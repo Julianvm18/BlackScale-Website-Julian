@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Comercial Gratuito | Blackscale Consulting</title>
+<meta name="description" content="Descubre en 3 minutos dónde tu operación comercial está perdiendo oportunidades. Diagnóstico gratuito de Blackscale Consulting.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── NAV: matches main site exactly ── */
+  .diag-page-wrap { padding-top: 72px; }
+
+  /* ── HERO ── */
+  .diag-hero {
+    padding: 5rem 0 3.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .diag-hero::before {
+    content: '';
+    position: absolute;
+    top: -10%; left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 400px;
+    background: radial-gradient(ellipse at center, var(--burgundy-glow) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .diag-hero .container { position: relative; z-index: 1; max-width: 700px; }
+  .diag-hero__tag {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--cream-light);
+    background: var(--burgundy);
+    border: 1px solid var(--burgundy-mid);
+    padding: 6px 18px; border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .diag-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300; color: var(--white);
+    line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .diag-hero h1 em { font-style: italic; color: var(--cream); }
+  .diag-hero__sub {
+    font-size: clamp(17px, 2vw, 20px);
+    font-weight: 300; color: var(--muted-light);
+    max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.8;
+  }
+  .diag-hero__stats {
+    display: flex; justify-content: center; align-items: center;
+    max-width: 400px; margin: 0 auto;
+  }
+  .diag-stat { flex: 1; text-align: center; padding: 0 1.25rem; }
+  .diag-stat__num {
+    font-family: var(--serif);
+    font-size: 2.2rem; font-weight: 400; color: var(--gold);
+    letter-spacing: -0.02em; line-height: 1; display: block;
+  }
+  .diag-stat__label {
+    font-family: var(--sans);
+    font-size: 12px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); margin-top: 5px; display: block;
+  }
+  .diag-stat__divider { width: 1px; height: 36px; background: var(--border-light); flex-shrink: 0; }
+
+  /* ── PROGRESS ── */
+  .progress-wrap { max-width: 640px; margin: 0 auto; padding: 2rem 28px 0; }
+  .progress-bar-bg { height: 3px; background: var(--border); border-radius: 100px; overflow: hidden; }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--burgundy), var(--burgundy-mid));
+    border-radius: 100px; transition: width 0.5s cubic-bezier(.4,0,.2,1); width: 0%;
+  }
+  .progress-text {
+    display: flex; justify-content: space-between; margin-top: 8px;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted);
+  }
+
+  /* ── FORM ── */
+  .form-container { max-width: 680px; margin: 2rem auto 5rem; padding: 0 28px; }
+  .diag-step { display: none; animation: fadeUp 0.35s ease; }
+  .diag-step.active { display: block; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+
+  .step-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--burgundy);
+    border-radius: var(--radius-lg);
+    padding: 44px 36px;
+    position: relative;
+  }
+  .step-number {
+    font-family: var(--sans); font-size: 13px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--burgundy-mid); margin-bottom: 12px;
+  }
+  .step-question {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3vw, 28px); font-weight: 300;
+    color: var(--white); margin-bottom: 8px; line-height: 1.2; letter-spacing: -0.01em;
+  }
+  .step-hint {
+    font-size: 17px; font-weight: 300; color: var(--muted);
+    margin-bottom: 28px; line-height: 1.7;
+  }
+
+  /* ── OPTIONS ── */
+  .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media(max-width:520px){.options-grid{grid-template-columns:1fr}}
+  .option-btn {
+    background: var(--brand-black);
+    border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px;
+    cursor: pointer; transition: all var(--transition); text-align: left; position: relative;
+  }
+  .option-btn:hover { border-color: var(--border-light); background: var(--surface-2); }
+  .option-btn.selected {
+    border-color: var(--burgundy); background: var(--burgundy-subtle);
+    box-shadow: 0 0 0 1px var(--burgundy);
+  }
+  .option-btn.selected::after {
+    content:''; position:absolute; top:0; left:0; right:0;
+    height:2px; background:var(--burgundy);
+    border-radius:var(--radius) var(--radius) 0 0;
+  }
+  .opt-icon { font-size: 1.2rem; margin-bottom: 6px; }
+  .opt-label { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--cream-light); line-height: 1.3; }
+  .opt-sub { font-size: 15px; font-weight: 300; color: var(--muted); margin-top: 3px; }
+
+  /* ── CONTACT INPUTS ── */
+  .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+  .form-group label {
+    font-family: var(--sans); font-size: 14px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-light);
+  }
+  .form-group input {
+    background: var(--brand-black); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 13px 16px;
+    font-family: var(--sans); font-size: 17px; font-weight: 300; color: var(--white);
+    outline: none; transition: border-color var(--transition);
+  }
+  .form-group input::placeholder { color: var(--muted); }
+  .form-group input:focus { border-color: var(--burgundy); }
+
+  /* ── BUTTONS ── */
+  .btn-row { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; gap: 14px; }
+  .diag-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 15px; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border-radius: var(--radius); padding: 13px 28px;
+    border: 1.5px solid transparent; cursor: pointer; transition: all var(--transition);
+  }
+  .diag-btn--primary {
+    background: var(--burgundy); color: var(--cream-light);
+    border-color: var(--burgundy); margin-left: auto;
+  }
+  .diag-btn--primary:hover { background: var(--burgundy-dark); border-color: var(--burgundy-dark); color: var(--white); }
+  .diag-btn--primary:disabled { opacity: 0.35; cursor: not-allowed; }
+  .diag-btn--outline {
+    background: transparent; color: var(--cream); border-color: var(--border-light);
+  }
+  .diag-btn--outline:hover { border-color: var(--burgundy-mid); color: var(--cream-light); background: var(--burgundy-subtle); }
+
+  /* ── RESULTS ── */
+  .results-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-top: 3px solid var(--burgundy);
+    border-radius: var(--radius-lg); padding: 48px 36px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .results-score {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 110px; height: 110px; border-radius: 50%;
+    font-family: var(--serif); font-size: 28px; font-weight: 400;
+    margin-bottom: 24px; position: relative; z-index: 1;
+  }
+  .results-score::after {
+    content: ''; position: absolute; inset: -5px; border-radius: 50%;
+    border: 1.5px solid; border-color: inherit; opacity: 0.25;
+  }
+  .score-low  { color: #d94f4f; border-color: #d94f4f; background: rgba(217,79,79,0.08); }
+  .score-mid  { color: var(--gold); border-color: var(--gold); background: rgba(209,156,21,0.08); }
+  .score-high { color: #5cb87a; border-color: #5cb87a; background: rgba(92,184,122,0.08); }
+  .results-title {
+    font-family: var(--serif); font-size: clamp(24px,3.5vw,32px); font-weight: 300;
+    color: var(--white); margin-bottom: 14px; line-height: 1.2; position: relative; z-index: 1;
+  }
+  .results-summary {
+    font-size: 19px; font-weight: 300; color: var(--muted-light);
+    line-height: 1.75; max-width: 520px; margin: 0 auto 32px; position: relative; z-index: 1;
+  }
+  .results-items { text-align: left; margin-bottom: 36px; position: relative; z-index: 1; }
+  .result-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 18px 0; border-bottom: 1px solid var(--border);
+  }
+  .result-item:last-child { border-bottom: none; }
+  .result-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0; margin-top: 2px;
+  }
+  .result-icon.warn { background: rgba(209,156,21,0.12); color: var(--gold); }
+  .result-icon.crit { background: rgba(217,79,79,0.12); color: #d94f4f; }
+  .result-icon.ok   { background: rgba(92,184,122,0.12); color: #5cb87a; }
+  .result-text strong {
+    display: block; font-family: var(--serif); font-size: 19px; font-weight: 400;
+    color: var(--cream-light); margin-bottom: 4px;
+  }
+  .result-text span { font-size: 16px; font-weight: 300; color: var(--muted); line-height: 1.6; }
+
+  /* ── CTA BAND ── */
+  .cta-wrap {
+    background: var(--burgundy); border-radius: var(--radius);
+    padding: 32px; position: relative; z-index: 1; overflow: hidden;
+  }
+  .cta-wrap::before {
+    content: 'BS'; position: absolute; right: -10px; top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--serif); font-size: 140px; font-weight: 600;
+    color: rgba(255,255,255,0.04); pointer-events: none; letter-spacing: -0.05em;
+  }
+  .cta-wrap h3 {
+    font-family: var(--serif); font-size: clamp(22px,3vw,28px); font-weight: 300;
+    color: var(--cream-light); margin-bottom: 8px; line-height: 1.2;
+  }
+  .cta-wrap p { font-size: 16px; font-weight: 300; color: rgba(215,210,203,0.6); margin-bottom: 20px; line-height: 1.6; }
+  .btn--cta {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 15px; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    background: var(--brand-black); color: var(--cream);
+    border: 1.5px solid var(--brand-black);
+    border-radius: var(--radius); padding: 14px 32px;
+    text-decoration: none; cursor: pointer; transition: all var(--transition); position: relative; z-index: 1;
+  }
+  .btn--cta:hover { background: var(--gold-dim); border-color: var(--gold-dim); color: var(--brand-black); }
+
+  /* ── SOFT CAPTURE ── */
+  .capture-divider {
+    display: flex; align-items: center; gap: 14px;
+    margin: 2rem 0 1.5rem; color: var(--muted);
+    font-size: 14px; letter-spacing: 0.04em;
+  }
+  .capture-divider::before, .capture-divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+  .capture-form { display: flex; flex-direction: column; gap: 10px; }
+  .capture-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media(max-width:520px) { .capture-row { grid-template-columns: 1fr; } }
+  .capture-form input {
+    width: 100%; padding: 12px 16px;
+    background: var(--brand-black); border: 1px solid var(--border);
+    border-radius: var(--radius); color: var(--text);
+    font-family: var(--sans); font-size: 16px;
+    transition: border-color var(--transition);
+  }
+  .capture-form input:focus { outline: none; border-color: var(--burgundy-mid); }
+  .capture-form input::placeholder { color: var(--muted); }
+  .capture-note { font-size: 13px; color: var(--muted); margin: 4px 0 0; text-align: center; }
+  .capture-note.sent { color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:768px){
+    .diag-hero{padding:4rem 0 2.5rem}
+    .step-card{padding:32px 24px}
+    .btn-row{flex-direction:column}
+    .diag-btn{width:100%;margin-left:0}
+    .diag-hero__stats{flex-direction:column;gap:16px}
+    .diag-stat__divider{display:none}
+    .cta-wrap{padding:24px 20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="diag-page-wrap">
+
+<!-- NAV — exact same as main site -->
+<header class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="logo">
+      <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale">
+    </a>
+    <nav class="nav__links">
+      <a href="services.html">Servicios</a>
+      <a href="why-us.html">Por Qué Nosotros</a>
+      <a href="process.html">Proceso</a>
+      <a href="blog/">Blog</a>
+      <a href="diagnostico.html" class="active">Diagnóstico</a>
+      <a href="contact.html" class="btn btn--outline">Contáctanos</a>
+    </nav>
+    <button class="nav__burger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="services.html">Servicios</a>
+  <a href="why-us.html">Por Qué Nosotros</a>
+  <a href="process.html">Proceso</a>
+  <a href="blog/">Blog</a>
+  <a href="diagnostico.html">Diagnóstico</a>
+  <a href="contact.html">Contáctanos</a>
+</div>
+
+<!-- HERO -->
+<section class="diag-hero">
+  <div class="container">
+    <div class="diag-hero__tag">Solo toma 3 minutos</div>
+    <h1>¿Dónde está perdiendo dinero<br><em>tu operación comercial?</em></h1>
+    <p class="diag-hero__sub">5 preguntas sobre tu marketing y ventas. Recibes un diagnóstico inmediato con los puntos exactos donde tu pipeline está fallando.</p>
+    <div class="diag-hero__stats">
+      <div class="diag-stat">
+        <span class="diag-stat__num">5</span>
+        <span class="diag-stat__label">Preguntas</span>
+      </div>
+      <div class="diag-stat__divider"></div>
+      <div class="diag-stat">
+        <span class="diag-stat__num">3 min</span>
+        <span class="diag-stat__label">Duración</span>
+      </div>
+      <div class="diag-stat__divider"></div>
+      <div class="diag-stat">
+        <span class="diag-stat__num">$0</span>
+        <span class="diag-stat__label">Costo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRESS -->
+<div class="progress-wrap" id="progressWrap" style="display:none">
+  <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+  <div class="progress-text">
+    <span id="progressLabel">Pregunta 1 de 5</span>
+    <span id="progressPct">0%</span>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="form-container" id="formContainer">
+
+  <div class="diag-step active" id="stepStart">
+    <div class="step-card" style="text-align:center">
+      <div style="font-size:2.5rem;margin-bottom:16px">📊</div>
+      <div class="step-question">Tu diagnóstico comercial empieza aquí</div>
+      <div class="step-hint">Evaluaremos la conexión entre tu marketing y ventas, tu pipeline y tu motor de demanda. En menos de 3 minutos sabrás exactamente dónde están las fugas.</div>
+      <div class="btn-row" style="justify-content:center">
+        <button class="diag-btn diag-btn--primary" onclick="startDiag()">Empezar diagnóstico</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="diag-step" id="step1">
+    <div class="step-card">
+      <div class="step-number">Pregunta 1 de 5</div>
+      <div class="step-question">¿Sabes cuánto revenue generó tu marketing este trimestre?</div>
+      <div class="step-hint">Si no puedes medirlo, no puedes mejorarlo.</div>
+      <div class="options-grid">
+        <div class="option-btn" onclick="sel(this,1)" data-score="1"><div class="opt-icon">❌</div><div class="opt-label">No tenemos visibilidad</div><div class="opt-sub">Marketing y ventas no están conectados</div></div>
+        <div class="option-btn" onclick="sel(this,1)" data-score="2"><div class="opt-icon">🤔</div><div class="opt-label">Una idea aproximada</div><div class="opt-sub">Sin datos concretos</div></div>
+        <div class="option-btn" onclick="sel(this,1)" data-score="3"><div class="opt-icon">📊</div><div class="opt-label">Rastreamos algunos KPIs</div><div class="opt-sub">Leads y conversiones básicas</div></div>
+        <div class="option-btn" onclick="sel(this,1)" data-score="4"><div class="opt-icon">✅</div><div class="opt-label">Atribución completa</div><div class="opt-sub">Sabemos qué canal genera más revenue</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="diag-btn diag-btn--outline" onclick="back(0)">Atrás</button>
+        <button class="diag-btn diag-btn--primary" id="btn1" disabled onclick="next(2)">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="diag-step" id="step2">
+    <div class="step-card">
+      <div class="step-number">Pregunta 2 de 5</div>
+      <div class="step-question">¿Tu pipeline de ventas tiene etapas claras y se gestiona con datos?</div>
+      <div class="step-hint">Un pipeline sin estructura es solo una lista de esperanzas.</div>
+      <div class="options-grid">
+        <div class="option-btn" onclick="sel(this,2)" data-score="1"><div class="opt-icon">🔴</div><div class="opt-label">No hay pipeline definido</div><div class="opt-sub">Vendemos de forma reactiva</div></div>
+        <div class="option-btn" onclick="sel(this,2)" data-score="2"><div class="opt-icon">🟡</div><div class="opt-label">Existe pero no se usa</div><div class="opt-sub">Cada quien trabaja a su manera</div></div>
+        <div class="option-btn" onclick="sel(this,2)" data-score="3"><div class="opt-icon">🟢</div><div class="opt-label">Sí, con etapas en CRM</div><div class="opt-sub">Lo seguimos pero no está optimizado</div></div>
+        <div class="option-btn" onclick="sel(this,2)" data-score="4"><div class="opt-icon">🔵</div><div class="opt-label">Pipeline con métricas activas</div><div class="opt-sub">Conversión por etapa y forecast real</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="diag-btn diag-btn--outline" onclick="back(1)">Atrás</button>
+        <button class="diag-btn diag-btn--primary" id="btn2" disabled onclick="next(3)">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="diag-step" id="step3">
+    <div class="step-card">
+      <div class="step-number">Pregunta 3 de 5</div>
+      <div class="step-question">¿Marketing y ventas trabajan hacia los mismos objetivos?</div>
+      <div class="step-hint">La mayoría del pipeline perdido ocurre en el handoff entre marketing y ventas.</div>
+      <div class="options-grid">
+        <div class="option-btn" onclick="sel(this,3)" data-score="1"><div class="opt-icon">🚧</div><div class="opt-label">No, trabajan por separado</div><div class="opt-sub">Metas distintas, sin coordinación</div></div>
+        <div class="option-btn" onclick="sel(this,3)" data-score="2"><div class="opt-icon">🤝</div><div class="opt-label">Hay reuniones pero no hay alineación real</div><div class="opt-sub">Hablan pero no comparten metas</div></div>
+        <div class="option-btn" onclick="sel(this,3)" data-score="3"><div class="opt-icon">📋</div><div class="opt-label">Comparten objetivos, coordinación parcial</div><div class="opt-sub">Falta sistema integrado</div></div>
+        <div class="option-btn" onclick="sel(this,3)" data-score="4"><div class="opt-icon">⚡</div><div class="opt-label">Totalmente alineados</div><div class="opt-sub">Pipeline y metas compartidas</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="diag-btn diag-btn--outline" onclick="back(2)">Atrás</button>
+        <button class="diag-btn diag-btn--primary" id="btn3" disabled onclick="next(4)">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="diag-step" id="step4">
+    <div class="step-card">
+      <div class="step-number">Pregunta 4 de 5</div>
+      <div class="step-question">¿Cómo consigue tu empresa nuevos prospectos hoy?</div>
+      <div class="step-hint">La forma en que generas demanda determina la calidad de tu pipeline.</div>
+      <div class="options-grid">
+        <div class="option-btn" onclick="sel(this,4)" data-score="1"><div class="opt-icon">🤷</div><div class="opt-label">Referidos y contactos personales</div><div class="opt-sub">Sin sistema activo</div></div>
+        <div class="option-btn" onclick="sel(this,4)" data-score="2"><div class="opt-icon">📧</div><div class="opt-label">Outreach básico sin estrategia</div><div class="opt-sub">Email o LinkedIn sin proceso</div></div>
+        <div class="option-btn" onclick="sel(this,4)" data-score="3"><div class="opt-icon">📢</div><div class="opt-label">Campañas activas de marketing</div><div class="opt-sub">Pauta, contenido y outreach</div></div>
+        <div class="option-btn" onclick="sel(this,4)" data-score="4"><div class="opt-icon">⚙️</div><div class="opt-label">Motor de demanda estructurado</div><div class="opt-sub">Sistema multicanal con métricas</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="diag-btn diag-btn--outline" onclick="back(3)">Atrás</button>
+        <button class="diag-btn diag-btn--primary" id="btn4" disabled onclick="next(5)">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="diag-step" id="step5">
+    <div class="step-card">
+      <div class="step-number">Pregunta 5 de 5</div>
+      <div class="step-question">¿Cuál es el problema más urgente en tu operación comercial?</div>
+      <div class="step-hint">Elige el que más te quita el sueño hoy.</div>
+      <div class="options-grid">
+        <div class="option-btn" onclick="sel(this,5)"><div class="opt-icon">📉</div><div class="opt-label">No generamos suficientes leads</div></div>
+        <div class="option-btn" onclick="sel(this,5)"><div class="opt-icon">🚪</div><div class="opt-label">Los leads entran pero no cierran</div></div>
+        <div class="option-btn" onclick="sel(this,5)"><div class="opt-icon">🔗</div><div class="opt-label">Marketing y ventas no están conectados</div></div>
+        <div class="option-btn" onclick="sel(this,5)"><div class="opt-icon">🔄</div><div class="opt-label">No sé qué está funcionando y qué no</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="diag-btn diag-btn--outline" onclick="back(4)">Atrás</button>
+        <button class="diag-btn diag-btn--primary" id="btn5" disabled onclick="goToResults()">Ver mi diagnóstico</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- step6 removed — results now shown directly after questions -->
+
+  <div class="diag-step" id="stepResults">
+    <div class="results-card">
+      <div class="results-score" id="scoreCircle"><span id="scoreNumber">--</span></div>
+      <div class="results-title" id="resultsTitle">Cargando resultado...</div>
+      <div class="results-summary" id="resultsSummary"></div>
+      <div class="results-items" id="resultsItems"></div>
+
+      <!-- Soft capture — value first, form implicit -->
+      <div class="cta-wrap">
+        <h3>¿Quieres revisar esto con alguien que ya lo ha visto decenas de veces?</h3>
+        <p>30 minutos con un fundador de BlackScale. Sin presentación, sin compromiso — solo revisamos tu resultado y definimos los 2 o 3 cambios que más impacto tendrían en tu operación.</p>
+        <a href="https://calendly.com/julian-vallejo-blackscale/30min" target="_blank" rel="noopener" class="btn--cta" id="ctaCalendly">Agendar llamada gratuita →</a>
+        <div class="capture-divider">
+          <span>o si prefieres que te contactemos</span>
+        </div>
+        <div class="capture-form" id="captureForm">
+          <div class="capture-row">
+            <input type="text" id="captureName" placeholder="Tu nombre" autocomplete="given-name">
+            <input type="email" id="captureEmail" placeholder="Tu email corporativo" autocomplete="email">
+          </div>
+          <button class="diag-btn diag-btn--outline" onclick="submitCapture()" id="captureBtn">Que me contacten →</button>
+          <p class="capture-note" id="captureNote">Te escribimos en menos de un día hábil.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER matching main site -->
+<footer class="footer">
+  <div class="footer__cta-strip" style="display:none"></div>
+  <div class="footer__main">
+    <div class="container footer__grid" style="justify-content:space-between;align-items:center;padding:1.5rem 0">
+      <p class="footer__copy">&copy; 2026 Blackscale Consulting. Todos los derechos reservados.</p>
+      <a href="index.html" style="color:var(--muted);font-size:15px;text-decoration:none;">blackscale.consulting</a>
+    </div>
+  </div>
+</footer>
+
+</div><!-- .diag-page-wrap -->
+
+<button id="back-to-top" aria-label="Volver arriba">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script>
+const A={},T=5;let C=0;
+function startDiag(){hide('stepStart');show('step1');document.getElementById('progressWrap').style.display='block';C=1;prog();}
+function sel(el,s){el.closest('.step-card').querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');A[s]={label:el.querySelector('.opt-label').textContent.trim(),score:parseInt(el.dataset.score)||0};var b=document.getElementById('btn'+s);if(b)b.disabled=false;}
+function next(s){hide('step'+(s-1));if(s<=T){show('step'+s);C=s;prog();}window.scrollTo({top:0,behavior:'smooth'});}
+function back(s){if(s===0){hide('step1');show('stepStart');document.getElementById('progressWrap').style.display='none';C=0;}else{hide('step'+(s+1));show('step'+s);C=s;}prog();window.scrollTo({top:0,behavior:'smooth'});}
+function prog(){if(!C)return;var p=Math.round(C/T*100);document.getElementById('progressFill').style.width=p+'%';document.getElementById('progressLabel').textContent='Pregunta '+C+' de '+T;document.getElementById('progressPct').textContent=p+'%';}
+function hide(id){var el=document.getElementById(id);if(el)el.classList.remove('active');}
+function show(id){var el=document.getElementById(id);if(el)el.classList.add('active');}
+
+// Called directly after step 5 — no gate
+function goToResults(){
+  hide('step5');
+  show('stepResults');
+  document.getElementById('progressWrap').style.display='none';
+  var t=0;for(var i=1;i<=4;i++)if(A[i])t+=A[i].score;
+  renderResults(Math.round(t/16*100));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderResults(p){
+  var sc=document.getElementById('scoreCircle');
+  document.getElementById('scoreNumber').textContent=p+'/100';
+  if(p<=35){
+    sc.className='results-score score-low';
+    document.getElementById('resultsTitle').textContent='Tu operación comercial necesita atención urgente.';
+    document.getElementById('resultsSummary').textContent='Marketing y ventas están operando sin estructura ni conexión. Estás perdiendo oportunidades todos los días. Con los ajustes correctos, el impacto es inmediato.';
+  } else if(p<=62){
+    sc.className='results-score score-mid';
+    document.getElementById('resultsTitle').textContent='Tienes una base, pero hay fugas importantes.';
+    document.getElementById('resultsSummary').textContent='Tu operación tiene algunos procesos, pero hay gaps críticos entre marketing y ventas que están frenando tu crecimiento. Cerrar esas fugas puede significar un salto real en resultados.';
+  } else {
+    sc.className='results-score score-high';
+    document.getElementById('resultsTitle').textContent='Tu operación comercial está bien encaminada.';
+    document.getElementById('resultsSummary').textContent='Tienes estructura, datos y alineación. El siguiente paso es optimizar y escalar lo que ya funciona, y cerrar los gaps restantes antes de que la competencia lo haga.';
+  }
+  var items=[];
+  if(A[1]&&A[1].score<=2)items.push({i:'crit',t:'Marketing desconectado del revenue',d:'No saber cuánto genera tu marketing es el gap más caro. Sin esa visibilidad, sigues invirtiendo a ciegas.'});
+  else if(A[1]&&A[1].score===3)items.push({i:'warn',t:'Atribución de marketing incompleta',d:'Tienes datos básicos pero te falta el cuadro completo. Optimizar la atribución puede revelarte dónde está el ROI real.'});
+  else if(A[1])items.push({i:'ok',t:'Atribución de marketing sólida',d:'Sabes qué genera revenue. Ahora el foco es escalar los canales de mayor retorno.'});
+  if(A[2]&&A[2].score<=2)items.push({i:'crit',t:'Pipeline sin estructura',d:'Sin pipeline definido no puedes predecir revenue ni identificar dónde se pierden las oportunidades.'});
+  else if(A[2]&&A[2].score===3)items.push({i:'warn',t:'Pipeline funcional, optimización pendiente',d:'Tienes estructura pero probablemente no mides conversión por etapa ni cuellos de botella reales.'});
+  else if(A[2])items.push({i:'ok',t:'Pipeline maduro con métricas',d:'Buen trabajo. El foco ahora es velocidad de ciclo y win rate por segmento.'});
+  if(A[3]&&A[3].score<=2)items.push({i:'crit',t:'Marketing y ventas desconectados',d:'Esta desconexión es la causa número uno de pipeline perdido. Los leads generados por marketing mueren en el handoff.'});
+  else if(A[3]&&A[3].score===3)items.push({i:'warn',t:'Alineación parcial entre áreas',d:'Hay voluntad pero falta el sistema. Necesitas un proceso integrado, no solo reuniones de coordinación.'});
+  else if(A[3])items.push({i:'ok',t:'Marketing y ventas bien alineados',d:'Tienes una ventaja competitiva real. Enfócate en optimizar el proceso de calificación compartido.'});
+  if(A[4]&&A[4].score<=2)items.push({i:'crit',t:'Sin motor de demanda activo',d:'Depender de referidos limita tu crecimiento al techo de tu red. Necesitas un sistema predecible de generación de leads.'});
+  else if(A[4]&&A[4].score===3)items.push({i:'warn',t:'Campañas activas, integración pendiente',d:'Estás generando demanda pero marketing y ventas probablemente no están alineados en la calificación.'});
+  else if(A[4])items.push({i:'ok',t:'Motor de demanda estructurado',d:'Tienes un sistema multicanal. El foco ahora es optimización de CAC y expansión de canales de mayor ROI.'});
+  if(A[5]){var pm={'No generamos suficientes leads':{i:'warn',t:'Prioridad: volumen de pipeline',d:'Sin leads suficientes, tu equipo comercial no puede crecer. Necesitas activar canales de outbound e inbound de forma urgente.'},'Los leads entran pero no cierran':{i:'warn',t:'Prioridad: conversión de pipeline',d:'Tienes volumen pero no cierras. Casi siempre es un problema de calificación, playbooks de ventas o seguimiento.'},'Marketing y ventas no están conectados':{i:'crit',t:'Prioridad: arquitectura comercial',d:'Esta desconexión es el problema más caro y el más solucionable. Con el sistema correcto, el impacto es inmediato.'},'No sé qué está funcionando y qué no':{i:'warn',t:'Prioridad: visibilidad de datos',d:'Sin datos, tomas decisiones a ciegas. Un dashboard básico de marketing y pipeline cambiaría completamente tu capacidad de gestión.'}};var x=pm[A[5].label];if(x)items.push(x);}
+  document.getElementById('resultsItems').innerHTML=items.map(x=>'<div class="result-item"><div class="result-icon '+x.i+'">'+(x.i==='crit'?'⚠️':x.i==='warn'?'⚡':'✅')+'</div><div class="result-text"><strong>'+x.t+'</strong><span>'+x.d+'</span></div></div>').join('');
+}
+
+// Optional soft capture — user initiated, not gated
+function submitCapture(){
+  var name=document.getElementById('captureName').value.trim();
+  var email=document.getElementById('captureEmail').value.trim();
+  if(!email){document.getElementById('captureNote').textContent='Ingresa tu email para continuar.';return;}
+  var btn=document.getElementById('captureBtn');
+  btn.disabled=true; btn.textContent='Enviando...';
+  // Build score summary for context
+  var t=0;for(var i=1;i<=4;i++)if(A[i])t+=A[i].score;
+  var p=Math.round(t/16*100);
+  var urgente=A[5]?A[5].label:'No especificado';
+  var body=new FormData();
+  body.append('nombre',name||'(no ingresó)');
+  body.append('email',email);
+  body.append('fuente','Diagnóstico comercial — score '+p+'/100');
+  body.append('urgencia',urgente);
+  fetch('https://formspree.io/f/xykbbnwv',{method:'POST',body:body,headers:{'Accept':'application/json'}})
+    .then(function(r){
+      var note=document.getElementById('captureNote');
+      if(r.ok){
+        note.textContent='✓ Recibido. Te contactamos en menos de un día hábil.';
+        note.className='capture-note sent';
+        document.getElementById('captureForm').style.display='none';
+        // Update Calendly link with known data
+        document.getElementById('ctaCalendly').href='https://calendly.com/julian-vallejo-blackscale/30min?'+new URLSearchParams({name:name,email:email}).toString();
+      } else {
+        btn.disabled=false; btn.textContent='Que me contacten →';
+        note.textContent='Algo falló. Intenta de nuevo.';
+      }
+    })
+    .catch(function(){
+      btn.disabled=false; btn.textContent='Que me contacten →';
+      document.getElementById('captureNote').textContent='Error de red. Intenta de nuevo.';
+    });
+}
+
+// Back to top
+(function(){var btn=document.getElementById('back-to-top');window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>400);});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
+// Mobile menu
+(function(){var burger=document.querySelector('.nav__burger');var menu=document.getElementById('mobileMenu');if(!burger||!menu)return;burger.addEventListener('click',function(){menu.classList.toggle('open');burger.classList.toggle('open');});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!burger.contains(e.target)){menu.classList.remove('open');burger.classList.remove('open');}});})();
+</script>
+</body>
+</html>
