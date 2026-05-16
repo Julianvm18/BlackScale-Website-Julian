@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF8WJBGXBX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,7 +8,6 @@
   gtag('js', new Date());
   gtag('config', 'G-NF8WJBGXBX');
 </script>
-<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -25,7 +23,6 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link rel="shortcut icon" href="logo.svg">
@@ -40,7 +37,39 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_LA" />
   <meta property="og:site_name" content="BlackScale Consulting" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"BlackScale Consulting","url":"https://blackscale.consulting","description":"Consultora B2B de marketing y ventas en Colombia. Conectamos marketing y ventas para generar pipeline predecible.","email":"Servicio@blackscale.consulting","areaServed":{"@type":"Country","name":"Colombia"},"serviceType":["Generación de Demanda B2B Colombia","Habilitación Comercial B2B","Revenue Operations","Marketing Basado en Cuentas","Sales Enablement Colombia"],"sameAs":["https://www.linkedin.com/in/blackscale-consulting-0686a83b8/","https://www.instagram.com/blackscale_con/"]}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://blackscale.consulting/#organization",
+        "name": "BlackScale Consulting",
+        "url": "https://blackscale.consulting/",
+        "logo": "https://blackscale.consulting/Horizontal%20Blanco.svg",
+        "email": "Servicio@blackscale.consulting",
+        "foundingLocation": { "@type": "Place", "name": "Bogota, Colombia" },
+        "sameAs": [
+          "https://www.linkedin.com/in/blackscale-consulting-0686a83b8/",
+          "https://www.instagram.com/blackscale_con/",
+          "https://www.facebook.com/profile.php?id=61578534510595"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://blackscale.consulting/#service",
+        "name": "BlackScale Consulting",
+        "description": "Consultoria de marketing B2B y crecimiento comercial para empresas en Colombia. Generacion de demanda, habilitacion comercial y Revenue Operations para pipelines predecibles.",
+        "url": "https://blackscale.consulting/",
+        "areaServed": { "@type": "Country", "name": "Colombia" },
+        "serviceType": ["Marketing B2B", "Generacion de Demanda", "Revenue Operations", "Habilitacion Comercial", "Sales Enablement", "Go-to-Market Strategy"],
+        "address": { "@type": "PostalAddress", "addressLocality": "Bogota", "addressCountry": "CO" },
+        "priceRange": "$$",
+        "email": "Servicio@blackscale.consulting"
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="style.css" />
   <style>
     .step__num { color: rgba(85, 28, 37, 0.72) !important; }
@@ -76,125 +105,39 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     <a href="blog/" data-i18n="nav.blog">Blog</a>
     <a href="diagnostico.html" data-i18n="nav.diag">Diagnóstico</a>
     <a href="contact.html" data-i18n="nav.cta">Contáctanos</a>
-    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero__texture"></div>
     <div class="container hero__inner">
       <h1 class="hero__headline" data-i18n-html="hero.headline">
-          Marketing diseñado para escalar<br /><em>negocios B2B.</em>
+          Tu marketing genera leads.<br /><em>Tu equipo de ventas dice que no sirven.</em>
         </h1>
       <p class="hero__sub" data-i18n="hero.sub">
-          En Blackscale Consulting ayudamos a empresas B2B a generar leads de alta calidad y fortalecer su pipeline de ventas mediante estrategias de marketing basadas en datos, optimización de pauta digital y sales enablement para convertir más oportunidades en clientes.
+          Ahí está tu problema de revenue — y ahí empezamos nosotros. En BlackScale conectamos marketing y ventas para que tu pipeline B2B sea predecible: más reuniones calificadas, ciclos más cortos, más cierres. Sin métricas de vanidad.
         </p>
-      <div class="hero__cta">
-        <a href="contact.html" class="btn btn--primary">Agenda tu consultoría gratuita</a>
+      <div class="hero__cta" style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;">
+        <a href="contact.html" class="btn btn--primary">Diagnóstica tu pipeline — es gratis</a>
+        <a href="diagnostico.html" style="font-size:.9rem;color:#C39A4C;border-bottom:1px solid rgba(195,154,76,.35);text-decoration:none;padding-bottom:1px;">O empieza con el diagnóstico de 3 minutos →</a>
       </div>
-      <div class="hero__stats">
+      <div class="hero__stats" style="margin-top:2rem;">
         <div class="stat">
-          <span class="stat__label">Especialización en LinkedIn Ads</span>
+          <span class="stat__label">La mayoría de agencias te cobra por clics — nosotros contamos cierres</span>
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
-          <span class="stat__label">Experiencia en mercados altamente competitivos</span>
+          <span class="stat__label">Especialistas exclusivamente B2B Colombia</span>
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
-          <span class="stat__label">Enfoque en ingresos B2B</span>
+          <span class="stat__label">Pipeline activo en semanas, no meses</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Bridge: hero → pain hooks -->
-  <div class="section-bridge" aria-hidden="true">
-  </div>
-
-  <!-- PAIN HOOKS -->
-  <section class="why" id="pain-hooks" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80&auto=format&fit=crop');">  
-    <div class="container why__inner">
-      <div class="why__text">
-        <span class="section-tag">Lo Que Vemos</span>
-        <ul class="why__list" style="margin-top:0;">
-          <li>
-            <span class="check"></span>
-            <div>
-              <span class="pain-hook__label">El problema de arquitectura</span>
-              <strong class="pain-hook__title">Tu equipo de marketing genera leads. Tu equipo de ventas dice que no sirven.</strong>
-              <p>Y mientras tanto, el pipeline se desangra. Esto no es un problema de talento. Es un problema de arquitectura comercial: la estrategia de marketing no está diseñada para alimentar el proceso de ventas, los mensajes no califican al prospecto antes de que llegue al equipo comercial, y no hay un sistema que conecte ambas partes. Eso es exactamente lo que resolvemos.</p>
-            </div>
-          </li>
-          <li>
-            <span class="check"></span>
-            <div>
-              <span class="pain-hook__label">El costo del statu quo</span>
-              <strong class="pain-hook__title">Cada mes sin un sistema de pipeline estructurado es un mes de oportunidades que se van a la competencia.</strong>
-              <p>No porque tu producto sea peor. Sino porque tu motor comercial no está diseñado para competir y ganar.</p>
-            </div>
-          </li>
-          <li>
-            <span class="check"></span>
-            <div>
-              <span class="pain-hook__label">El marketing que no se traduce en ganancias</span>
-              <strong class="pain-hook__title">Tienes actividad de marketing. Publicaciones, pauta, tal vez eventos.</strong>
-              <p>Pero si alguien te pregunta cuánto revenue generó el marketing este trimestre, la respuesta es silencio. No porque el marketing no sirva, sino porque nunca estuvo conectado al pipeline. Estás pagando por visibilidad, no por crecimiento.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bridge: pain hooks → why -->
-  <div class="section-bridge" aria-hidden="true">
-  </div>
-
-  <!-- WHY US PREVIEW -->
-  <section class="why" id="why">
-    <div class="container why__inner">
-      <div class="why__text">
-        <span class="section-tag" data-i18n="tag.why">Por Qué Blackscale</span>
-        <h2 data-i18n-html="idx.why.heading">No hacemos<br /><em>métricas de vanidad.</em></h2>
-        <p data-i18n="idx.why.sub">La mayoría de agencias de marketing miden clics e impresiones. Nosotros medimos pipeline, revenue y crecimiento comercial. Cada acción está vinculada a resultados que importan para tu negocio.</p>
-        <ul class="why__list">
-          <li>
-            <span class="check"></span>
-            <div>
-              <strong data-i18n="idx.why.li1.strong">Cubrimos el gap que nadie más cubre</strong>
-              <p data-i18n="idx.why.li1.p">La mayoría de agencias te entregan leads. Los consultores de ventas te entrenan el equipo. Nosotros construimos el sistema que conecta los dos, para que el marketing genere pipeline real, no actividad.</p>
-            </div>
-          </li>
-          <li>
-            <span class="check"></span>
-            <div>
-              <strong data-i18n="idx.why.li2.strong">Construimos sistemas, no campañas</strong>
-              <p data-i18n="idx.why.li2.p">Una campaña termina. Un sistema escala. Cada engagement deja infraestructura comercial que sigue funcionando: CRM configurado, playbooks, cadencias y métricas que tu equipo opera solo.</p>
-            </div>
-          </li>
-          <li>
-            <span class="check"></span>
-            <div>
-              <strong data-i18n="idx.why.li3.strong">Diagnóstico antes de estrategia</strong>
-              <p data-i18n="idx.why.li3.p">No proponemos soluciones sin entender el problema real. Cada engagement empieza con una auditoría comercial, no con un deck de ventas.</p>
-            </div>
-          </li>
-          <li>
-            <span class="check"></span>
-            <div>
-              <strong data-i18n="idx.why.li4.strong">Datos, no intuición</strong>
-              <p data-i18n="idx.why.li4.p">Medimos todo lo que ejecutamos. Cada decisión está anclada en datos, no en suposiciones ni en lo que funcionó en otra industria.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="section-cta">
-        <a href="why-us.html" class="btn btn--outline-burgundy" data-i18n="btn.learn_more">Conócenos Mejor</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bridge: why → services -->
+  <!-- Bridge: hero → services -->
   <div class="section-bridge" aria-hidden="true">
   </div>
 
@@ -256,7 +199,39 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <!-- Bridge: services → founders -->
+  <!-- SOCIAL PROOF / PROBLEMA EN DATOS -->
+  <section style="padding:60px 0;border-top:1px solid rgba(85,28,37,0.25);border-bottom:1px solid rgba(85,28,37,0.25);background:rgba(109,31,46,0.06);">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:2.5rem;">
+        <span class="section-tag">El Problema Es Real</span>
+        <h2 style="font-size:clamp(1.4rem,3vw,1.9rem);">Los números detrás de<br /><em>la desconexión comercial.</em></h2>
+        <p style="max-width:560px;margin:0 auto;color:var(--muted-light,#a09891);font-size:.95rem;">La mayoría de empresas B2B en Colombia opera con marketing y ventas desconectados. Esto no es un problema de talento — es un problema de arquitectura.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;max-width:900px;margin:0 auto;">
+        <div style="text-align:center;padding:1.5rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,0.3);border-radius:6px;">
+          <div style="font-size:2.4rem;font-weight:800;color:#C39A4C;line-height:1;">73%</div>
+          <div style="font-size:.85rem;color:#a09891;margin-top:.6rem;line-height:1.5;">de equipos B2B no tiene un criterio escrito de lead calificado</div>
+        </div>
+        <div style="text-align:center;padding:1.5rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,0.3);border-radius:6px;">
+          <div style="font-size:2.4rem;font-weight:800;color:#C39A4C;line-height:1;">+49%</div>
+          <div style="font-size:.85rem;color:#a09891;margin-top:.6rem;line-height:1.5;">win rate promedio con habilitación comercial estructurada vs sin ella</div>
+        </div>
+        <div style="text-align:center;padding:1.5rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,0.3);border-radius:6px;">
+          <div style="font-size:2.4rem;font-weight:800;color:#C39A4C;line-height:1;">10%+</div>
+          <div style="font-size:.85rem;color:#a09891;margin-top:.6rem;line-height:1.5;">del revenue anual se pierde por desalineación entre marketing y ventas</div>
+        </div>
+        <div style="text-align:center;padding:1.5rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,0.3);border-radius:6px;">
+          <div style="font-size:2.4rem;font-weight:800;color:#C39A4C;line-height:1;">7x</div>
+          <div style="font-size:.85rem;color:#a09891;margin-top:.6rem;line-height:1.5;">más probable cerrar un lead si se contacta en la primera hora vs después</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="diagnostico.html" style="font-size:.9rem;color:#C39A4C;border-bottom:1px solid rgba(195,154,76,.35);text-decoration:none;">¿Cuántos de estos problemas tiene tu empresa ahora mismo? Toma el diagnóstico →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bridge: social proof → founders -->
   <div class="section-bridge" aria-hidden="true">
   </div>
 
@@ -334,50 +309,49 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
         <span class="section-tag" data-i18n="tag.get_in_touch">Contáctanos</span>
         <p data-i18n="contact.sub">Cuéntanos sobre tu empresa y tus objetivos. Te respondemos en menos de un día hábil para agendar tu diagnóstico gratuito.</p>
       </div>
-      <!-- HubSpot Form -->
-<form action="https://formspree.io/f/xykbbnwv" method="POST" class="contact-form">
-  <div class="form-group">
-    <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-  </div>
-  <div class="form-group">
-    <label for="empresa">Empresa</label>
-    <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Tu correo corporativo" required>
-  </div>
-  <div class="form-group">
-    <label for="telefono">Teléfono <span style="opacity:0.6;">(opcional)</span></label>
-    <input type="tel" id="telefono" name="telefono" placeholder="Tu número (opcional)">
-  </div>
-  <button type="submit" class="btn btn--primary">Solicitar diagnóstico gratuito</button>
-</form>
-<script>
-(function() {
-  var form = document.querySelector('.contact-form');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var formData = new FormData(form);
-    fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } }).then(function(response) {
-      if (response.ok) {
-        form.reset();
-        form.style.display = 'none';
-        var gate = document.getElementById('calendly-gate');
-        var thanks = document.getElementById('form-thanks');
-        if (gate) gate.style.display = 'block';
-        if (thanks) thanks.style.display = 'block';
-      }
-    });
-  });
-})();
-</script>        <div id="form-thanks" style="display:none; text-align:center; padding:20px;"><h3>¡Gracias! Ahora agenda tu llamada:</h3></div>
-        <div id="calendly-gate" style="display:none; text-align:center; margin-top:1.5rem;">
-          <a href="https://calendly.com/julian-vallejo-blackscale/30min" target="_blank" rel="noopener" class="btn btn--primary btn--full">Reserva tu llamada</a>
+      <form action="https://formspree.io/f/xykbbnwv" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
         </div>
-        
+        <div class="form-group">
+          <label for="empresa">Empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Tu correo corporativo" required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono <span style="opacity:0.6;">(opcional)</span></label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Tu número (opcional)">
+        </div>
+        <button type="submit" class="btn btn--primary">Solicitar diagnóstico gratuito</button>
+      </form>
+      <script>
+      (function() {
+        var form = document.querySelector('.contact-form');
+        if (!form) return;
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var formData = new FormData(form);
+          fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } }).then(function(response) {
+            if (response.ok) {
+              form.reset();
+              form.style.display = 'none';
+              var gate = document.getElementById('calendly-gate');
+              var thanks = document.getElementById('form-thanks');
+              if (gate) gate.style.display = 'block';
+              if (thanks) thanks.style.display = 'block';
+            }
+          });
+        });
+      })();
+      </script>
+      <div id="form-thanks" style="display:none; text-align:center; padding:20px;"><h3>¡Gracias! Ahora agenda tu llamada:</h3></div>
+      <div id="calendly-gate" style="display:none; text-align:center; margin-top:1.5rem;">
+        <a href="https://calendly.com/julian-vallejo-blackscale/30min" target="_blank" rel="noopener" class="btn btn--primary btn--full">Reserva tu llamada</a>
+      </div>
       <div class="form-success" id="formSuccess">
         <h3 data-i18n="form.success.h">Mensaje recibido.</h3>
         <p data-i18n="form.success.p">Gracias por escribirnos. Un fundador te contactará en menos de un día hábil para agendar tu sesión de diagnóstico gratuita.</p>
@@ -405,10 +379,9 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
           <p class="footer__desc" data-i18n="footer.desc">Consultoría de Marketing B2B y Crecimiento Comercial. Ayudamos a empresas a construir motores de crecimiento estructurados y medibles.</p>
           <div class="footer__contact-info">
             <a href="mailto:Servicio@blackscale.consulting" class="footer__contact-link"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>Servicio@blackscale.consulting</span></a>
-
           </div>
           <div class="footer__social">
-            <a href="https://www.linkedin.com/in/blackscale-consulting-0686a83b8/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.linkedin.com/in/blackscale-consulting-0686a83b8/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
             <a href="https://www.instagram.com/blackscale_con/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
             <a href="https://www.facebook.com/profile.php?id=61578534510595" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
           </div>
@@ -418,9 +391,9 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
           <ul class="footer__col-links">
             <li><a href="why-us.html" data-i18n="footer.co.why">Por Qué Blackscale</a></li>
             <li><a href="process.html" data-i18n="footer.co.process">Nuestro Proceso</a></li>
-            <li style="display:none"><a href="why-us.html#founders" data-i18n="footer.co.team">The Team</a></li>
-            <li style="display:none"><a href="why-us.html" data-i18n="footer.co.success">Success Cases</a></li>
-            <li style="display:none"><a href="contact.html" data-i18n="footer.co.careers">Careers</a></li>
+            <li style="display:none"><a href="why-us.html#founders" data-i18n="footer.co.team">El Equipo</a></li>
+            <li style="display:none"><a href="why-us.html" data-i18n="footer.co.success">Casos de Éxito</a></li>
+            <li style="display:none"><a href="contact.html" data-i18n="footer.co.careers">Únete</a></li>
             <li><a href="contact.html" data-i18n="footer.co.contact">Contacto</a></li>
           </ul>
         </div>
@@ -448,7 +421,6 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     </div>
   </footer>
 
-  
   <button id="back-to-top" aria-label="Volver arriba">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"/>
