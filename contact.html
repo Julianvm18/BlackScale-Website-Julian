@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-CO">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NF8WJBGXBX"></script>
-<script>
+<!-- Klaro Consent Manager -->
+<link rel="stylesheet" href="/klaro/klaro.css">
+<script defer src="/klaro/klaro-config.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7.18/dist/klaro-no-css.js"></script>
+
+<!-- Google Analytics 4 — bloqueado hasta consentimiento (Res. SIC 32.126) -->
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="google-analytics"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-NF8WJBGXBX"></script>
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="google-analytics">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-NF8WJBGXBX');
+  gtag('config', 'G-NF8WJBGXBX', { 'anonymize_ip': true });
 </script>
-<!-- Meta Pixel Code -->
-<script>
+
+<!-- Meta Pixel — bloqueado hasta consentimiento -->
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="meta-pixel">
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -25,13 +39,81 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 /></noscript>
+
+
 <!-- End Meta Pixel Code -->
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <meta name="theme-color" content="#6B2737" />
   <link rel="shortcut icon" href="logo.svg">
   <link rel="apple-touch-icon" href="logo.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get in Touch — Blackscale Consulting</title>
+  <title>Contáctanos | BlackScale Consulting Colombia</title>
+  <meta name="description" content="Habla con un especialista en ventas B2B en Bogotá. Diagnosticamos tu pipeline y diseñamos una estrategia de generación de demanda para empresas en Colombia. Respuesta en menos de 24 horas." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://blackscale.consulting/contact" />
+  <meta property="og:title" content="Contáctanos | BlackScale Consulting Colombia" />
+  <meta property="og:description" content="Habla directo con un especialista B2B. Diagnosticamos tu pipeline y te respondemos en menos de 24 horas para agendar tu sesión gratuita." />
+  <meta property="og:url" content="https://blackscale.consulting/contact" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:site_name" content="BlackScale Consulting" />
+
+  <!-- Schema: ContactPage + LocalBusiness -->
+    <meta property="og:image" content="https://blackscale.consulting/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="BlackScale Consulting - Consultoría B2B en Colombia" />
+  <meta name="twitter:image" content="https://blackscale.consulting/og-image.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://blackscale.consulting/contact.html",
+        "name": "Contáctanos | BlackScale Consulting Colombia",
+        "description": "Página de contacto de BlackScale Consulting. Consultoría B2B especializada en generación de demanda, revenue operations y habilitación comercial para empresas en Colombia.",
+        "url": "https://blackscale.consulting/contact.html",
+        "inLanguage": "es-CO",
+        "isPartOf": {
+          "@id": "https://blackscale.consulting/"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://blackscale.consulting/#organization",
+        "name": "BlackScale Consulting",
+        "url": "https://blackscale.consulting",
+        "email": "Servicio@blackscale.consulting",
+        "description": "Consultoría B2B en Bogotá, Colombia. Especializados en generación de demanda, revenue operations y habilitación comercial para empresas que buscan escalar sus ventas.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bogotá",
+          "addressRegion": "Cundinamarca",
+          "addressCountry": "CO"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        "serviceType": [
+          "Consultoría B2B",
+          "Generación de Demanda",
+          "Revenue Operations",
+          "Habilitación Comercial",
+          "Marketing ABM"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/blackscale-consulting-0686a83b8/",
+          "https://www.instagram.com/blackscale_con/",
+          "https://www.facebook.com/profile.php?id=61578534510595"
+        ]
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css" />
   <style>
     .field-error {
@@ -61,6 +143,21 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
       opacity: .6;
       cursor: not-allowed;
     }
+    .contact__body-text {
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(245,245,245,0.08);
+    }
+    .contact__body-text p {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .contact__body-text strong {
+      color: var(--cream-light);
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -69,16 +166,16 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <header class="nav">
     <div class="container nav__inner">
       <a href="index.html" class="logo">
-        <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale">
+        <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale" fetchpriority="high" width="160" height="40">
       </a>
       <nav class="nav__links">
-        <a href="services.html" data-i18n="nav.services">Services</a>
-        <a href="why-us.html" data-i18n="nav.why">Why Us</a>
-        <a href="process.html" data-i18n="nav.process">Process</a>
+        <a href="services.html" data-i18n="nav.services">Servicios</a>
+        <a href="why-us.html" data-i18n="nav.why">Por Qué Nosotros</a>
+        <a href="process.html" data-i18n="nav.process">Proceso</a>
         <a href="blog/" data-i18n="nav.blog">Blog</a>
-        <a href="contact.html" class="btn btn--outline active" data-i18n="nav.cta">Get in Touch</a>
+        <a href="contact.html" class="btn btn--outline active" data-i18n="nav.cta">Contáctanos</a>
       </nav>
-      <button class="nav__burger" aria-label="Open menu">
+      <button class="nav__burger" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -86,23 +183,26 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="services.html" data-i18n="nav.services">Services</a>
-    <a href="why-us.html" data-i18n="nav.why">Why Us</a>
-    <a href="process.html" data-i18n="nav.process">Process</a>
+    <a href="services.html" data-i18n="nav.services">Servicios</a>
+    <a href="why-us.html" data-i18n="nav.why">Por Qué Nosotros</a>
+    <a href="process.html" data-i18n="nav.process">Proceso</a>
     <a href="blog/" data-i18n="nav.blog">Blog</a>
-    <a href="contact.html" data-i18n="nav.cta">Get in Touch</a>
+    <a href="contact.html" data-i18n="nav.cta">Contáctanos</a>
     </div>
 
-  <!-- PAGE HEADER -->
-  <section class="page-header">
-    <div class="container">
+  <!-- PAGE HEADER con imagen ambiental -->
+  <section class="contact-hero">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=2000&q=80&auto=format&fit=crop" alt="Equipo profesional en sala de reuniones" loading="eager" class="contact-hero__bg">
+    <div class="contact-hero__overlay"></div>
+    <div class="container contact-hero__content">
       <div class="breadcrumb">
-        <a href="index.html" data-i18n="breadcrumb.home">Home</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Inicio</a>
         <span>/</span>
-        <span data-i18n="breadcrumb.contact">Get in Touch</span>
+        <span data-i18n="breadcrumb.contact">Contáctanos</span>
       </div>
-      <div class="page-header__tag" data-i18n="contact.page.tag">Let's Talk</div>
-      <p data-i18n="contact.page.sub">Tell us about your business and where you want to grow. We'll follow up within one business day to book your free strategy call.</p>
+      <div class="page-header__tag" data-i18n="contact.page.tag">Hablemos</div>
+      <h1>Habla con un especialista en ventas B2B en Colombia</h1>
+      <p data-i18n="contact.page.sub">Cuéntanos sobre tu empresa. Te respondemos en menos de un día hábil para agendar tu diagnóstico gratuito.</p>
     </div>
   </section>
 
@@ -110,90 +210,196 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <section class="contact" id="contact">
     <div class="container contact__inner">
       <div class="contact__text">
-        <span class="section-tag" data-i18n="contact.reach_out.tag">Reach Out</span>
-        <h2 data-i18n-html="contact.reach_out.heading">We respond<br /><em>within 24 hours.</em></h2>
-        <p data-i18n="contact.reach_out.sub">No gatekeeping, no junior account rep. You'll hear directly from one of our founders within one business day.</p>
+        <span class="section-tag" data-i18n="contact.reach_out.tag">Hablemos</span>
+        <h2 data-i18n-html="contact.reach_out.heading">Respondemos en menos de 24 horas</h2>
+        <p data-i18n="contact.reach_out.sub">Sin filtros ni representantes junior. Hablas directo con uno de los fundadores en menos de un día hábil.</p>
 
         <div class="contact__info" style="margin-top: 40px;">
           <a href="mailto:Servicio@blackscale.consulting">Servicio@blackscale.consulting</a>
         </div>
 
         <div style="margin-top: 52px;">
-          <p style="font-size: 17px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px;" data-i18n="contact.next.label">What happens after you submit</p>
+          <p style="font-size: 17px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px;" data-i18n="contact.next.label">Qué pasa después de enviar el formulario</p>
           <ol style="list-style: none; display: flex; flex-direction: column; gap: 18px; padding: 0;">
             <li style="display: flex; gap: 16px; align-items: flex-start;">
               <span style="font-family: var(--serif); font-size: 22px; color: var(--burgundy-mid); font-weight: 400; line-height: 1; flex-shrink: 0;">1</span>
               <div>
-                <strong style="display: block; font-size: 17px; font-weight: 600; color: var(--cream-light); margin-bottom: 4px;" data-i18n="contact.next.s1.strong">We review your submission</strong>
-                <span style="font-size: 17px; color: var(--muted); font-weight: 300;" data-i18n="contact.next.s1.span">We read every submission personally — no auto-replies or bots.</span>
+                <strong style="display: block; font-size: 17px; font-weight: 600; color: var(--cream-light); margin-bottom: 4px;" data-i18n="contact.next.s1.strong">Leemos tu mensaje personalmente</strong>
+                <span style="font-size: 17px; color: var(--muted); font-weight: 300;" data-i18n="contact.next.s1.span">Cada submisión la revisa un fundador.</span>
               </div>
             </li>
             <li style="display: flex; gap: 16px; align-items: flex-start;">
               <span style="font-family: var(--serif); font-size: 22px; color: var(--burgundy-mid); font-weight: 400; line-height: 1; flex-shrink: 0;">2</span>
               <div>
-                <strong style="display: block; font-size: 17px; font-weight: 600; color: var(--cream-light); margin-bottom: 4px;" data-i18n="contact.next.s2.strong">We follow up within 24 hours</strong>
-                <span style="font-size: 17px; color: var(--muted); font-weight: 300;" data-i18n="contact.next.s2.span">A founder reaches out to schedule your free strategy call.</span>
+                <strong style="display: block; font-size: 17px; font-weight: 600; color: var(--cream-light); margin-bottom: 4px;" data-i18n="contact.next.s2.strong">Te escribimos en menos de 24 horas</strong>
+                <span style="font-size: 17px; color: var(--muted); font-weight: 300;" data-i18n="contact.next.s2.span">Un fundador te contacta para agendar la llamada gratuita.</span>
               </div>
             </li>
             <li style="display: flex; gap: 16px; align-items: flex-start;">
               <span style="font-family: var(--serif); font-size: 22px; color: var(--burgundy-mid); font-weight: 400; line-height: 1; flex-shrink: 0;">3</span>
               <div>
-                <strong style="display: block; font-size: 17px; font-weight: 600; color: var(--cream-light); margin-bottom: 4px;" data-i18n="contact.next.s3.strong">30-minute strategy call</strong>
-                <span style="font-size: 17px; color: var(--muted); font-weight: 300;" data-i18n="contact.next.s3.span">We diagnose your biggest growth bottleneck — no commitment required.</span>
+                <strong style="display: block; font-size: 17px; font-weight: 600; color: var(--cream-light); margin-bottom: 4px;" data-i18n="contact.next.s3.strong">Sesión de diagnóstico de 30 minutos</strong>
+                <span style="font-size: 17px; color: var(--muted); font-weight: 300;" data-i18n="contact.next.s3.span">Diagnosticamos tu mayor fuga de revenue, sin compromiso.</span>
               </div>
             </li>
           </ol>
         </div>
+
+        <!-- Texto SEO compacto: keywords clave para Bogotá/Colombia/B2B sin saturar -->
+        <div class="contact__body-text">
+          <p>BlackScale Consulting es una consultora B2B con base en <strong>Bogotá, Colombia</strong>. Trabajamos con empresas que venden a otras empresas — tecnología, servicios profesionales, manufactura y distribución — con ciclos de venta de 30 a 180 días. El formulario llega directo a un fundador.</p>
+        </div>
       </div>
 
       <div style="padding-top: 60px;">
-        <!-- HubSpot Form -->
-<form action="https://formspree.io/f/xykbbnwv" method="POST" class="contact-form">
+        <!-- BlackScale Nexus Lead Form -->
+<form class="contact-form" id="bsLeadForm" novalidate>
   <div class="form-group">
     <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
   </div>
   <div class="form-group">
     <label for="empresa">Empresa</label>
-    <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
+    <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required autocomplete="organization">
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Tu correo corporativo" required>
+    <input type="email" id="email" name="email" placeholder="Tu correo corporativo" required autocomplete="email">
   </div>
   <div class="form-group">
     <label for="telefono">Teléfono <span style="opacity:0.6;">(opcional)</span></label>
-    <input type="tel" id="telefono" name="telefono" placeholder="Tu número (opcional)">
+    <input type="tel" id="telefono" name="telefono" placeholder="Tu número (opcional)" autocomplete="tel">
   </div>
-  <button type="submit" class="btn btn--primary">Solicitar diagnóstico gratuito</button>
+  <!-- Honeypot fields (must stay empty) -->
+  <div aria-hidden="true" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+    <label for="_honey">Leave this empty</label>
+    <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off" value="">
+    <label for="website_url">Website</label>
+    <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" value="">
+  </div>
+  <div class="form-consent">
+    <label class="consent-label">
+      <input type="checkbox"
+             name="habeas_data"
+             id="habeas_data"
+             required
+             class="consent-checkbox">
+      <span class="consent-text">
+        Autorizo a <strong>Blackscale Consulting SAS</strong> a tratar
+        mis datos personales para contactarme con fines comerciales,
+        conforme a la
+        <a href="/legal.html#privacy" target="_blank" rel="noopener">
+          Política de Privacidad
+        </a>
+        y la Ley 1581 de 2012. Puedo revocar esta autorización escribiendo a
+        <a href="mailto:Servicio@blackscale.consulting">
+          Servicio@blackscale.consulting
+        </a>.
+      </span>
+    </label>
+  </div>
+  <div class="form-error" id="bsFormError" role="alert" aria-live="polite" style="display:none; color:#ff8a8a; margin-bottom:1rem; font-size:0.9rem;"></div>
+  <button type="submit" class="btn btn--primary" id="bsFormSubmit">Solicitar diagnóstico gratuito</button>
 </form>
 <script>
 (function() {
-  var form = document.querySelector('.contact-form');
+  var form = document.getElementById('bsLeadForm');
   if (!form) return;
+  var btn = document.getElementById('bsFormSubmit');
+  var errorBox = document.getElementById('bsFormError');
+  var btnOriginalText = btn.textContent;
+
+  function getUTM(name) {
+    var m = window.location.search.match(new RegExp('[?&]' + name + '=([^&]*)'));
+    return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
+  }
+
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    var formData = new FormData(form);
-    fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } }).then(function(response) {
-      if (response.ok) {
+    errorBox.style.display = 'none';
+    errorBox.textContent = '';
+
+    var nombre = form.nombre.value.trim();
+    if (!nombre) {
+      errorBox.textContent = 'Por favor ingresa tu nombre.';
+      errorBox.style.display = 'block';
+      return;
+    }
+
+    var payload = {
+      name:         nombre,
+      email:        form.email.value.trim(),
+      phone:        form.telefono.value.trim(),
+      company:      form.empresa.value.trim(),
+      message:      '',
+      source:       'website',
+      utm_source:   getUTM('utm_source'),
+      utm_medium:   getUTM('utm_medium'),
+      utm_campaign: getUTM('utm_campaign'),
+      _honey:       form._honey.value,
+      website_url:  form.website_url.value
+    };
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    fetch('https://nexus.blackscale.consulting/api/webhook', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function(response) {
+      if (response.status === 201) {
         form.reset();
         form.style.display = 'none';
         var gate = document.getElementById('calendly-gate');
         var thanks = document.getElementById('form-thanks');
+        var success = document.getElementById('formSuccess');
         if (gate) gate.style.display = 'block';
         if (thanks) thanks.style.display = 'block';
+        if (success) success.style.display = 'block';
+      } else {
+        return response.json().catch(function() { return {}; }).then(function(data) {
+          throw new Error((data && data.error) || ('HTTP ' + response.status));
+        });
       }
+    }).catch(function(err) {
+      errorBox.textContent = 'No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos a Servicio@blackscale.consulting';
+      errorBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = btnOriginalText;
     });
   });
+
+  // Habeas data validation
+  (function() {
+    document.querySelectorAll('form').forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        var habeas = form.querySelector('#habeas_data');
+        if (habeas && !habeas.checked) {
+          e.preventDefault();
+          e.stopPropagation();
+          var consentBox = habeas.closest('.form-consent');
+          if (consentBox) {
+            consentBox.classList.add('consent-error');
+            consentBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(function() { consentBox.classList.remove('consent-error'); }, 2000);
+          }
+          return false;
+        }
+      }, true);
+    });
+  })();
 })();
-</script>        <div id="calendly-gate" style="display:none; margin-top:2rem; text-align:center;">
+</script>
+
+        <div id="calendly-gate" style="display:none; margin-top:2rem; text-align:center;">
           <p style="margin-bottom:1rem; color:var(--cream-light);" data-i18n="form.gate.p">Tu mensaje fue recibido. Agenda tu llamada de diagnóstico gratuita:</p>
           <a href="https://calendly.com/julian-vallejo-blackscale/30min" target="_blank" rel="noopener" class="btn btn--primary">Agenda tu llamada</a>
         </div>
 
         <div class="form-success" id="formSuccess">
-          <h3 data-i18n="form.success.h">Message received.</h3>
-          <p data-i18n="form.success.p">Thank you for reaching out. A founder will be in touch within one business day to schedule your free strategy call.</p>
+          <h3 data-i18n="form.success.h">Mensaje recibido.</h3>
+          <p data-i18n="form.success.p">Gracias por escribirnos. Un fundador te contactará en menos de un día hábil para agendar tu sesión de diagnóstico gratuita.</p>
         </div>
       </div>
     </div>
@@ -204,25 +410,24 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     <div class="footer__cta-strip">
       <div class="container footer__cta-inner">
         <div class="footer__cta-text">
-          <h3 data-i18n="footer.cta.h">Ready to scale your revenue?</h3>
-          <p data-i18n="footer.cta.p">Let's talk about your growth goals. No pitch, just strategy.</p>
+          <h3 data-i18n="footer.cta.h">¿Listo para escalar tu revenue?</h3>
+          <p data-i18n="footer.cta.p">Hablemos de tus objetivos de crecimiento. Sin presentación corporativa, solo estrategia.</p>
         </div>
-        <a href="contact.html" class="btn btn--primary" data-i18n="footer.contact_us">Contact Us</a>
+        <a href="contact.html" class="btn btn--primary" data-i18n="footer.contact_us">Contáctanos</a>
       </div>
     </div>
     <div class="footer__main">
       <div class="container footer__grid">
         <div class="footer__col footer__col--brand">
           <a href="index.html" class="logo logo--footer">
-            <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale">
+            <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale" loading="lazy" width="160" height="40">
           </a>
-          <p class="footer__desc" data-i18n="footer.desc">B2B Marketing &amp; Revenue Growth Consulting. We help ambitious companies build structured, measurable growth engines.</p>
+          <p class="footer__desc" data-i18n="footer.desc">Agencia B2B con base en Bogotá, Colombia. Especialistas en generación de demanda, revenue operations y habilitación comercial.</p>
           <div class="footer__contact-info">
             <a href="mailto:Servicio@blackscale.consulting" class="footer__contact-link">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               Servicio@blackscale.consulting
             </a>
-
           </div>
           <div class="footer__social">
             <a href="https://www.linkedin.com/in/blackscale-consulting-0686a83b8/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
@@ -231,79 +436,55 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
           </div>
         </div>
         <div class="footer__col" style="display:none">
-          <h4 class="footer__col-title" data-i18n="footer.col.services">Services</h4>
+          <h4 class="footer__col-title" data-i18n="footer.col.services">Servicios</h4>
           <ul class="footer__col-links">
-            <li><a href="services.html#demand" data-i18n="footer.svc.demand">Demand Generation</a></li>
+            <li><a href="services.html#demand" data-i18n="footer.svc.demand">Generación de Demanda</a></li>
             <li><a href="services.html#revops" data-i18n="footer.svc.revops">Revenue Operations</a></li>
-            <li><a href="services.html#sales" data-i18n="footer.svc.sales">Sales Enablement</a></li>
-            <li><a href="services.html#abm" data-i18n="footer.svc.abm">Account-Based Marketing</a></li>
-            <li><a href="services.html#gtm" data-i18n="footer.svc.gtm">Go-to-Market Strategy</a></li>
-            <li><a href="services.html#analytics" data-i18n="footer.svc.analytics">Performance Analytics</a></li>
+            <li><a href="services.html#sales" data-i18n="footer.svc.sales">Habilitación Comercial</a></li>
+            <li><a href="services.html#abm" data-i18n="footer.svc.abm">Marketing ABM</a></li>
+            <li><a href="services.html#gtm" data-i18n="footer.svc.gtm">Estrategia Go-to-Market</a></li>
+            <li><a href="services.html#analytics" data-i18n="footer.svc.analytics">Analítica de Desempeño</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4 class="footer__col-title" data-i18n="footer.col.company">Company</h4>
+          <h4 class="footer__col-title" data-i18n="footer.col.company">Empresa</h4>
           <ul class="footer__col-links">
-            <li><a href="why-us.html" data-i18n="footer.co.why">Why Blackscale</a></li>
-            <li><a href="process.html" data-i18n="footer.co.process">Our Process</a></li>
-            <li style="display:none"><a href="why-us.html#founders" data-i18n="footer.co.team">The Team</a></li>
-            <li style="display:none"><a href="why-us.html" data-i18n="footer.co.success">Success Cases</a></li>
-            <li style="display:none"><a href="contact.html" data-i18n="footer.co.careers">Careers</a></li>
-            <li><a href="contact.html" data-i18n="footer.co.contact">Contact</a></li>
+            <li><a href="why-us.html" data-i18n="footer.co.why">Por Qué BlackScale</a></li>
+            <li><a href="process.html" data-i18n="footer.co.process">Nuestro Proceso</a></li>
+            <li style="display:none"><a href="why-us.html#founders" data-i18n="footer.co.team">El Equipo</a></li>
+            <li style="display:none"><a href="why-us.html" data-i18n="footer.co.success">Casos de Éxito</a></li>
+            <li style="display:none"><a href="contact.html" data-i18n="footer.co.careers">Únete</a></li>
+            <li><a href="contact.html" data-i18n="footer.co.contact">Contacto</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4 class="footer__col-title" data-i18n="footer.col.legal">Legal &amp; Policies</h4>
+          <h4 class="footer__col-title" data-i18n="footer.col.legal">Legal y Políticas</h4>
           <ul class="footer__col-links">
-            <li><a href="legal.html#privacy" data-i18n="footer.legal.privacy">Privacy Policy</a></li>
-            <li><a href="legal.html#data-management" data-i18n="footer.legal.data">Data Management</a></li>
-            <li><a href="legal.html#terms" data-i18n="footer.legal.terms">Terms of Service</a></li>
-            <li><a href="legal.html#cookies" data-i18n="footer.legal.cookie">Cookie Policy</a></li>
-            <li><a href="legal.html#accessibility" data-i18n="footer.legal.access">Accessibility</a></li>
+            <li><a href="legal.html#privacy" data-i18n="footer.legal.privacy">Política de Privacidad</a></li>
+            <li><a href="legal.html#data-management" data-i18n="footer.legal.data">Gestión de Datos</a></li>
+            <li><a href="legal.html#terms" data-i18n="footer.legal.terms">Términos de Servicio</a></li>
+            <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;">Preferencias de Cookies</a></li>
+            <li><a href="legal.html#cookies" data-i18n="footer.legal.cookie">Política de Cookies</a></li>
+            <li><a href="legal.html#accessibility" data-i18n="footer.legal.access">Accesibilidad</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
       <div class="container footer__bottom-inner">
-        <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 Blackscale Consulting. All rights reserved.</p>
+        <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 Blackscale Consulting. Todos los derechos reservados.</p>
         <div class="footer__bottom-links">
-          <a href="legal.html#privacy" data-i18n="footer.bottom.privacy">Privacy</a>
-          <a href="legal.html#terms" data-i18n="footer.bottom.terms">Terms</a>
+          <a href="legal.html#privacy" data-i18n="footer.bottom.privacy">Privacidad</a>
+          <a href="legal.html#terms" data-i18n="footer.bottom.terms">Términos</a>
           <a href="legal.html#cookies" data-i18n="footer.bottom.cookies">Cookies</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <button id="back-to-top" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
+  <button id="back-to-top" aria-label="Volver arriba"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
 
-  <script src="translations.js"></script>
-  <script src="script.js"></script>
-
-  <script>
-  (function() {
-    var form = document.querySelector('form[action*="formspree"]');
-    if (!form) return;
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      var data = new FormData(this);
-      try {
-        var res = await fetch(this.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          this.style.display = 'none';
-          var success = document.getElementById('formSuccess');
-          if (success) success.style.display = 'block';
-          var gate = document.getElementById('calendly-gate');
-          if (gate) gate.style.display = 'block';
-        }
-      } catch(err) { console.error(err); }
-    });
-  })();
-  </script>
+  <script src="translations.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-CO">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NF8WJBGXBX"></script>
-<script>
+<!-- Klaro Consent Manager -->
+<link rel="stylesheet" href="/klaro/klaro.css">
+<script defer src="/klaro/klaro-config.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7.18/dist/klaro-no-css.js"></script>
+
+<!-- Google Analytics 4 — bloqueado hasta consentimiento (Res. SIC 32.126) -->
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="google-analytics"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-NF8WJBGXBX"></script>
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="google-analytics">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-NF8WJBGXBX');
+  gtag('config', 'G-NF8WJBGXBX', { 'anonymize_ip': true });
 </script>
-<!-- Meta Pixel Code -->
-<script>
+
+<!-- Meta Pixel — bloqueado hasta consentimiento -->
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="meta-pixel">
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -25,13 +39,43 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 /></noscript>
+
+
 <!-- End Meta Pixel Code -->
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <meta name="theme-color" content="#6B2737" />
   <link rel="shortcut icon" href="logo.svg">
   <link rel="apple-touch-icon" href="logo.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — Blackscale Consulting</title>
+  <title>Servicios de Marketing B2B y Habilitación Comercial en Colombia | BlackScale</title>
+  <meta name="description" content="Generación de demanda, Revenue Operations, habilitación comercial y ABM para empresas B2B en Colombia. Pipelines predecibles y marketing alineado con ventas." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://blackscale.consulting/services" />
+  <meta property="og:title" content="Servicios de Marketing B2B en Colombia | BlackScale Consulting" />
+  <meta property="og:description" content="Generación de demanda, Revenue Operations y habilitación comercial para empresas B2B colombianas. Pipeline predecible, resultados medibles." />
+  <meta property="og:url" content="https://blackscale.consulting/services" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:site_name" content="BlackScale Consulting" />
+    <meta property="og:image" content="https://blackscale.consulting/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="BlackScale Consulting - Consultoría B2B en Colombia" />
+  <meta name="twitter:image" content="https://blackscale.consulting/og-image.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Service", "name": "Generación de Demanda B2B", "provider": { "@type": "Organization", "name": "BlackScale Consulting", "url": "https://blackscale.consulting/" }, "areaServed": { "@type": "Country", "name": "Colombia" }, "description": "Construimos pipelines B2B repetibles con campañas segmentadas, contenido y outreach multicanal para empresas en Colombia." },
+      { "@type": "Service", "name": "Revenue Operations", "provider": { "@type": "Organization", "name": "BlackScale Consulting", "url": "https://blackscale.consulting/" }, "areaServed": { "@type": "Country", "name": "Colombia" }, "description": "Alineación de marketing, ventas y customer success con datos unificados y procesos optimizados." },
+      { "@type": "Service", "name": "Habilitación Comercial B2B", "provider": { "@type": "Organization", "name": "BlackScale Consulting", "url": "https://blackscale.consulting/" }, "areaServed": { "@type": "Country", "name": "Colombia" }, "description": "Playbooks, frameworks de mensajería e inteligencia competitiva para equipos de ventas B2B." },
+      { "@type": "Service", "name": "Marketing Basado en Cuentas (ABM)", "provider": { "@type": "Organization", "name": "BlackScale Consulting", "url": "https://blackscale.consulting/" }, "areaServed": { "@type": "Country", "name": "Colombia" }, "description": "Campañas coordinadas y personalizadas para las cuentas de mayor valor en empresas B2B colombianas." },
+      { "@type": "Service", "name": "Estrategia Go-to-Market", "provider": { "@type": "Organization", "name": "BlackScale Consulting", "url": "https://blackscale.consulting/" }, "areaServed": { "@type": "Country", "name": "Colombia" }, "description": "Lanzamiento de nuevos productos o entrada a nuevos mercados con investigación, ICP y estrategia de canales." },
+      { "@type": "Service", "name": "Analítica de Desempeño", "provider": { "@type": "Organization", "name": "BlackScale Consulting", "url": "https://blackscale.consulting/" }, "areaServed": { "@type": "Country", "name": "Colombia" }, "description": "Atribución de revenue, dashboards y reportes de marketing y pipeline B2B." }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -40,16 +84,16 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <header class="nav">
     <div class="container nav__inner">
       <a href="index.html" class="logo">
-        <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale">
+        <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale" fetchpriority="high" width="160" height="40">
       </a>
       <nav class="nav__links">
-        <a href="services.html" class="active" data-i18n="nav.services">Services</a>
-        <a href="why-us.html" data-i18n="nav.why">Why Us</a>
-        <a href="process.html" data-i18n="nav.process">Process</a>
+        <a href="services.html" class="active" data-i18n="nav.services">Servicios</a>
+        <a href="why-us.html" data-i18n="nav.why">Por Qué Nosotros</a>
+        <a href="process.html" data-i18n="nav.process">Proceso</a>
         <a href="blog/" data-i18n="nav.blog">Blog</a>
-        <a href="contact.html" class="btn btn--outline" data-i18n="nav.cta">Get in Touch</a>
+        <a href="contact.html" class="btn btn--outline" data-i18n="nav.cta">Contáctanos</a>
       </nav>
-      <button class="nav__burger" aria-label="Open menu">
+      <button class="nav__burger" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -57,42 +101,46 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="services.html" data-i18n="nav.services">Services</a>
-    <a href="why-us.html" data-i18n="nav.why">Why Us</a>
-    <a href="process.html" data-i18n="nav.process">Process</a>
+    <a href="services.html" data-i18n="nav.services">Servicios</a>
+    <a href="why-us.html" data-i18n="nav.why">Por Qué Nosotros</a>
+    <a href="process.html" data-i18n="nav.process">Proceso</a>
     <a href="blog/" data-i18n="nav.blog">Blog</a>
-    <a href="contact.html" data-i18n="nav.cta">Get in Touch</a>
+    <a href="contact.html" data-i18n="nav.cta">Contáctanos</a>
     </div>
 
   <!-- PAGE HEADER -->
   <section class="page-header">
     <div class="container">
       <div class="breadcrumb">
-        <a href="index.html" data-i18n="breadcrumb.home">Home</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Inicio</a>
         <span>/</span>
-        <span data-i18n="breadcrumb.services">Services</span>
+        <span data-i18n="breadcrumb.services">Servicios</span>
       </div>
-      <div class="page-header__tag" data-i18n="svc.page.tag">What We Do</div>
-      <h1 data-i18n-html="svc.page.h1">End-to-end B2B growth,<br /><em>done right.</em></h1>
-      <p data-i18n="svc.page.sub">From demand generation to deal closure, we cover every lever that drives revenue — with strategies built around your business, not a template.</p>
+      <div class="page-header__tag" data-i18n="svc.page.tag">Lo Que Hacemos</div>
+      <h1 data-i18n-html="svc.page.h1">Servicios de marketing y ventas B2B en Colombia</h1>
+      <p data-i18n="svc.page.sub">Desde la generación de demanda hasta el cierre, cubrimos cada palanca que impulsa el revenue. Estrategias construidas alrededor de tu negocio, no de una plantilla.</p>
     </div>
   </section>
 
   <!-- SERVICES FULL -->
   <section class="services" id="services" style="padding: 100px 0;">
     <div class="container">
+      <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+        <h2 data-i18n="svc.section.h2">Servicios B2B para empresas en Colombia</h2>
+        <p data-i18n="svc.section.sub" style="max-width: 720px; margin: 16px auto 0;">Seis áreas de trabajo conectadas por una sola misión: construir un proceso de ventas predecible para tu empresa.</p>
+      </div>
       <div class="services__grid services__grid--full">
         <div class="card" id="demand">
           <div class="card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h18M3 9h18M3 15h12M3 21h8"/></svg>
           </div>
-          <h3 data-i18n="svc.demand.h">Demand Generation</h3>
-          <p data-i18n="svc.demand.full_p">Build repeatable, scalable pipelines with targeted campaigns, content strategy, and multi-channel outreach. We identify your ideal buyer profile, map their journey, and design programs that bring the right opportunities to your funnel — consistently.</p>
+          <h3 data-i18n="svc.demand.h">Generación de Demanda</h3>
+          <p data-i18n="svc.demand.full_p">Construimos pipelines repetibles y escalables con campañas segmentadas, estrategia de contenido y outreach multicanal. Identificamos tu perfil de comprador ideal en Colombia, mapeamos su journey y diseñamos programas que atraen las oportunidades correctas a tu embudo de forma consistente.</p>
           <ul style="margin-top: 18px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.demand.li1">Outbound & inbound strategy</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.demand.li2">Content marketing & SEO</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.demand.li3">Paid media management</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.demand.li4">Lead scoring & nurturing</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.demand.li1">Estrategia outbound e inbound</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.demand.li2">Marketing de contenidos y SEO</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.demand.li3">Gestión de pauta digital</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.demand.li4">Lead scoring y nurturing</span></li>
           </ul>
         </div>
         <div class="card" id="revops">
@@ -100,125 +148,326 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           </div>
           <h3 data-i18n="svc.revops.h">Revenue Operations</h3>
-          <p data-i18n="svc.revops.full_p">Align your sales, marketing, and customer success teams around unified data, optimized processes, and the tools that make closing easier. We build the operational backbone that allows your revenue engine to run efficiently at scale.</p>
+          <p data-i18n="svc.revops.full_p">Alineamos marketing, ventas y customer success alrededor de datos unificados, procesos optimizados y las herramientas que hacen más fácil cerrar. Construimos la columna vertebral operacional que permite que tu motor de revenue funcione eficientemente a escala.</p>
           <ul style="margin-top: 18px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.revops.li1">CRM implementation & hygiene</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.revops.li2">Pipeline & forecast management</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.revops.li3">Tech stack audit & optimization</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.revops.li4">Cross-team alignment frameworks</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.revops.li1">Implementación y limpieza de CRM</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.revops.li2">Gestión de pipeline y forecast</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.revops.li3">Auditoría y optimización del tech stack</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.revops.li4">Frameworks de alineación entre equipos</span></li>
           </ul>
         </div>
         <div class="card" id="sales">
           <div class="card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           </div>
-          <h3 data-i18n="svc.sales.h">Sales Enablement</h3>
-          <p data-i18n="svc.sales.full_p">Give your sales team everything they need to close more deals, faster. We create the playbooks, messaging frameworks, objection handling guides, and competitive intelligence that turn good reps into great ones.</p>
+          <h3 data-i18n="svc.sales.h">Habilitación Comercial</h3>
+          <p data-i18n="svc.sales.full_p">Equipamos a tu equipo de ventas con todo lo que necesita para cerrar más negocios, más rápido. Creamos los playbooks, frameworks de mensajería, guías de manejo de objeciones e inteligencia competitiva que convierten buenos comerciales en comerciales excepcionales.</p>
           <ul style="margin-top: 18px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.sales.li1">Sales playbooks & scripts</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.sales.li2">Competitive battle cards</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.sales.li3">Pitch decks & proposal templates</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.sales.li4">Rep training & onboarding</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.sales.li1">Playbooks y scripts de ventas</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.sales.li2">Battle cards competitivas</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.sales.li3">Decks de pitch y plantillas de propuesta</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.sales.li4">Entrenamiento y onboarding comercial</span></li>
           </ul>
         </div>
         <div class="card" id="abm">
           <div class="card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
           </div>
-          <h3 data-i18n="svc.abm.h">Account-Based Marketing</h3>
-          <p data-i18n="svc.abm.full_p">Stop spraying and praying. We help you identify your highest-value accounts and build coordinated, personalized campaigns that open doors and accelerate deals with exactly the right buyers.</p>
+          <h3 data-i18n="svc.abm.h">Marketing Basado en Cuentas (ABM)</h3>
+          <p data-i18n="svc.abm.full_p">Deja de disparar a ciegas. Te ayudamos a identificar tus cuentas de mayor valor en Colombia y construir campañas coordinadas y personalizadas que abren puertas y aceleran negocios con exactamente los compradores correctos.</p>
           <ul style="margin-top: 18px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.abm.li1">ICP definition & account selection</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.abm.li2">Personalized multi-touch campaigns</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.abm.li3">Intent data & signal monitoring</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.abm.li4">Sales & marketing coordination</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.abm.li1">Definición de ICP y selección de cuentas</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.abm.li2">Campañas multitouch personalizadas</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.abm.li3">Monitoreo de señales de intención</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.abm.li4">Coordinación marketing y ventas</span></li>
           </ul>
         </div>
         <div class="card" id="gtm">
           <div class="card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-          <h3 data-i18n="svc.gtm.h">Go-to-Market Strategy</h3>
-          <p data-i18n="svc.gtm.full_p">Launch new products or enter new markets with confidence. We build GTM plans grounded in competitive research, ICP definition, and channel strategy — so you enter the market with precision, not guesswork.</p>
+          <h3 data-i18n="svc.gtm.h">Estrategia Go-to-Market</h3>
+          <p data-i18n="svc.gtm.full_p">Lanza nuevos productos o entra a nuevos mercados en Colombia con confianza. Construimos planes GTM basados en investigación competitiva, definición de ICP y estrategia de canales, para que entres al mercado con precisión y no con suposiciones.</p>
           <ul style="margin-top: 18px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.gtm.li1">Market research & segmentation</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.gtm.li2">Positioning & messaging</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.gtm.li3">Channel & pricing strategy</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.gtm.li4">Launch execution planning</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.gtm.li1">Investigación de mercado y segmentación</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.gtm.li2">Posicionamiento y mensajería</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.gtm.li3">Estrategia de canales y pricing</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.gtm.li4">Planificación de ejecución de lanzamiento</span></li>
           </ul>
         </div>
         <div class="card" id="analytics">
           <div class="card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
           </div>
-          <h3 data-i18n="svc.analytics.h">Performance Analytics</h3>
-          <p data-i18n="svc.analytics.full_p">Translate marketing data into clear revenue attribution. We build the dashboards, reporting systems, and measurement frameworks so you always know exactly what's working, what isn't, and where to invest next.</p>
+          <h3 data-i18n="svc.analytics.h">Analítica de Desempeño</h3>
+          <p data-i18n="svc.analytics.full_p">Traducimos los datos de marketing en atribución clara de revenue. Construimos los dashboards, sistemas de reporte y frameworks de medición para que siempre sepas exactamente qué está funcionando, qué no, y dónde invertir a continuación.</p>
           <ul style="margin-top: 18px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.analytics.li1">Revenue attribution modeling</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.analytics.li2">Executive dashboards</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.analytics.li3">KPI definition & tracking</span></li>
-            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.analytics.li4">Monthly performance reporting</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.analytics.li1">Modelado de atribución de revenue</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.analytics.li2">Dashboards ejecutivos</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.analytics.li3">Definición y seguimiento de KPIs</span></li>
+            <li style="font-size: 13px; color: var(--muted-light); display: flex; gap: 10px; align-items: center;"><span style="color: var(--burgundy-mid);">→</span> <span data-i18n="svc.analytics.li4">Reportes mensuales de desempeño</span></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
+
+  <!-- FAQ: SEO + AI Overview bait -->
+  <section style="padding: 80px 0; border-top: 1px solid rgba(85,28,37,0.3);">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 48px;">
+        <span class="section-tag">Preguntas Frecuentes</span>
+        <h2>Lo que las empresas B2B en Colombia nos preguntan</h2>
+      </div>
+      <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 0;">
+
+        <details style="border-bottom: 1px solid rgba(85,28,37,0.25); padding: 24px 0;">
+          <summary style="font-size: 1.05rem; font-weight: 600; cursor: pointer; color: var(--text-light, #F5F2EE); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            ¿Qué es la generación de demanda B2B y por qué la necesita mi empresa en Colombia?
+            <span style="color: var(--burgundy-mid, #8B2635); font-size: 1.4rem; line-height: 1;">+</span>
+          </summary>
+          <p style="margin-top: 16px; color: var(--muted-light, #a09891); line-height: 1.7; font-size: 0.95rem;">
+            La generación de demanda B2B es el proceso de crear interés calificado en tu producto o servicio entre tomadores de decisión de otras empresas. En Colombia, muchas PYMEs dependen del voz a voz o de la red de contactos del fundador. La generación de demanda estructurada reemplaza eso con campañas repetibles (outbound, pauta digital en LinkedIn, contenido SEO) que llenan el pipeline de forma predecible, sin depender de referidos.
+          </p>
+        </details>
+
+        <details style="border-bottom: 1px solid rgba(85,28,37,0.25); padding: 24px 0;">
+          <summary style="font-size: 1.05rem; font-weight: 600; cursor: pointer; color: var(--text-light, #F5F2EE); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            ¿Qué es Revenue Operations (RevOps) y aplica para empresas pequeñas en Colombia?
+            <span style="color: var(--burgundy-mid, #8B2635); font-size: 1.4rem; line-height: 1;">+</span>
+          </summary>
+          <p style="margin-top: 16px; color: var(--muted-light, #a09891); line-height: 1.7; font-size: 0.95rem;">
+            Revenue Operations es la alineación de marketing, ventas y servicio al cliente alrededor de datos y procesos compartidos. Sí aplica para PYMEs. De hecho, una empresa con 5 a 20 personas en el equipo comercial tiene más que ganar porque los silos se forman más rápido y cuestan más proporcionalmente. RevOps para PYMEs colombianas no requiere grandes herramientas ni presupuestos: requiere procesos claros, un CRM bien configurado y métricas que todos entienden.
+          </p>
+        </details>
+
+        <details style="border-bottom: 1px solid rgba(85,28,37,0.25); padding: 24px 0;">
+          <summary style="font-size: 1.05rem; font-weight: 600; cursor: pointer; color: var(--text-light, #F5F2EE); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            ¿Cuánto tiempo tarda en verse resultados con una agencia de marketing B2B?
+            <span style="color: var(--burgundy-mid, #8B2635); font-size: 1.4rem; line-height: 1;">+</span>
+          </summary>
+          <p style="margin-top: 16px; color: var(--muted-light, #a09891); line-height: 1.7; font-size: 0.95rem;">
+            Depende del canal. Outbound y pauta digital pueden generar conversaciones calificadas en 2 a 4 semanas. SEO y contenido toman 3 a 6 meses para mostrar tracción orgánica. En BlackScale, el primer mes es de diagnóstico y activación, y en el segundo mes el pipeline empieza a moverse. Los clientes ven resultados medibles antes del tercer mes, sin esperar un año para saber si la estrategia funciona.
+          </p>
+        </details>
+
+        <details style="border-bottom: 1px solid rgba(85,28,37,0.25); padding: 24px 0;">
+          <summary style="font-size: 1.05rem; font-weight: 600; cursor: pointer; color: var(--text-light, #F5F2EE); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            ¿En qué industrias en Colombia tienen experiencia?
+            <span style="color: var(--burgundy-mid, #8B2635); font-size: 1.4rem; line-height: 1;">+</span>
+          </summary>
+          <p style="margin-top: 16px; color: var(--muted-light, #a09891); line-height: 1.7; font-size: 0.95rem;">
+            Trabajamos con empresas B2B en seguros, SaaS y tecnología, fintech, logística y servicios profesionales en Colombia. Estos sectores comparten un reto común: ciclos de venta largos, múltiples tomadores de decisión y equipos comerciales que operan sin infraestructura de marketing. Es exactamente el problema que resolvemos.
+          </p>
+        </details>
+
+        <details style="border-bottom: 1px solid rgba(85,28,37,0.25); padding: 24px 0;">
+          <summary style="font-size: 1.05rem; font-weight: 600; cursor: pointer; color: var(--text-light, #F5F2EE); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            ¿Qué diferencia a BlackScale de otras agencias de marketing en Colombia?
+            <span style="color: var(--burgundy-mid, #8B2635); font-size: 1.4rem; line-height: 1;">+</span>
+          </summary>
+          <p style="margin-top: 16px; color: var(--muted-light, #a09891); line-height: 1.7; font-size: 0.95rem;">
+            La mayoría de agencias en Colombia entrega campañas y reportes de métricas de vanidad: clics, impresiones, alcance. BlackScale trabaja exclusivamente en B2B y mide una sola cosa: pipeline y revenue. No tercerizamos la ejecución. Los fundadores están embebidos en cada cliente y no empezamos a ejecutar después de 3 meses de onboarding. El pipeline empieza a moverse en semanas.
+          </p>
+        </details>
+
+        <details style="padding: 24px 0;">
+          <summary style="font-size: 1.05rem; font-weight: 600; cursor: pointer; color: var(--text-light, #F5F2EE); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            ¿Cómo funciona el diagnóstico gratuito?
+            <span style="color: var(--burgundy-mid, #8B2635); font-size: 1.4rem; line-height: 1;">+</span>
+          </summary>
+          <p style="margin-top: 16px; color: var(--muted-light, #a09891); line-height: 1.7; font-size: 0.95rem;">
+            Es una sesión de 30 a 60 minutos con uno de los fundadores. Analizamos tu pipeline actual, tus canales de adquisición, la estructura de tu equipo comercial y dónde están las fugas de revenue. Al final de la sesión tienes claridad sobre los 2 o 3 cambios de mayor impacto que puedes hacer ahora mismo, sin necesidad de contratarnos. Si tiene sentido trabajar juntos, lo conversamos.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es la generación de demanda B2B y por qué la necesita mi empresa en Colombia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La generación de demanda B2B es el proceso de crear interés calificado en tu producto o servicio entre tomadores de decisión de otras empresas. En Colombia, muchas PYMEs dependen del voz a voz o de la red de contactos del fundador. La generación de demanda estructurada reemplaza eso con campañas repetibles que llenan el pipeline de forma predecible."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es Revenue Operations (RevOps) y aplica para empresas pequeñas en Colombia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Revenue Operations es la alineación de marketing, ventas y servicio al cliente alrededor de datos y procesos compartidos. Sí aplica para PYMEs colombianas. RevOps no requiere grandes herramientas: requiere procesos claros, un CRM bien configurado y métricas que todos entienden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo tarda en verse resultados con una agencia de marketing B2B?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Outbound y pauta digital pueden generar conversaciones calificadas en 2-4 semanas. SEO y contenido toman 3-6 meses. En BlackScale, el primer mes es de diagnóstico y activación; el segundo mes el pipeline empieza a moverse. Los clientes ven resultados medibles antes del tercer mes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué industrias en Colombia tienen experiencia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trabajamos con empresas B2B en seguros, SaaS y tecnología, fintech, logística y servicios profesionales en Colombia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué diferencia a BlackScale de otras agencias de marketing en Colombia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BlackScale trabaja exclusivamente en B2B y mide pipeline y revenue, no métricas de vanidad. Los fundadores están embebidos en cada cliente y el pipeline empieza a moverse en semanas, no meses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo funciona el diagnóstico gratuito?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es una sesión de 30-60 minutos con uno de los fundadores. Analizamos pipeline actual, canales de adquisición, estructura comercial y fugas de revenue. Al final tienes claridad sobre los 2-3 cambios de mayor impacto que puedes hacer ahora mismo."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- CONTACT FORM -->
   <section class="contact-inline">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="tag.get_in_touch">Get in Touch</span>
-        <p data-i18n="contact.sub">Tell us about your business and goals. We'll follow up within one business day to book your free strategy call.</p>
+        <span class="section-tag" data-i18n="tag.get_in_touch">Contáctanos</span>
+        <p data-i18n="contact.sub">Cuéntanos sobre tu empresa y tus objetivos. Te respondemos en menos de un día hábil para agendar tu diagnóstico gratuito.</p>
       </div>
-      <!-- HubSpot Form -->
-<form action="https://formspree.io/f/xykbbnwv" method="POST" class="contact-form">
+<!-- BlackScale Nexus Lead Form -->
+<form class="contact-form" id="bsLeadForm" novalidate>
   <div class="form-group">
     <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
   </div>
   <div class="form-group">
     <label for="empresa">Empresa</label>
-    <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
+    <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required autocomplete="organization">
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Tu correo corporativo" required>
+    <input type="email" id="email" name="email" placeholder="Tu correo corporativo" required autocomplete="email">
   </div>
   <div class="form-group">
     <label for="telefono">Teléfono <span style="opacity:0.6;">(opcional)</span></label>
-    <input type="tel" id="telefono" name="telefono" placeholder="Tu número (opcional)">
+    <input type="tel" id="telefono" name="telefono" placeholder="Tu número (opcional)" autocomplete="tel">
   </div>
-  <button type="submit" class="btn btn--primary">Solicitar diagnóstico gratuito</button>
+  <!-- Honeypot fields (must stay empty) -->
+  <div aria-hidden="true" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+    <label for="_honey">Leave this empty</label>
+    <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off" value="">
+    <label for="website_url">Website</label>
+    <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" value="">
+  </div>
+  <div class="form-error" id="bsFormError" role="alert" aria-live="polite" style="display:none; color:#ff8a8a; margin-bottom:1rem; font-size:0.9rem;"></div>
+  <button type="submit" class="btn btn--primary" id="bsFormSubmit">Solicitar diagnóstico gratuito</button>
 </form>
 <script>
 (function() {
-  var form = document.querySelector('.contact-form');
+  var form = document.getElementById('bsLeadForm');
   if (!form) return;
+  var btn = document.getElementById('bsFormSubmit');
+  var errorBox = document.getElementById('bsFormError');
+  var btnOriginalText = btn.textContent;
+
+  function getUTM(name) {
+    var m = window.location.search.match(new RegExp('[?&]' + name + '=([^&]*)'));
+    return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
+  }
+
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    var formData = new FormData(form);
-    fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } }).then(function(response) {
-      if (response.ok) {
+    errorBox.style.display = 'none';
+    errorBox.textContent = '';
+
+    var nombre = form.nombre.value.trim();
+    if (!nombre) {
+      errorBox.textContent = 'Por favor ingresa tu nombre.';
+      errorBox.style.display = 'block';
+      return;
+    }
+
+    var payload = {
+      name:         nombre,
+      email:        form.email.value.trim(),
+      phone:        form.telefono.value.trim(),
+      company:      form.empresa.value.trim(),
+      message:      '',
+      source:       'website',
+      utm_source:   getUTM('utm_source'),
+      utm_medium:   getUTM('utm_medium'),
+      utm_campaign: getUTM('utm_campaign'),
+      _honey:       form._honey.value,
+      website_url:  form.website_url.value
+    };
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    fetch('https://nexus.blackscale.consulting/api/webhook', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function(response) {
+      if (response.status === 201) {
         form.reset();
         form.style.display = 'none';
         var gate = document.getElementById('calendly-gate');
         var thanks = document.getElementById('form-thanks');
+        var success = document.getElementById('formSuccess');
         if (gate) gate.style.display = 'block';
         if (thanks) thanks.style.display = 'block';
+        if (success) success.style.display = 'block';
+      } else {
+        return response.json().catch(function() { return {}; }).then(function(data) {
+          throw new Error((data && data.error) || ('HTTP ' + response.status));
+        });
       }
+    }).catch(function(err) {
+      errorBox.textContent = 'No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos a Servicio@blackscale.consulting';
+      errorBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = btnOriginalText;
     });
   });
 })();
-</script>        <div id="form-thanks" style="display:none; text-align:center; padding:20px;"><h3>¡Gracias! Ahora agenda tu llamada:</h3></div>
+</script>
+
+        <div id="form-thanks" style="display:none; text-align:center; padding:20px;"><h3>¡Gracias! Ahora agenda tu llamada:</h3></div>
         <div id="calendly-gate" style="display:none; text-align:center; margin-top:1.5rem;">
           <a href="https://calendly.com/julian-vallejo-blackscale/30min" target="_blank" rel="noopener" class="btn btn--primary btn--full">Reserva tu llamada</a>
         </div>
-        
       <div class="form-success" id="formSuccess">
-        <h3 data-i18n="form.success.h">Message received.</h3>
-        <p data-i18n="form.success.p">Thank you for reaching out. A founder will be in touch within one business day to schedule your free strategy call.</p>
+        <h3 data-i18n="form.success.h">Mensaje recibido.</h3>
+        <p data-i18n="form.success.p">Gracias por escribirnos. Un fundador te contactará en menos de un día hábil para agendar tu sesión de diagnóstico gratuita.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSTICO CTA (warm tier) -->
+  <section class="diag-cta-strip" style="background:#0F0F0F;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15);padding:60px 0;">
+    <div class="container" style="max-width:1100px;margin:0 auto;padding:0 24px;text-align:center;">
+      <p style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;margin:0 0 12px;font-weight:600;">¿Aún no listo para hablar?</p>
+      <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,4vw,40px);font-weight:400;color:#F5F5F5;margin:0 0 16px;line-height:1.2;">Descubre dónde tu pipeline está perdiendo revenue.</h3>
+      <p style="font-size:17px;color:rgba(245,245,245,.7);max-width:620px;margin:0 auto 28px;line-height:1.5;">5 preguntas. 3 minutos. Diagnóstico inmediato sobre el estado real de tu operación comercial B2B.</p>
+      <a href="diagnostico.html" style="display:inline-block;padding:14px 32px;background:transparent;color:#C9A84C;border:1.5px solid #C9A84C;border-radius:2px;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.04em;transition:all .25s ease;" onmouseover="this.style.background='#C9A84C';this.style.color='#0D0D0D';" onmouseout="this.style.background='transparent';this.style.color='#C9A84C';">Hacer el diagnóstico gratuito →</a>
     </div>
   </section>
 
@@ -227,25 +476,24 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     <div class="footer__cta-strip">
       <div class="container footer__cta-inner">
         <div class="footer__cta-text">
-          <h3 data-i18n="footer.cta.h">Ready to scale your revenue?</h3>
-          <p data-i18n="footer.cta.p">Let's talk about your growth goals. No pitch, just strategy.</p>
+          <h3 data-i18n="footer.cta.h">¿Listo para escalar tu revenue?</h3>
+          <p data-i18n="footer.cta.p">Hablemos de tus objetivos de crecimiento. Sin presentación corporativa, solo estrategia.</p>
         </div>
-        <a href="contact.html" class="btn btn--primary" data-i18n="footer.contact_us">Contact Us</a>
+        <a href="contact.html" class="btn btn--primary" data-i18n="footer.contact_us">Contáctanos</a>
       </div>
     </div>
     <div class="footer__main">
       <div class="container footer__grid">
         <div class="footer__col footer__col--brand">
           <a href="index.html" class="logo logo--footer">
-            <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale">
+            <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale" loading="lazy" width="160" height="40">
           </a>
-          <p class="footer__desc" data-i18n="footer.desc">B2B Marketing &amp; Revenue Growth Consulting. We help ambitious companies build structured, measurable growth engines.</p>
+          <p class="footer__desc" data-i18n="footer.desc">Agencia B2B con base en Bogotá, Colombia. Especialistas en generación de demanda, revenue operations y habilitación comercial.</p>
           <div class="footer__contact-info">
             <a href="mailto:Servicio@blackscale.consulting" class="footer__contact-link">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               Servicio@blackscale.consulting
             </a>
-
           </div>
           <div class="footer__social">
             <a href="https://www.linkedin.com/in/blackscale-consulting-0686a83b8/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
@@ -254,55 +502,52 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
           </div>
         </div>
         <div class="footer__col" style="display:none">
-          <h4 class="footer__col-title" data-i18n="footer.col.services">Services</h4>
+          <h4 class="footer__col-title" data-i18n="footer.col.services">Servicios</h4>
           <ul class="footer__col-links">
-            <li><a href="services.html#demand" data-i18n="footer.svc.demand">Demand Generation</a></li>
-            <li><a href="services.html#revops" data-i18n="footer.svc.revops">Revenue Operations</a></li>
-            <li><a href="services.html#sales" data-i18n="footer.svc.sales">Sales Enablement</a></li>
-            <li><a href="services.html#abm" data-i18n="footer.svc.abm">Account-Based Marketing</a></li>
-            <li><a href="services.html#gtm" data-i18n="footer.svc.gtm">Go-to-Market Strategy</a></li>
-            <li><a href="services.html#analytics" data-i18n="footer.svc.analytics">Performance Analytics</a></li>
+            <li><a href="services.html#demand">Generación de Demanda</a></li>
+            <li><a href="services.html#revops">Revenue Operations</a></li>
+            <li><a href="services.html#sales">Habilitación Comercial</a></li>
+            <li><a href="services.html#abm">Marketing ABM</a></li>
+            <li><a href="services.html#gtm">Estrategia Go-to-Market</a></li>
+            <li><a href="services.html#analytics">Analítica de Desempeño</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4 class="footer__col-title" data-i18n="footer.col.company">Company</h4>
+          <h4 class="footer__col-title">Empresa</h4>
           <ul class="footer__col-links">
-            <li><a href="why-us.html" data-i18n="footer.co.why">Why Blackscale</a></li>
-            <li><a href="process.html" data-i18n="footer.co.process">Our Process</a></li>
-            <li style="display:none"><a href="why-us.html#founders" data-i18n="footer.co.team">The Team</a></li>
-            <li style="display:none"><a href="why-us.html" data-i18n="footer.co.success">Success Cases</a></li>
-            <li style="display:none"><a href="contact.html" data-i18n="footer.co.careers">Careers</a></li>
-            <li><a href="contact.html" data-i18n="footer.co.contact">Contact</a></li>
+            <li><a href="why-us.html">Por Qué BlackScale</a></li>
+            <li><a href="process.html">Nuestro Proceso</a></li>
+            <li><a href="contact.html">Contacto</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4 class="footer__col-title" data-i18n="footer.col.legal">Legal &amp; Policies</h4>
+          <h4 class="footer__col-title">Legal y Políticas</h4>
           <ul class="footer__col-links">
-            <li><a href="legal.html#privacy" data-i18n="footer.legal.privacy">Privacy Policy</a></li>
-            <li><a href="legal.html#data-management" data-i18n="footer.legal.data">Data Management</a></li>
-            <li><a href="legal.html#terms" data-i18n="footer.legal.terms">Terms of Service</a></li>
-            <li><a href="legal.html#cookies" data-i18n="footer.legal.cookie">Cookie Policy</a></li>
-            <li><a href="legal.html#gdpr" data-i18n="footer.legal.gdpr">GDPR Compliance</a></li>
-            <li><a href="legal.html#accessibility" data-i18n="footer.legal.access">Accessibility</a></li>
+            <li><a href="legal.html#privacy">Política de Privacidad</a></li>
+            <li><a href="legal.html#data-management">Gestión de Datos</a></li>
+            <li><a href="legal.html#terms">Términos de Servicio</a></li>
+            <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;">Preferencias de Cookies</a></li>
+            <li><a href="legal.html#cookies">Política de Cookies</a></li>
+            <li><a href="legal.html#accessibility">Accesibilidad</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
       <div class="container footer__bottom-inner">
-        <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 Blackscale Consulting. All rights reserved.</p>
+        <p class="footer__copy">&copy; 2026 Blackscale Consulting. Todos los derechos reservados.</p>
         <div class="footer__bottom-links">
-          <a href="legal.html#privacy" data-i18n="footer.bottom.privacy">Privacy</a>
-          <a href="legal.html#terms" data-i18n="footer.bottom.terms">Terms</a>
-          <a href="legal.html#cookies" data-i18n="footer.bottom.cookies">Cookies</a>
+          <a href="legal.html#privacy">Privacidad</a>
+          <a href="legal.html#terms">Términos</a>
+          <a href="legal.html#cookies">Cookies</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <button id="back-to-top" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
+  <button id="back-to-top" aria-label="Volver arriba"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
 
-  <script src="translations.js"></script>
-  <script src="script.js"></script>
+  <script src="translations.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

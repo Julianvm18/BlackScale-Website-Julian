@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-CO">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NF8WJBGXBX"></script>
-<script>
+<!-- Klaro Consent Manager -->
+<link rel="stylesheet" href="/klaro/klaro.css">
+<script defer src="/klaro/klaro-config.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7.18/dist/klaro-no-css.js"></script>
+
+<!-- Google Analytics 4 — bloqueado hasta consentimiento (Res. SIC 32.126) -->
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="google-analytics"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-NF8WJBGXBX"></script>
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="google-analytics">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-NF8WJBGXBX');
+  gtag('config', 'G-NF8WJBGXBX', { 'anonymize_ip': true });
 </script>
-<!-- Meta Pixel Code -->
-<script>
+
+<!-- Meta Pixel — bloqueado hasta consentimiento -->
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="meta-pixel">
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -25,13 +39,87 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 /></noscript>
+
+
 <!-- End Meta Pixel Code -->
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <meta name="theme-color" content="#6B2737" />
   <link rel="shortcut icon" href="logo.svg">
   <link rel="apple-touch-icon" href="logo.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Blackscale — Blackscale Consulting</title>
+  <title>Por Qué BlackScale | Consultoría B2B Orientada a Revenue en Colombia</title>
+  <meta name="description" content="BlackScale no mide clics ni impresiones. Mide pipeline, revenue y crecimiento. Consultoría B2B en Bogotá especializada en ventas B2B, generación de demanda y revenue operations para empresas colombianas." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://blackscale.consulting/why-us" />
+  <meta property="og:title" content="Por Qué BlackScale | Consultoría B2B en Colombia" />
+  <meta property="og:description" content="No métricas de vanidad. Solo pipeline, revenue y resultados medibles para empresas B2B en Colombia." />
+  <meta property="og:url" content="https://blackscale.consulting/why-us" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:site_name" content="BlackScale Consulting" />
+
+  <!-- Schema: AboutPage + Organization -->
+    <meta property="og:image" content="https://blackscale.consulting/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="BlackScale Consulting - Consultoría B2B en Colombia" />
+  <meta name="twitter:image" content="https://blackscale.consulting/og-image.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://blackscale.consulting/why-us.html",
+        "name": "Por Qué BlackScale | Consultoría B2B en Colombia",
+        "description": "Filosofía, valores y diferenciales de BlackScale Consulting, consultoría B2B en Bogotá especializada en ventas B2B, generación de demanda y revenue operations.",
+        "url": "https://blackscale.consulting/why-us.html",
+        "inLanguage": "es-CO",
+        "isPartOf": {
+          "@id": "https://blackscale.consulting/"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://blackscale.consulting/#organization",
+        "name": "BlackScale Consulting",
+        "url": "https://blackscale.consulting",
+        "email": "Servicio@blackscale.consulting",
+        "description": "Consultoría B2B en Bogotá, Colombia. Especializados en generación de demanda, revenue operations y habilitación comercial para empresas B2B en Colombia.",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Bogotá, Colombia"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bogotá",
+          "addressRegion": "Cundinamarca",
+          "addressCountry": "CO"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Colombia"
+        },
+        "knowsAbout": [
+          "Ventas B2B",
+          "Generación de Demanda B2B",
+          "Revenue Operations",
+          "Habilitación Comercial",
+          "Marketing ABM",
+          "Pipeline B2B",
+          "Go-to-Market Colombia"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/blackscale-consulting-0686a83b8/",
+          "https://www.instagram.com/blackscale_con/",
+          "https://www.facebook.com/profile.php?id=61578534510595"
+        ]
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -40,16 +128,16 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <header class="nav">
     <div class="container nav__inner">
       <a href="index.html" class="logo">
-        <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale">
+        <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale" fetchpriority="high" width="160" height="40">
       </a>
       <nav class="nav__links">
-        <a href="services.html" data-i18n="nav.services">Services</a>
-        <a href="why-us.html" class="active" data-i18n="nav.why">Why Us</a>
-        <a href="process.html" data-i18n="nav.process">Process</a>
+        <a href="services.html" data-i18n="nav.services">Servicios</a>
+        <a href="why-us.html" class="active" data-i18n="nav.why">Por Qué Nosotros</a>
+        <a href="process.html" data-i18n="nav.process">Proceso</a>
         <a href="blog/" data-i18n="nav.blog">Blog</a>
-        <a href="contact.html" class="btn btn--outline" data-i18n="nav.cta">Get in Touch</a>
+        <a href="contact.html" class="btn btn--outline" data-i18n="nav.cta">Contáctanos</a>
       </nav>
-      <button class="nav__burger" aria-label="Open menu">
+      <button class="nav__burger" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -57,61 +145,61 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="services.html" data-i18n="nav.services">Services</a>
-    <a href="why-us.html" data-i18n="nav.why">Why Us</a>
-    <a href="process.html" data-i18n="nav.process">Process</a>
+    <a href="services.html" data-i18n="nav.services">Servicios</a>
+    <a href="why-us.html" data-i18n="nav.why">Por Qué Nosotros</a>
+    <a href="process.html" data-i18n="nav.process">Proceso</a>
     <a href="blog/" data-i18n="nav.blog">Blog</a>
-    <a href="contact.html" data-i18n="nav.cta">Get in Touch</a>
+    <a href="contact.html" data-i18n="nav.cta">Contáctanos</a>
     </div>
 
   <!-- PAGE HEADER -->
   <section class="page-header">
     <div class="container">
       <div class="breadcrumb">
-        <a href="index.html" data-i18n="breadcrumb.home">Home</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Inicio</a>
         <span>/</span>
-        <span data-i18n="breadcrumb.why">Why Us</span>
+        <span data-i18n="breadcrumb.why">Por Qué Nosotros</span>
       </div>
-      <div class="page-header__tag" data-i18n="why.page.tag">Why Blackscale</div>
-      <h1 data-i18n-html="why.page.h1">We don't do<br /><em>vanity metrics.</em></h1>
-      <p data-i18n="why.page.sub">Most marketing agencies track clicks and impressions. We track pipeline, revenue, and growth. Every engagement is tied to outcomes that matter to your business.</p>
+      <div class="page-header__tag" data-i18n="why.page.tag">Por Qué BlackScale</div>
+      <h1 data-i18n-html="why.page.h1">No trabajamos con métricas de vanidad</h1>
+      <p data-i18n="why.page.sub">La mayoría de agencias de marketing mide clics e impresiones. Nosotros medimos pipeline, revenue y crecimiento. Cada engagement está atado a resultados que importan para tu negocio en Colombia.</p>
     </div>
   </section>
 
-  <!-- WHY US — FULL -->
+  <!-- WHY US: FULL -->
   <section class="why" id="why">
     <div class="container why__inner">
       <div class="why__text">
-        <span class="section-tag" data-i18n="tag.our_philosophy">Our Philosophy</span>
-        <h2 data-i18n-html="why.philosophy.heading">Revenue is the<br /><em>only metric that matters.</em></h2>
-        <p data-i18n="why.philosophy.sub">We've seen too many companies invest in marketing that looks great on a dashboard but does nothing for the bottom line. Blackscale was built to do things differently — every strategy, tactic, and dollar is measured against one thing: revenue impact.</p>
+        <span class="section-tag" data-i18n="tag.our_philosophy">Nuestra Filosofía</span>
+        <h2 data-i18n-html="why.philosophy.heading">El revenue es la única métrica que importa</h2>
+        <p data-i18n="why.philosophy.sub">Hemos visto demasiadas empresas colombianas invertir en marketing que se ve bien en un dashboard pero no hace nada por el resultado final. BlackScale fue construido para hacer las cosas diferente. Cada estrategia, táctica y peso invertido se mide contra una sola cosa: impacto en revenue.</p>
         <ul class="why__list">
           <li>
             <span class="check"></span>
             <div>
-              <strong data-i18n="why.li1.strong">Revenue-first mindset</strong>
-              <p data-i18n="why.li1.p">Every strategy and tactic is evaluated on its ability to drive measurable revenue impact. We don't celebrate traffic; we celebrate closed deals.</p>
+              <strong data-i18n="why.li1.strong">Mentalidad revenue-first</strong>
+              <p data-i18n="why.li1.p">Cada estrategia y táctica se evalúa por su capacidad de generar impacto medible en revenue. No celebramos el tráfico; celebramos los negocios cerrados.</p>
             </div>
           </li>
           <li>
             <span class="check"></span>
             <div>
-              <strong data-i18n="why.li2.strong">Deep B2B expertise</strong>
-              <p data-i18n="why.li2.p">We work exclusively in B2B. We understand complex sales cycles, buying committees, multi-stakeholder dynamics, and the nuances of enterprise purchasing decisions.</p>
+              <strong data-i18n="why.li2.strong">Expertise profundo en B2B</strong>
+              <p data-i18n="why.li2.p">Trabajamos exclusivamente en B2B. Entendemos los ciclos de venta complejos, los comités de compra y las dinámicas de decisión en empresas colombianas de seguros, SaaS, fintech, logística y servicios profesionales.</p>
             </div>
           </li>
           <li>
             <span class="check"></span>
             <div>
-              <strong data-i18n="why.li3.strong">Embedded, not outsourced</strong>
-              <p data-i18n="why.li3.p">We work as a true extension of your team, not a distant vendor sending monthly reports. You get senior-level thinking and hands-on execution, every day.</p>
+              <strong data-i18n="why.li3.strong">Embebidos, no externalizados</strong>
+              <p data-i18n="why.li3.p">Trabajamos como una extensión real de tu equipo, no como un proveedor distante que manda reportes mensuales. Obtienes pensamiento senior y ejecución práctica, todos los días.</p>
             </div>
           </li>
           <li>
             <span class="check"></span>
             <div>
-              <strong data-i18n="why.li5.strong">Data-driven, not gut-driven</strong>
-              <p data-i18n="why.li5.p">Every recommendation is backed by data. We audit before we advise, and we measure everything we execute so decisions compound over time.</p>
+              <strong data-i18n="why.li5.strong">Basados en datos, no en intuición</strong>
+              <p data-i18n="why.li5.p">Cada recomendación está respaldada por datos. Auditamos antes de aconsejar y medimos todo lo que ejecutamos para que las decisiones se acumulen con el tiempo.</p>
             </div>
           </li>
         </ul>
@@ -119,42 +207,105 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     </div>
   </section>
 
+  <!-- WHY EXPANDED — V2: imagen lateral + bullets escaneables -->
+  <section class="why-expanded-v2">
+    <div class="why-expanded-v2__container">
+
+      <!-- BLOQUE 1 -->
+      <div class="why-block">
+        <div class="why-block__image">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80&auto=format&fit=crop" alt="Ejecutivos analizando estrategia frente a vista de ciudad" loading="lazy">
+        </div>
+        <div class="why-block__content">
+          <span class="why-block__tag">El mercado</span>
+          <h3 class="why-block__title">Por qué las empresas B2B en Colombia nos eligen</h3>
+          <p class="why-block__intro">El mercado B2B en Colombia tiene dinámicas propias. No se vende igual que en consumo, ni igual que en mercados más grandes.</p>
+          <ul class="why-block__bullets">
+            <li><strong>Ciclos largos:</strong> ventas de 30 a 180 días, no de minutos.</li>
+            <li><strong>Decisiones multinivel:</strong> compradores que pasan por varios filtros antes de hablar contigo.</li>
+            <li><strong>Pre-investigación:</strong> el prospecto investiga antes de cualquier conversación.</li>
+            <li><strong>Procesos rotos:</strong> equipos comerciales sin un sistema claro para mover oportunidades de etapa.</li>
+          </ul>
+          <p class="why-block__close">BlackScale nació para resolver exactamente eso. Construimos nuestra metodología <em>desde adentro</em> del proceso de ventas, con foco en pipeline real y conversiones reales — no en métricas decorativas.</p>
+        </div>
+      </div>
+
+      <!-- BLOQUE 2 — reverse -->
+      <div class="why-block why-block--reverse">
+        <div class="why-block__image">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80&auto=format&fit=crop" alt="Equipo profesional analizando métricas en sala de reuniones" loading="lazy">
+        </div>
+        <div class="why-block__content">
+          <span class="why-block__tag">La diferencia</span>
+          <h3 class="why-block__title">Lo que nos diferencia de otras agencias en Bogotá</h3>
+          <p class="why-block__intro">La mayoría de agencias en Colombia mide su trabajo en alcance, impresiones o leads generados. <strong>Nosotros medimos revenue.</strong> Esa diferencia cambia todo.</p>
+          <ul class="why-block__bullets">
+            <li><strong>Diagnóstico antes que ejecución:</strong> auditamos tu proceso comercial completo antes de proponer nada.</li>
+            <li><strong>Mapeo de fricción:</strong> identificamos qué etapas del pipeline tienen mayor caída y mayor potencial de revenue.</li>
+            <li><strong>Trabajo embebido:</strong> en las reuniones, revisando deals, diseñando playbooks — no enviando reportes desde afuera.</li>
+            <li><strong>Acompañamiento semanal:</strong> ejecución continua con el equipo comercial, no entregables aislados.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BLOQUE 3 -->
+      <div class="why-block">
+        <div class="why-block__image">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80&auto=format&fit=crop" alt="Sesión profesional de estrategia B2B" loading="lazy">
+        </div>
+        <div class="why-block__content">
+          <span class="why-block__tag">El foco</span>
+          <h3 class="why-block__title">Especialización exclusiva en ventas B2B</h3>
+          <p class="why-block__intro">No trabajamos con marcas de consumo masivo, e-commerce ni startups en etapa de idea. Nuestro foco exclusivo:</p>
+          <ul class="why-block__bullets">
+            <li><strong>Empresas B2B en Colombia</strong> con producto o servicio ya validado.</li>
+            <li><strong>Ciclos de venta de 30 a 180 días</strong> — no transacciones rápidas.</li>
+            <li><strong>Equipos comerciales de 3 a 30 personas</strong> en ventas.</li>
+            <li><strong>Ticket medio-alto</strong> vendido a otras empresas.</li>
+          </ul>
+          <p class="why-block__close">Si tu empresa encaja en ese perfil y quieres construir un proceso de ventas predecible, <a href="diagnostico.html" class="why-block__link">el diagnóstico gratuito es el primer paso →</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- VALUES -->
   <section class="values">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="tag.our_values">Our Values</span>
-        <h2 data-i18n-html="values.heading">What we believe<br /><em>shapes how we work.</em></h2>
-        <p data-i18n="values.sub">These aren't words on a wall — they're the principles that guide every engagement we take on.</p>
+        <span class="section-tag" data-i18n="tag.our_values">Nuestros Valores</span>
+        <h2 data-i18n-html="values.heading">Lo que creemos define cómo trabajamos</h2>
+        <p data-i18n="values.sub">No son palabras en una pared. Son los principios que guían cada engagement que tomamos.</p>
       </div>
       <div class="values__grid">
         <div class="value-card">
-          <h3 data-i18n="values.v1.h">Honesty over comfort</h3>
-          <p data-i18n="values.v1.p">We'll tell you what you need to hear, not what you want to hear. If your strategy is broken, we'll say so — and then help you fix it.</p>
+          <h3 data-i18n="values.v1.h">Honestidad sobre comodidad</h3>
+          <p data-i18n="values.v1.p">Te diremos lo que necesitas escuchar, no lo que quieres oír. Si tu estrategia está rota, lo decimos y te ayudamos a arreglarla.</p>
         </div>
         <div class="value-card">
-          <h3 data-i18n="values.v2.h">Outcomes over activity</h3>
-          <p data-i18n="values.v2.p">More campaigns don't mean more revenue. We focus on the actions that actually move the needle, and we hold ourselves accountable to results.</p>
+          <h3 data-i18n="values.v2.h">Resultados sobre actividad</h3>
+          <p data-i18n="values.v2.p">Más campañas no significa más revenue. Nos enfocamos en las acciones que realmente mueven la aguja y nos hacemos responsables de los resultados.</p>
         </div>
         <div class="value-card">
-          <h3 data-i18n="values.v3.h">Speed over perfection</h3>
-          <p data-i18n="values.v3.p">Done and tested beats perfect and pending. We move fast, learn from data, and iterate — because the market doesn't wait.</p>
+          <h3 data-i18n="values.v3.h">Velocidad sobre perfección</h3>
+          <p data-i18n="values.v3.p">Hecho y probado supera a perfecto y pendiente. Nos movemos rápido, aprendemos de los datos e iteramos. El mercado no espera.</p>
         </div>
         <div class="value-card">
-          <h3 data-i18n="values.v4.h">Partnership over transaction</h3>
-          <p data-i18n="values.v4.p">We're invested in your success. We win when you win, and that shapes how we show up every single day.</p>
+          <h3 data-i18n="values.v4.h">Alianza sobre transacción</h3>
+          <p data-i18n="values.v4.p">Estamos invertidos en tu éxito. Ganamos cuando tú ganas, y eso define cómo nos presentamos cada día.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOUNDERS -->
+  <!-- FOUNDERS (hidden until bios ready) -->
   <section class="founders" id="founders" style="display:none">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="tag.team">The Team</span>
-        <h2 data-i18n-html="founders.heading">Meet the<br /><em>founders.</em></h2>
-        <p data-i18n="founders.sub">The people behind Blackscale Consulting — building better B2B growth, together.</p>
+        <span class="section-tag" data-i18n="tag.team">El Equipo</span>
+        <h2 data-i18n-html="founders.heading">Conoce a los<br /><em>fundadores.</em></h2>
+        <p data-i18n="founders.sub">Las personas detrás de BlackScale Consulting, construyendo mejor crecimiento B2B, juntos.</p>
       </div>
       <div class="founders__grid">
         <div class="founder-card">
@@ -163,8 +314,8 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
           </div>
           <div class="founder-card__info">
             <h3>Founder Name</h3>
-            <p class="founder-card__title" data-i18n="founders.f1.title">Co-Founder & CEO</p>
-            <p class="founder-card__bio" data-i18n="founders.bio">Bio coming soon. We'll add a brief background about this founder's expertise, journey, and vision for Blackscale Consulting.</p>
+            <p class="founder-card__title" data-i18n="founders.f1.title">Co-Fundador &amp; CEO</p>
+            <p class="founder-card__bio" data-i18n="founders.bio">Bio próximamente.</p>
           </div>
         </div>
         <div class="founder-card">
@@ -173,8 +324,8 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
           </div>
           <div class="founder-card__info">
             <h3>Founder Name</h3>
-            <p class="founder-card__title" data-i18n="founders.f2.title">Co-Founder & COO</p>
-            <p class="founder-card__bio" data-i18n="founders.bio">Bio coming soon. We'll add a brief background about this founder's expertise, journey, and vision for Blackscale Consulting.</p>
+            <p class="founder-card__title" data-i18n="founders.f2.title">Co-Fundador &amp; COO</p>
+            <p class="founder-card__bio" data-i18n="founders.bio">Bio próximamente.</p>
           </div>
         </div>
       </div>
@@ -185,57 +336,126 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <section class="contact-inline">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="tag.get_in_touch">Get in Touch</span>
-        <p data-i18n="contact.sub">Tell us about your business and goals. We'll follow up within one business day to book your free strategy call.</p>
+        <span class="section-tag" data-i18n="tag.get_in_touch">Contáctanos</span>
+        <p data-i18n="contact.sub">Cuéntanos sobre tu empresa y tus objetivos. Te respondemos en menos de un día hábil para agendar tu diagnóstico gratuito.</p>
       </div>
-      <!-- HubSpot Form -->
-<form action="https://formspree.io/f/xykbbnwv" method="POST" class="contact-form">
+<!-- BlackScale Nexus Lead Form -->
+<form class="contact-form" id="bsLeadForm" novalidate>
   <div class="form-group">
     <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
   </div>
   <div class="form-group">
     <label for="empresa">Empresa</label>
-    <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required>
+    <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required autocomplete="organization">
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="Tu correo corporativo" required>
+    <input type="email" id="email" name="email" placeholder="Tu correo corporativo" required autocomplete="email">
   </div>
   <div class="form-group">
     <label for="telefono">Teléfono <span style="opacity:0.6;">(opcional)</span></label>
-    <input type="tel" id="telefono" name="telefono" placeholder="Tu número (opcional)">
+    <input type="tel" id="telefono" name="telefono" placeholder="Tu número (opcional)" autocomplete="tel">
   </div>
-  <button type="submit" class="btn btn--primary">Solicitar diagnóstico gratuito</button>
+  <!-- Honeypot fields (must stay empty) -->
+  <div aria-hidden="true" style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+    <label for="_honey">Leave this empty</label>
+    <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off" value="">
+    <label for="website_url">Website</label>
+    <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" value="">
+  </div>
+  <div class="form-error" id="bsFormError" role="alert" aria-live="polite" style="display:none; color:#ff8a8a; margin-bottom:1rem; font-size:0.9rem;"></div>
+  <button type="submit" class="btn btn--primary" id="bsFormSubmit">Solicitar diagnóstico gratuito</button>
 </form>
 <script>
 (function() {
-  var form = document.querySelector('.contact-form');
+  var form = document.getElementById('bsLeadForm');
   if (!form) return;
+  var btn = document.getElementById('bsFormSubmit');
+  var errorBox = document.getElementById('bsFormError');
+  var btnOriginalText = btn.textContent;
+
+  function getUTM(name) {
+    var m = window.location.search.match(new RegExp('[?&]' + name + '=([^&]*)'));
+    return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
+  }
+
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    var formData = new FormData(form);
-    fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } }).then(function(response) {
-      if (response.ok) {
+    errorBox.style.display = 'none';
+    errorBox.textContent = '';
+
+    var nombre = form.nombre.value.trim();
+    if (!nombre) {
+      errorBox.textContent = 'Por favor ingresa tu nombre.';
+      errorBox.style.display = 'block';
+      return;
+    }
+
+    var payload = {
+      name:         nombre,
+      email:        form.email.value.trim(),
+      phone:        form.telefono.value.trim(),
+      company:      form.empresa.value.trim(),
+      message:      '',
+      source:       'website',
+      utm_source:   getUTM('utm_source'),
+      utm_medium:   getUTM('utm_medium'),
+      utm_campaign: getUTM('utm_campaign'),
+      _honey:       form._honey.value,
+      website_url:  form.website_url.value
+    };
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    fetch('https://nexus.blackscale.consulting/api/webhook', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function(response) {
+      if (response.status === 201) {
         form.reset();
         form.style.display = 'none';
         var gate = document.getElementById('calendly-gate');
         var thanks = document.getElementById('form-thanks');
+        var success = document.getElementById('formSuccess');
         if (gate) gate.style.display = 'block';
         if (thanks) thanks.style.display = 'block';
+        if (success) success.style.display = 'block';
+      } else {
+        return response.json().catch(function() { return {}; }).then(function(data) {
+          throw new Error((data && data.error) || ('HTTP ' + response.status));
+        });
       }
+    }).catch(function(err) {
+      errorBox.textContent = 'No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos a Servicio@blackscale.consulting';
+      errorBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = btnOriginalText;
     });
   });
 })();
-</script>        <div id="form-thanks" style="display:none; text-align:center; padding:20px;"><h3>¡Gracias! Ahora agenda tu llamada:</h3></div>
+</script>
+
+        <div id="form-thanks" style="display:none; text-align:center; padding:20px;"><h3>¡Gracias! Ahora agenda tu llamada:</h3></div>
         <div id="calendly-gate" style="display:none; text-align:center; margin-top:1.5rem;">
           <a href="https://calendly.com/julian-vallejo-blackscale/30min" target="_blank" rel="noopener" class="btn btn--primary btn--full">Reserva tu llamada</a>
         </div>
-        
       <div class="form-success" id="formSuccess">
-        <h3 data-i18n="form.success.h">Message received.</h3>
-        <p data-i18n="form.success.p">Thank you for reaching out. A founder will be in touch within one business day to schedule your free strategy call.</p>
+        <h3 data-i18n="form.success.h">Mensaje recibido.</h3>
+        <p data-i18n="form.success.p">Gracias por escribirnos. Un fundador te contactará en menos de un día hábil para agendar tu sesión de diagnóstico gratuita.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSTICO CTA (warm tier) -->
+  <section class="diag-cta-strip" style="background:#0F0F0F;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15);padding:60px 0;">
+    <div class="container" style="max-width:1100px;margin:0 auto;padding:0 24px;text-align:center;">
+      <p style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;margin:0 0 12px;font-weight:600;">¿Aún no listo para hablar?</p>
+      <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,4vw,40px);font-weight:400;color:#F5F5F5;margin:0 0 16px;line-height:1.2;">Descubre dónde tu pipeline está perdiendo revenue.</h3>
+      <p style="font-size:17px;color:rgba(245,245,245,.7);max-width:620px;margin:0 auto 28px;line-height:1.5;">5 preguntas. 3 minutos. Diagnóstico inmediato sobre el estado real de tu operación comercial B2B.</p>
+      <a href="diagnostico.html" style="display:inline-block;padding:14px 32px;background:transparent;color:#C9A84C;border:1.5px solid #C9A84C;border-radius:2px;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.04em;transition:all .25s ease;" onmouseover="this.style.background='#C9A84C';this.style.color='#0D0D0D';" onmouseout="this.style.background='transparent';this.style.color='#C9A84C';">Hacer el diagnóstico gratuito →</a>
     </div>
   </section>
 
@@ -244,25 +464,24 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     <div class="footer__cta-strip">
       <div class="container footer__cta-inner">
         <div class="footer__cta-text">
-          <h3 data-i18n="footer.cta.h">Ready to scale your revenue?</h3>
-          <p data-i18n="footer.cta.p">Let's talk about your growth goals. No pitch, just strategy.</p>
+          <h3 data-i18n="footer.cta.h">¿Listo para escalar tu revenue?</h3>
+          <p data-i18n="footer.cta.p">Hablemos de tus objetivos de crecimiento. Sin presentación corporativa, solo estrategia.</p>
         </div>
-        <a href="contact.html" class="btn btn--primary" data-i18n="footer.contact_us">Contact Us</a>
+        <a href="contact.html" class="btn btn--primary" data-i18n="footer.contact_us">Contáctanos</a>
       </div>
     </div>
     <div class="footer__main">
       <div class="container footer__grid">
         <div class="footer__col footer__col--brand">
           <a href="index.html" class="logo logo--footer">
-            <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale">
+            <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale" loading="lazy" width="160" height="40">
           </a>
-          <p class="footer__desc" data-i18n="footer.desc">B2B Marketing &amp; Revenue Growth Consulting. We help ambitious companies build structured, measurable growth engines.</p>
+          <p class="footer__desc" data-i18n="footer.desc">Agencia B2B con base en Bogotá, Colombia. Especialistas en generación de demanda, revenue operations y habilitación comercial.</p>
           <div class="footer__contact-info">
             <a href="mailto:Servicio@blackscale.consulting" class="footer__contact-link">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               Servicio@blackscale.consulting
             </a>
-
           </div>
           <div class="footer__social">
             <a href="https://www.linkedin.com/in/blackscale-consulting-0686a83b8/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
@@ -271,54 +490,52 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
           </div>
         </div>
         <div class="footer__col" style="display:none">
-          <h4 class="footer__col-title" data-i18n="footer.col.services">Services</h4>
+          <h4 class="footer__col-title">Servicios</h4>
           <ul class="footer__col-links">
-            <li><a href="services.html#demand" data-i18n="footer.svc.demand">Demand Generation</a></li>
-            <li><a href="services.html#revops" data-i18n="footer.svc.revops">Revenue Operations</a></li>
-            <li><a href="services.html#sales" data-i18n="footer.svc.sales">Sales Enablement</a></li>
-            <li><a href="services.html#abm" data-i18n="footer.svc.abm">Account-Based Marketing</a></li>
-            <li><a href="services.html#gtm" data-i18n="footer.svc.gtm">Go-to-Market Strategy</a></li>
-            <li><a href="services.html#analytics" data-i18n="footer.svc.analytics">Performance Analytics</a></li>
+            <li><a href="services.html#demand">Generación de Demanda</a></li>
+            <li><a href="services.html#revops">Revenue Operations</a></li>
+            <li><a href="services.html#sales">Habilitación Comercial</a></li>
+            <li><a href="services.html#abm">Marketing ABM</a></li>
+            <li><a href="services.html#gtm">Estrategia Go-to-Market</a></li>
+            <li><a href="services.html#analytics">Analítica de Desempeño</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4 class="footer__col-title" data-i18n="footer.col.company">Company</h4>
+          <h4 class="footer__col-title">Empresa</h4>
           <ul class="footer__col-links">
-            <li><a href="why-us.html" data-i18n="footer.co.why">Why Blackscale</a></li>
-            <li><a href="process.html" data-i18n="footer.co.process">Our Process</a></li>
-            <li style="display:none"><a href="why-us.html#founders" data-i18n="footer.co.team">The Team</a></li>
-            <li style="display:none"><a href="why-us.html" data-i18n="footer.co.success">Success Cases</a></li>
-            <li style="display:none"><a href="contact.html" data-i18n="footer.co.careers">Careers</a></li>
-            <li><a href="contact.html" data-i18n="footer.co.contact">Contact</a></li>
+            <li><a href="why-us.html">Por Qué BlackScale</a></li>
+            <li><a href="process.html">Nuestro Proceso</a></li>
+            <li><a href="contact.html">Contacto</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4 class="footer__col-title" data-i18n="footer.col.legal">Legal &amp; Policies</h4>
+          <h4 class="footer__col-title">Legal y Políticas</h4>
           <ul class="footer__col-links">
-            <li><a href="legal.html#privacy" data-i18n="footer.legal.privacy">Privacy Policy</a></li>
-            <li><a href="legal.html#data-management" data-i18n="footer.legal.data">Data Management</a></li>
-            <li><a href="legal.html#terms" data-i18n="footer.legal.terms">Terms of Service</a></li>
-            <li><a href="legal.html#cookies" data-i18n="footer.legal.cookie">Cookie Policy</a></li>
-            <li><a href="legal.html#accessibility" data-i18n="footer.legal.access">Accessibility</a></li>
+            <li><a href="legal.html#privacy">Política de Privacidad</a></li>
+            <li><a href="legal.html#data-management">Gestión de Datos</a></li>
+            <li><a href="legal.html#terms">Términos de Servicio</a></li>
+            <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;">Preferencias de Cookies</a></li>
+            <li><a href="legal.html#cookies">Política de Cookies</a></li>
+            <li><a href="legal.html#accessibility">Accesibilidad</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
       <div class="container footer__bottom-inner">
-        <p class="footer__copy" data-i18n="footer.copy">&copy; 2026 Blackscale Consulting. All rights reserved.</p>
+        <p class="footer__copy">&copy; 2026 Blackscale Consulting. Todos los derechos reservados.</p>
         <div class="footer__bottom-links">
-          <a href="legal.html#privacy" data-i18n="footer.bottom.privacy">Privacy</a>
-          <a href="legal.html#terms" data-i18n="footer.bottom.terms">Terms</a>
-          <a href="legal.html#cookies" data-i18n="footer.bottom.cookies">Cookies</a>
+          <a href="legal.html#privacy">Privacidad</a>
+          <a href="legal.html#terms">Términos</a>
+          <a href="legal.html#cookies">Cookies</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <button id="back-to-top" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
+  <button id="back-to-top" aria-label="Volver arriba"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
 
-  <script src="translations.js"></script>
-  <script src="script.js"></script>
+  <script src="translations.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
