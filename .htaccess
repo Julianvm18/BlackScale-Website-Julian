@@ -1,0 +1,10 @@
+# Forzar codificación UTF-8 para evitar mojibake en los acentos (í, á, ú, →, etc.)
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .htm .css .js .xml .txt .svg .json
+
+# Asegurar el Content-Type correcto con charset para HTML
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Content-Type "text/html; charset=UTF-8"
+  </FilesMatch>
+</IfModule>
