@@ -1,30 +1,16 @@
 <!DOCTYPE html>
 <html lang="es-CO">
 <head>
-<!-- Klaro Consent Manager -->
-<link rel="stylesheet" href="../klaro/klaro.css">
-<script defer src="../klaro/klaro-config.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7.18/dist/klaro-no-css.js"></script>
-
-<!-- Google Analytics 4 — bloqueado hasta consentimiento (Res. SIC 32.126) -->
-<script type="text/plain"
-        data-type="application/javascript"
-        data-name="google-analytics"
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-NF8WJBGXBX"></script>
-<script type="text/plain"
-        data-type="application/javascript"
-        data-name="google-analytics">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NF8WJBGXBX"></script>
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-NF8WJBGXBX', { 'anonymize_ip': true });
+  gtag('config', 'G-NF8WJBGXBX');
 </script>
-
-<!-- Meta Pixel — bloqueado hasta consentimiento -->
-<script type="text/plain"
-        data-type="application/javascript"
-        data-name="meta-pixel">
+<!-- Meta Pixel Code -->
+<script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -39,8 +25,6 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 /></noscript>
-
-
 <!-- End Meta Pixel Code -->
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="../logo.svg">
@@ -503,7 +487,6 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <li><a href="../legal.html#privacy" data-i18n="footer.legal.privacy">Política de Privacidad</a></li>
             <li><a href="../legal.html#data-management" data-i18n="footer.legal.data">Gestión de Datos</a></li>
             <li><a href="../legal.html#terms" data-i18n="footer.legal.terms">Términos de Servicio</a></li>
-            <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;">Preferencias de Cookies</a></li>
             <li><a href="../legal.html#cookies" data-i18n="footer.legal.cookie">Política de Cookies</a></li>
           </ul>
         </div>

@@ -1,11 +1,117 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
+<!-- Klaro Consent Manager -->
+<link rel="stylesheet" href="/klaro/klaro.css">
+<script defer src="/klaro/klaro-config.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7.18/dist/klaro-no-css.js"></script>
+
+<!-- Google Analytics 4 — bloqueado hasta consentimiento (Res. SIC 32.126) -->
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="google-analytics"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-NF8WJBGXBX"></script>
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="google-analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NF8WJBGXBX', { 'anonymize_ip': true });
+</script>
+
+<!-- Meta Pixel — bloqueado hasta consentimiento -->
+<script type="text/plain"
+        data-type="application/javascript"
+        data-name="meta-pixel">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1753512212293395');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
+/></noscript>
+
+
+<!-- End Meta Pixel Code -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diagnóstico Comercial Gratuito | Blackscale Consulting</title>
-<meta name="description" content="Descubre en 3 minutos dónde tu operación comercial está perdiendo oportunidades. Diagnóstico gratuito de Blackscale Consulting.">
+<title>Diagnóstico Comercial B2B Gratuito en Colombia | BlackScale</title>
+<meta name="description" content="Diagnóstico comercial gratuito para empresas B2B en Colombia. 5 preguntas, 3 minutos. Descubre dónde tu pipeline está perdiendo oportunidades en Bogotá y Colombia.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://blackscale.consulting/diagnostico">
+<meta property="og:title" content="Diagnóstico Comercial Gratuito | BlackScale Consulting Colombia">
+<meta property="og:description" content="5 preguntas para descubrir dónde tu operación B2B está perdiendo revenue. Diagnóstico inmediato, sin registro. Para empresas en Colombia.">
+<meta property="og:url" content="https://blackscale.consulting/diagnostico">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="BlackScale Consulting">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diagnóstico Comercial Gratuito | BlackScale Consulting Colombia">
+<meta name="twitter:description" content="5 preguntas para descubrir dónde tu pipeline B2B está fallando. Empresas en Colombia.">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <meta name="theme-color" content="#6B2737" />
+
+  <meta property="og:image" content="https://blackscale.consulting/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="BlackScale Consulting - Consultoría B2B en Colombia" />
+  <meta name="twitter:image" content="https://blackscale.consulting/og-image.jpg" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://blackscale.consulting/diagnostico.html",
+      "name": "Diagnóstico Comercial Gratuito | BlackScale Consulting Colombia",
+      "description": "Herramienta de diagnóstico B2B gratuita para empresas en Colombia. Evalúa en 3 minutos el estado de tu pipeline, marketing y ventas.",
+      "url": "https://blackscale.consulting/diagnostico.html",
+      "inLanguage": "es-CO",
+      "isPartOf": { "@id": "https://blackscale.consulting/" },
+      "provider": {
+        "@type": "Organization",
+        "name": "BlackScale Consulting",
+        "url": "https://blackscale.consulting",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bogotá",
+          "addressRegion": "Cundinamarca",
+          "addressCountry": "CO"
+        }
+      }
+    },
+    {
+      "@type": "Quiz",
+      "name": "Diagnóstico Comercial B2B",
+      "description": "Diagnóstico gratuito de 5 preguntas para empresas B2B en Colombia. Identifica las fugas en tu pipeline de ventas, la desconexión entre marketing y ventas, y el estado de tu motor de demanda.",
+      "url": "https://blackscale.consulting/diagnostico.html",
+      "inLanguage": "es-CO",
+      "provider": {
+        "@type": "Organization",
+        "name": "BlackScale Consulting",
+        "url": "https://blackscale.consulting"
+      },
+      "educationalLevel": "Professional",
+      "about": [
+        { "@type": "Thing", "name": "Ventas B2B Colombia" },
+        { "@type": "Thing", "name": "Pipeline comercial" },
+        { "@type": "Thing", "name": "Generación de demanda B2B" },
+        { "@type": "Thing", "name": "Revenue Operations" }
+      ]
+    }
+  ]
+}
+</script>
+
 <link rel="stylesheet" href="style.css">
 <style>
   /* ── NAV: matches main site exactly ── */
@@ -288,7 +394,7 @@
 <header class="nav">
   <div class="container nav__inner">
     <a href="index.html" class="logo">
-      <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale">
+      <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale" fetchpriority="high" width="160" height="40">
     </a>
     <nav class="nav__links">
       <a href="services.html">Servicios</a>
@@ -318,7 +424,7 @@
   <div class="container">
     <div class="diag-hero__tag">Solo toma 3 minutos</div>
     <h1>¿Dónde está perdiendo dinero<br><em>tu operación comercial?</em></h1>
-    <p class="diag-hero__sub">5 preguntas sobre tu marketing y ventas. Recibes un diagnóstico inmediato con los puntos exactos donde tu pipeline está fallando.</p>
+    <p class="diag-hero__sub">5 preguntas sobre tu proceso comercial B2B. Diagnóstico inmediato con los puntos exactos donde tu pipeline está perdiendo oportunidades, diseñado para empresas en Colombia.</p>
     <div class="diag-hero__stats">
       <div class="diag-stat">
         <span class="diag-stat__num">5</span>
@@ -354,7 +460,7 @@
     <div class="step-card" style="text-align:center">
       <div style="font-size:2.5rem;margin-bottom:16px">📊</div>
       <div class="step-question">Tu diagnóstico comercial empieza aquí</div>
-      <div class="step-hint">Evaluaremos la conexión entre tu marketing y ventas, tu pipeline y tu motor de demanda. En menos de 3 minutos sabrás exactamente dónde están las fugas.</div>
+      <div class="step-hint">Evaluaremos la conexión entre tu marketing y ventas, el estado de tu pipeline B2B y tu motor de generación de demanda. En menos de 3 minutos sabrás exactamente dónde están las fugas en tu operación comercial. Diseñado para empresas B2B en Colombia.</div>
       <div class="btn-row" style="justify-content:center">
         <button class="diag-btn diag-btn--primary" onclick="startDiag()">Empezar diagnóstico</button>
       </div>
@@ -462,8 +568,8 @@
 
       <!-- Soft capture — value first, form implicit -->
       <div class="cta-wrap">
-        <h3>¿Quieres revisar esto con alguien que ya lo ha visto decenas de veces?</h3>
-        <p>30 minutos con un fundador de BlackScale. Sin presentación, sin compromiso — solo revisamos tu resultado y definimos los 2 o 3 cambios que más impacto tendrían en tu operación.</p>
+        <h3>¿Quieres revisar esto con alguien que ya lo ha visto en decenas de empresas B2B en Colombia?</h3>
+        <p>30 minutos con un fundador de BlackScale. Sin presentación, sin compromiso: revisamos tu resultado y definimos los 2 o 3 cambios que más impacto tendrían en tu operación comercial en Colombia.</p>
         <a href="https://calendly.com/julian-vallejo-blackscale/30min" target="_blank" rel="noopener" class="btn--cta" id="ctaCalendly">Agendar llamada gratuita →</a>
         <div class="capture-divider">
           <span>o si prefieres que te contactemos</span>
@@ -473,7 +579,28 @@
             <input type="text" id="captureName" placeholder="Tu nombre" autocomplete="given-name">
             <input type="email" id="captureEmail" placeholder="Tu email corporativo" autocomplete="email">
           </div>
-          <button class="diag-btn diag-btn--outline" onclick="submitCapture()" id="captureBtn">Que me contacten →</button>
+            <div class="form-consent">
+    <label class="consent-label">
+      <input type="checkbox"
+             name="habeas_data_diag"
+             id="habeas_data_diag"
+             required
+             class="consent-checkbox">
+      <span class="consent-text">
+        Autorizo a <strong>Blackscale Consulting SAS</strong> a tratar
+        mis datos personales para contactarme con fines comerciales,
+        conforme a la
+        <a href="/legal.html#privacy" target="_blank" rel="noopener">
+          Política de Privacidad
+        </a>
+        y la Ley 1581 de 2012. Puedo revocar esta autorización escribiendo a
+        <a href="mailto:Servicio@blackscale.consulting">
+          Servicio@blackscale.consulting
+        </a>.
+      </span>
+    </label>
+  </div>
+        <button class="diag-btn diag-btn--outline" onclick="submitCapture()" id="captureBtn">Que me contacten →</button>
           <p class="capture-note" id="captureNote">Te escribimos en menos de un día hábil.</p>
         </div>
       </div>
@@ -488,7 +615,10 @@
   <div class="footer__main">
     <div class="container footer__grid" style="justify-content:space-between;align-items:center;padding:1.5rem 0">
       <p class="footer__copy">&copy; 2026 Blackscale Consulting. Todos los derechos reservados.</p>
-      <a href="index.html" style="color:var(--muted);font-size:15px;text-decoration:none;">blackscale.consulting</a>
+      <div style="display:flex;gap:1.5rem;align-items:center;">
+        <a href="index.html" style="color:var(--muted);font-size:15px;text-decoration:none;">blackscale.consulting</a>
+        <a href="#" onclick="if(window.klaro){klaro.show();}return false;" style="color:var(--muted);font-size:14px;text-decoration:none;">Preferencias de Cookies</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -556,6 +686,12 @@ function renderResults(p){
 
 // Optional soft capture — user initiated, not gated
 function submitCapture(){
+  var habeasDiag=document.getElementById('habeas_data_diag');
+  if(habeasDiag&&!habeasDiag.checked){
+    var cb=habeasDiag.closest('.form-consent');
+    if(cb){cb.classList.add('consent-error');cb.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){cb.classList.remove('consent-error');},2000);}
+    return;
+  }
   var name=document.getElementById('captureName').value.trim();
   var email=document.getElementById('captureEmail').value.trim();
   if(!email){document.getElementById('captureNote').textContent='Ingresa tu email para continuar.';return;}
@@ -565,15 +701,24 @@ function submitCapture(){
   var t=0;for(var i=1;i<=4;i++)if(A[i])t+=A[i].score;
   var p=Math.round(t/16*100);
   var urgente=A[5]?A[5].label:'No especificado';
-  var body=new FormData();
-  body.append('nombre',name||'(no ingresó)');
-  body.append('email',email);
-  body.append('fuente','Diagnóstico comercial — score '+p+'/100');
-  body.append('urgencia',urgente);
-  fetch('https://formspree.io/f/xykbbnwv',{method:'POST',body:body,headers:{'Accept':'application/json'}})
+  function getUTM(n){var m=window.location.search.match(new RegExp('[?&]'+n+'=([^&]*)'));return m?decodeURIComponent(m[1].replace(/\+/g,' ')):'';}
+  var payload={
+    name: name||'(no ingresó)',
+    email: email,
+    phone: '',
+    company: '',
+    message: 'Diagnóstico comercial — score '+p+'/100. Prioridad urgente: '+urgente,
+    source: 'website-diagnostico',
+    utm_source: getUTM('utm_source'),
+    utm_medium: getUTM('utm_medium'),
+    utm_campaign: getUTM('utm_campaign'),
+    _honey: '',
+    website_url: ''
+  };
+  fetch('https://nexus.blackscale.consulting/api/webhook',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
     .then(function(r){
       var note=document.getElementById('captureNote');
-      if(r.ok){
+      if(r.status===201){
         note.textContent='✓ Recibido. Te contactamos en menos de un día hábil.';
         note.className='capture-note sent';
         document.getElementById('captureForm').style.display='none';
