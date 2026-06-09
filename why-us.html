@@ -5,12 +5,8 @@
 <link rel="stylesheet" href="/klaro/klaro.css">
 <script defer src="/klaro/klaro-config.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7.18/dist/klaro-no-css.js"></script>
-<!-- Preconnect to critical third-parties (perf) -->
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-<link rel="dns-prefetch" href="https://www.google-analytics.com">
-<!-- Google tag (gtag.js) -->
-<!-- Google Analytics 4 — bloqueado hasta consentimiento (Res. SIC 32.126) -->
+
+<!-- Google Analytics 4: bloqueado hasta consentimiento (Res. SIC 32.126) -->
 <script type="text/plain"
         data-type="application/javascript"
         data-name="google-analytics"
@@ -24,8 +20,8 @@
   gtag('js', new Date());
   gtag('config', 'G-NF8WJBGXBX', { 'anonymize_ip': true });
 </script>
-<!-- Meta Pixel Code -->
-<!-- Meta Pixel — bloqueado hasta consentimiento -->
+
+<!-- Meta Pixel: bloqueado hasta consentimiento -->
 <script type="text/plain"
         data-type="application/javascript"
         data-name="meta-pixel">
@@ -43,7 +39,9 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <meta name="theme-color" content="#6B2737" />
@@ -456,11 +454,11 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   </section>
 
   <!-- DIAGNOSTICO CTA (warm tier) -->
-  <section class="diag-cta-strip" style="background:#0F0F0F;border-top:1px solid rgba(201,168,76.15);border-bottom:1px solid rgba(201,168,76.15);padding:60px 0;">
+  <section class="diag-cta-strip" style="background:#0F0F0F;border-top:1px solid rgba(201,168,76,0.15);border-bottom:1px solid rgba(201,168,76,0.15);padding:60px 0;">
     <div class="container" style="max-width:1100px;margin:0 auto;padding:0 24px;text-align:center;">
       <p style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;margin:0 0 12px;font-weight:600;">¿Aún no listo para hablar?</p>
       <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,4vw,40px);font-weight:400;color:#F5F5F5;margin:0 0 16px;line-height:1.2;">Descubre dónde tu pipeline está perdiendo revenue.</h3>
-      <p style="font-size:17px;color:rgba(245,245,245.7);max-width:620px;margin:0 auto 28px;line-height:1.5;">5 preguntas. 3 minutos. Diagnóstico inmediato sobre el estado real de tu operación comercial B2B.</p>
+      <p style="font-size:17px;color:rgba(245,245,245,0.7);max-width:620px;margin:0 auto 28px;line-height:1.5;">5 preguntas. 3 minutos. Diagnóstico inmediato sobre el estado real de tu operación comercial B2B.</p>
       <a href="diagnostico.html" style="display:inline-block;padding:14px 32px;background:transparent;color:#C9A84C;border:1.5px solid #C9A84C;border-radius:2px;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.04em;transition:all .25s ease;" onmouseover="this.style.background='#C9A84C';this.style.color='#0D0D0D';" onmouseout="this.style.background='transparent';this.style.color='#C9A84C';">Mide la salud de tu pipeline →</a>
     </div>
   </section>

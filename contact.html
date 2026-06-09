@@ -5,12 +5,8 @@
 <link rel="stylesheet" href="/klaro/klaro.css">
 <script defer src="/klaro/klaro-config.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7.18/dist/klaro-no-css.js"></script>
-<!-- Preconnect to critical third-parties (perf) -->
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-<link rel="dns-prefetch" href="https://www.google-analytics.com">
-<!-- Google tag (gtag.js) -->
-<!-- Google Analytics 4 — bloqueado hasta consentimiento (Res. SIC 32.126) -->
+
+<!-- Google Analytics 4: bloqueado hasta consentimiento (Res. SIC 32.126) -->
 <script type="text/plain"
         data-type="application/javascript"
         data-name="google-analytics"
@@ -24,8 +20,8 @@
   gtag('js', new Date());
   gtag('config', 'G-NF8WJBGXBX', { 'anonymize_ip': true });
 </script>
-<!-- Meta Pixel Code -->
-<!-- Meta Pixel — bloqueado hasta consentimiento -->
+
+<!-- Meta Pixel: bloqueado hasta consentimiento -->
 <script type="text/plain"
         data-type="application/javascript"
         data-name="meta-pixel">
@@ -43,7 +39,9 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <meta name="theme-color" content="#6B2737" />
@@ -174,6 +172,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
         <a href="why-us.html" data-i18n="nav.why">Por qué nosotros</a>
         <a href="process.html" data-i18n="nav.process">Proceso</a>
         <a href="blog/" data-i18n="nav.blog">Blog</a>
+        <a href="diagnostico.html" data-i18n="nav.diag">Diagnóstico</a>
         <a href="contact.html" class="btn btn--outline active" data-i18n="nav.cta">Contáctanos</a>
       </nav>
       <button class="nav__burger" aria-label="Abrir menú">
@@ -423,7 +422,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <li><a href="legal.html#data-management" data-i18n="footer.legal.data">Gestión de Datos</a></li>
             <li><a href="legal.html#terms" data-i18n="footer.legal.terms">Términos de Servicio</a></li>
             <li><a href="legal.html#cookies" data-i18n="footer.legal.cookie">Política de Cookies</a></li>
-            <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;" data-i18n="footer.legal.prefs">Preferencias de Cookies</a></li>
+            <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;">Preferencias de Cookies</a></li>
             <li><a href="legal.html#accessibility" data-i18n="footer.legal.access">Accesibilidad</a></li>
           </ul>
         </div>

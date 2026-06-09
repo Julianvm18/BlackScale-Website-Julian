@@ -97,14 +97,14 @@
       'breadcrumb.process': 'Proceso',
       'breadcrumb.contact': 'Cont\u00e1ctanos',
 
-      // INDEX — HERO
+      // INDEX - HERO
       'hero.headline': 'Marketing dise\u00f1ado para escalar negocios B2B.',
       'hero.sub': 'En Blackscale Consulting ayudamos a empresas B2B a generar leads de alta calidad y fortalecer su pipeline de ventas mediante estrategias de marketing basadas en datos, optimizaci\u00f3n de pauta digital y sales enablement para convertir m\u00e1s oportunidades en clientes.',
       'hero.stat1': 'Especializaci\u00f3n en LinkedIn Ads',
       'hero.stat2': 'Experiencia operando en mercados altamente competitivos',
       'hero.stat3': 'Enfoque en ingresos B2B',
 
-      // INDEX — SERVICES PREVIEW
+      // INDEX - SERVICES PREVIEW
       'idx.svc.heading': 'Resultados que puedes<br /><em>obtener.</em>',
       'idx.svc.sub': 'Acompa\u00f1amos a las empresas desde la generaci\u00f3n de demanda hasta el cierre de ventas, alineando marketing y ventas para maximizar resultados.',
 
@@ -122,7 +122,7 @@
       'svc.analytics.h': 'Crecimiento Basado en Datos',
       'svc.analytics.p': 'Cada acci\u00f3n se mide y optimiza constantemente para escalar los ingresos de forma sostenida.',
 
-      // INDEX — WHY US PREVIEW
+      // INDEX - WHY US PREVIEW
       'idx.why.heading': 'No nos enfocamos en<br /><em>m\u00e9tricas de vanidad.</em>',
       'idx.why.sub': 'La mayor\u00eda de las agencias de marketing miden clics e impresiones. Nosotros medimos pipeline, ingresos y crecimiento. Cada compromiso est\u00e1 ligado a resultados que importan para tu negocio.',
       'idx.why.li1.strong': 'Mentalidad enfocada en ingresos',
@@ -134,14 +134,14 @@
       'idx.why.li4.strong': 'Basado en datos, no en corazonadas',
       'idx.why.li4.p': 'Cada recomendaci\u00f3n est\u00e1 respaldada por datos. Auditamos antes de asesorar, y medimos todo lo que ejecutamos para que las decisiones se acumulen con el tiempo.',
 
-      // INDEX — FOUNDERS
+      // INDEX - FOUNDERS
       'founders.heading': 'Conoce a los<br /><em>fundadores.</em>',
       'founders.sub': 'Las personas detr\u00e1s de Blackscale Consulting \u2014 construyendo un mejor crecimiento B2B, juntos.',
       'founders.f1.title': 'Co-Fundador y CEO',
       'founders.f2.title': 'Co-Fundador y COO',
       'founders.bio': 'Biograf\u00eda pr\u00f3ximamente. A\u00f1adiremos una breve rese\u00f1a sobre la experiencia, trayectoria y visi\u00f3n de este fundador para Blackscale Consulting.',
 
-      // INDEX — PROCESS PREVIEW
+      // INDEX - PROCESS PREVIEW
       'idx.process.heading': 'C\u00f3mo desarrollamos<br /><em>la estrategia.</em>',
       'idx.process.sub': 'Un proceso estructurado de seis pasos que te lleva desde la alineaci\u00f3n hasta un crecimiento sostenido y medible.',
       'idx.process.s1.h': 'Onboarding Estrat\u00e9gico',
@@ -166,7 +166,7 @@
       'svc.page.h1': 'Crecimiento B2B integral.',
       'svc.page.sub': 'Desde la generaci\u00f3n de demanda hasta el cierre de negocios, cubrimos cada palanca que impulsa los ingresos, con estrategias dise\u00f1adas para tu negocio.',
 
-      // SERVICE CARDS — FULL (services page)
+      // SERVICE CARDS - FULL (services page)
       'svc.demand.full_p': 'Construye pipelines repetibles y escalables con campa\u00f1as dirigidas, estrategia de contenido y alcance multicanal. Identificamos tu perfil de comprador ideal, mapeamos su recorrido y dise\u00f1amos programas que traen las oportunidades correctas a tu embudo \u2014 de forma consistente.',
       'svc.demand.li1': 'Estrategia outbound e inbound',
       'svc.demand.li2': 'Marketing de contenido y SEO',

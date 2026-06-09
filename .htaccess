@@ -1,10 +1,142 @@
-# Forzar codificación UTF-8 para evitar mojibake en los acentos (í, á, ú, →, etc.)
-AddDefaultCharset UTF-8
-AddCharset UTF-8 .html .htm .css .js .xml .txt .svg .json
+# ============================================================
+# BlackScale Consulting - .htaccess
+# Performance + SEO + Security + Clean URLs
+# ============================================================
 
-# Asegurar el Content-Type correcto con charset para HTML
-<IfModule mod_headers.c>
-  <FilesMatch "\.(html|htm)$">
-    Header set Content-Type "text/html; charset=UTF-8"
-  </FilesMatch>
+# ---- REWRITE ENGINE ----------------------------------------
+RewriteEngine On
+RewriteBase /
+
+# Evita que MultiViews (negociacion de contenido de Apache) interfiera
+# con las clean URLs y genere 404 o bucles.
+Options -MultiViews
+
+# Indice por defecto
+DirectoryIndex index.html
+
+# ---- FORCE HTTPS -------------------------------------------
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ---- FORCE NON-WWW -----------------------------------------
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# ============================================================
+# CLEAN URLS  ->  UNA SOLA CONVENCION
+# La URL publica es SIN extension (coincide con los canonicals).
+#   - /pagina.html  se redirige 301 a  /pagina
+#   - /pagina       se sirve internamente desde  /pagina.html
+# THE_REQUEST refleja solo la peticion original del navegador, por lo
+# que las reescrituras internas (regla 3) nunca disparan la regla 2:
+# no hay bucle de redireccion.
+# ============================================================
+
+# 1) /index.html o /index  ->  raiz /
+RewriteCond %{THE_REQUEST} \s/+index(\.html)?[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# 2) Peticion externa a /algo.html  ->  /algo  (301 hacia la URL limpia)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 3) Servir /algo desde /algo.html sin mostrar la extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# ---- COMPRESSION (GZIP) ------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/woff
+  AddOutputFilterByType DEFLATE font/woff2
+  AddOutputFilterByType DEFLATE application/font-woff
+  AddOutputFilterByType DEFLATE application/font-woff2
 </IfModule>
+
+# ---- BROWSER CACHING (Expires) -----------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Default
+  ExpiresDefault                              "access plus 1 month"
+
+  # HTML - short cache (siempre fresco)
+  ExpiresByType text/html                     "access plus 0 seconds"
+
+  # XML/JSON
+  ExpiresByType application/xml               "access plus 0 seconds"
+  ExpiresByType application/json              "access plus 0 seconds"
+  ExpiresByType text/xml                      "access plus 0 seconds"
+
+  # CSS, JS - 1 anio
+  ExpiresByType text/css                      "access plus 1 year"
+  ExpiresByType application/javascript        "access plus 1 year"
+  ExpiresByType text/javascript               "access plus 1 year"
+
+  # Imagenes - 1 anio
+  ExpiresByType image/jpeg                    "access plus 1 year"
+  ExpiresByType image/png                     "access plus 1 year"
+  ExpiresByType image/gif                     "access plus 1 year"
+  ExpiresByType image/svg+xml                 "access plus 1 year"
+  ExpiresByType image/webp                    "access plus 1 year"
+  ExpiresByType image/avif                    "access plus 1 year"
+  ExpiresByType image/x-icon                  "access plus 1 year"
+
+  # Fonts - 1 anio
+  ExpiresByType font/ttf                      "access plus 1 year"
+  ExpiresByType font/otf                      "access plus 1 year"
+  ExpiresByType font/woff                     "access plus 1 year"
+  ExpiresByType font/woff2                    "access plus 1 year"
+  ExpiresByType application/font-woff         "access plus 1 year"
+  ExpiresByType application/font-woff2        "access plus 1 year"
+
+  # Manifests
+  ExpiresByType application/manifest+json     "access plus 1 week"
+  ExpiresByType text/cache-manifest           "access plus 0 seconds"
+</IfModule>
+
+# ---- CACHE-CONTROL HEADERS ---------------------------------
+<IfModule mod_headers.c>
+  # Static assets - immutable
+  <FilesMatch "\.(css|js|svg|jpg|jpeg|png|gif|webp|avif|ico|woff|woff2|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML - no cache (always fresh)
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+  </FilesMatch>
+
+  # XML/sitemap - cache corto
+  <FilesMatch "\.(xml|json|txt)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+
+  # ---- SECURITY HEADERS ------------------------------------
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# ---- CHARSET -----------------------------------------------
+AddDefaultCharset UTF-8
+
+# ---- ERROR PAGES -------------------------------------------
+ErrorDocument 404 /404.html

@@ -6,7 +6,7 @@
 <script defer src="/klaro/klaro-config.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7.18/dist/klaro-no-css.js"></script>
 
-<!-- Google Analytics 4 — bloqueado hasta consentimiento (Res. SIC 32.126) -->
+<!-- Google Analytics 4: bloqueado hasta consentimiento (Res. SIC 32.126) -->
 <script type="text/plain"
         data-type="application/javascript"
         data-name="google-analytics"
@@ -21,7 +21,7 @@
   gtag('config', 'G-NF8WJBGXBX', { 'anonymize_ip': true });
 </script>
 
-<!-- Meta Pixel — bloqueado hasta consentimiento -->
+<!-- Meta Pixel: bloqueado hasta consentimiento -->
 <script type="text/plain"
         data-type="application/javascript"
         data-name="meta-pixel">
@@ -39,9 +39,9 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 /></noscript>
-
-
-<!-- End Meta Pixel Code -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diagnóstico Comercial B2B Gratuito en Colombia | BlackScale</title>
@@ -112,6 +112,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 }
 </script>
 
+  <!-- Fuentes (preconnect + carga optimizada, evita @import render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
 <link rel="stylesheet" href="style.css">
 <style>
   /* ── NAV: matches main site exactly ── */
@@ -180,7 +184,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   .progress-bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--burgundy), var(--burgundy-mid));
-    border-radius: 100px; transition: width 0.5s cubic-bezier(.4,0,.2,1); width: 0%;
+    border-radius: 100px; transition: width 0.5s cubic-bezier(.4,0.2,1); width: 0%;
   }
   .progress-text {
     display: flex; justify-content: space-between; margin-top: 8px;
@@ -356,7 +360,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     margin: 2rem 0 1.5rem; color: var(--muted);
     font-size: 14px; letter-spacing: 0.04em;
   }
-  .capture-divider::before, .capture-divider::after {
+  .capture-divider::before.capture-divider::after {
     content: ''; flex: 1; height: 1px; background: var(--border);
   }
   .capture-form { display: flex; flex-direction: column; gap: 10px; }
@@ -390,15 +394,15 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 
 <div class="diag-page-wrap">
 
-<!-- NAV — exact same as main site -->
+<!-- NAV, exact same as main site -->
 <header class="nav">
   <div class="container nav__inner">
     <a href="index.html" class="logo">
-      <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale" fetchpriority="high" width="160" height="40">
+      <img src="Horizontal Blanco.svg" class="logo__img" alt="BlackScale" fetchpriority="high" width="160" height="40">
     </a>
     <nav class="nav__links">
-      <a href="services.html">Servicios</a>
-      <a href="why-us.html">Por Qué Nosotros</a>
+      <a href="services.html">Qué hacemos</a>
+      <a href="why-us.html">Por qué nosotros</a>
       <a href="process.html">Proceso</a>
       <a href="blog/">Blog</a>
       <a href="diagnostico.html" class="active">Diagnóstico</a>
@@ -411,8 +415,8 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="services.html">Servicios</a>
-  <a href="why-us.html">Por Qué Nosotros</a>
+  <a href="services.html">Qué hacemos</a>
+  <a href="why-us.html">Por qué nosotros</a>
   <a href="process.html">Proceso</a>
   <a href="blog/">Blog</a>
   <a href="diagnostico.html">Diagnóstico</a>
@@ -557,7 +561,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     </div>
   </div>
 
-  <!-- step6 removed — results now shown directly after questions -->
+  <!-- step6 removed, results now shown directly after questions -->
 
   <div class="diag-step" id="stepResults">
     <div class="results-card">
@@ -566,7 +570,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
       <div class="results-summary" id="resultsSummary"></div>
       <div class="results-items" id="resultsItems"></div>
 
-      <!-- Soft capture — value first, form implicit -->
+      <!-- Soft capture, value first, form implicit -->
       <div class="cta-wrap">
         <h3>¿Quieres revisar esto con alguien que ya lo ha visto en decenas de empresas B2B en Colombia?</h3>
         <p>30 minutos con un fundador de BlackScale. Sin presentación, sin compromiso: revisamos tu resultado y definimos los 2 o 3 cambios que más impacto tendrían en tu operación comercial en Colombia.</p>
@@ -579,28 +583,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <input type="text" id="captureName" placeholder="Tu nombre" autocomplete="given-name">
             <input type="email" id="captureEmail" placeholder="Tu email corporativo" autocomplete="email">
           </div>
-            <div class="form-consent">
-    <label class="consent-label">
-      <input type="checkbox"
-             name="habeas_data_diag"
-             id="habeas_data_diag"
-             required
-             class="consent-checkbox">
-      <span class="consent-text">
-        Autorizo a <strong>Blackscale Consulting SAS</strong> a tratar
-        mis datos personales para contactarme con fines comerciales,
-        conforme a la
-        <a href="/legal.html#privacy" target="_blank" rel="noopener">
-          Política de Privacidad
-        </a>
-        y la Ley 1581 de 2012. Puedo revocar esta autorización escribiendo a
-        <a href="mailto:Servicio@blackscale.consulting">
-          Servicio@blackscale.consulting
-        </a>.
-      </span>
-    </label>
-  </div>
-        <button class="diag-btn diag-btn--outline" onclick="submitCapture()" id="captureBtn">Que me contacten →</button>
+          <button class="diag-btn diag-btn--outline" onclick="submitCapture()" id="captureBtn">Que me contacten →</button>
           <p class="capture-note" id="captureNote">Te escribimos en menos de un día hábil.</p>
         </div>
       </div>
@@ -614,11 +597,9 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <div class="footer__cta-strip" style="display:none"></div>
   <div class="footer__main">
     <div class="container footer__grid" style="justify-content:space-between;align-items:center;padding:1.5rem 0">
-      <p class="footer__copy">&copy; 2026 Blackscale Consulting. Todos los derechos reservados.</p>
-      <div style="display:flex;gap:1.5rem;align-items:center;">
-        <a href="index.html" style="color:var(--muted);font-size:15px;text-decoration:none;">blackscale.consulting</a>
-        <a href="#" onclick="if(window.klaro){klaro.show();}return false;" style="color:var(--muted);font-size:14px;text-decoration:none;">Preferencias de Cookies</a>
-      </div>
+      <p class="footer__copy">&copy; 2026 BlackScale Consulting. Todos los derechos reservados.</p>
+      <p class="footer__copy"><a href="#" onclick="if(window.klaro){klaro.show();}return false;" style="color:inherit;border-bottom:1px solid rgba(209,156,21,0.4);padding-bottom:2px;">Preferencias de Cookies</a></p>
+      <a href="index.html" style="color:var(--muted);font-size:15px;text-decoration:none;">blackscale.consulting</a>
     </div>
   </div>
 </footer>
@@ -641,7 +622,7 @@ function prog(){if(!C)return;var p=Math.round(C/T*100);document.getElementById('
 function hide(id){var el=document.getElementById(id);if(el)el.classList.remove('active');}
 function show(id){var el=document.getElementById(id);if(el)el.classList.add('active');}
 
-// Called directly after step 5 — no gate
+// Called directly after step 5, no gate
 function goToResults(){
   hide('step5');
   show('stepResults');
@@ -684,14 +665,8 @@ function renderResults(p){
   document.getElementById('resultsItems').innerHTML=items.map(x=>'<div class="result-item"><div class="result-icon '+x.i+'">'+(x.i==='crit'?'⚠️':x.i==='warn'?'⚡':'✅')+'</div><div class="result-text"><strong>'+x.t+'</strong><span>'+x.d+'</span></div></div>').join('');
 }
 
-// Optional soft capture — user initiated, not gated
+// Optional soft capture, user initiated, not gated
 function submitCapture(){
-  var habeasDiag=document.getElementById('habeas_data_diag');
-  if(habeasDiag&&!habeasDiag.checked){
-    var cb=habeasDiag.closest('.form-consent');
-    if(cb){cb.classList.add('consent-error');cb.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){cb.classList.remove('consent-error');},2000);}
-    return;
-  }
   var name=document.getElementById('captureName').value.trim();
   var email=document.getElementById('captureEmail').value.trim();
   if(!email){document.getElementById('captureNote').textContent='Ingresa tu email para continuar.';return;}
@@ -707,7 +682,7 @@ function submitCapture(){
     email: email,
     phone: '',
     company: '',
-    message: 'Diagnóstico comercial — score '+p+'/100. Prioridad urgente: '+urgente,
+    message: 'Diagnóstico comercial, score '+p+'/100. Prioridad urgente: '+urgente,
     source: 'website-diagnostico',
     utm_source: getUTM('utm_source'),
     utm_medium: getUTM('utm_medium'),
