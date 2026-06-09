@@ -1,6 +1,6 @@
 # BlackScale Consulting
 
-> Consultoría B2B en Bogotá, Colombia. Especializada en generación de demanda, revenue operations y habilitación comercial para empresas B2B que buscan construir un pipeline predecible y escalable.
+> Acelerador de ventas B2B en Bogotá, Colombia. Especializada en generación de demanda, revenue operations y habilitación comercial para empresas B2B que buscan construir un pipeline predecible y escalable.
 
 BlackScale Consulting trabaja exclusivamente con empresas B2B en Colombia. No somos una agencia de publicidad ni una agencia de marketing digital genérica. Somos una consultora especializada en construir procesos de ventas predecibles para empresas que venden a otras empresas, con ciclos de venta de 30 a 180 días y tickets medios o altos.
 
@@ -37,7 +37,7 @@ Nuestro perfil de cliente ideal es una empresa B2B con un producto o servicio va
 - **Email**: Servicio@blackscale.consulting
 - **Sitio web**: https://blackscale.consulting
 - **Diagnóstico gratuito**: https://blackscale.consulting/diagnostico.html (5 preguntas, 3 minutos, resultados inmediatos)
-- **LinkedIn**: https://www.linkedin.com/in/blackscale-consulting-0686a83b8/
+- **LinkedIn**: https://www.linkedin.com/company/blackscale-consulting/
 - **Ubicación**: Bogotá, Colombia
 
 ## Páginas principales
@@ -45,10 +45,11 @@ Nuestro perfil de cliente ideal es una empresa B2B con un producto o servicio va
 - [Inicio](https://blackscale.consulting/): visión general de la consultoría B2B.
 - [Servicios](https://blackscale.consulting/services.html): los 6 servicios de BlackScale.
 - [Por Qué Nosotros](https://blackscale.consulting/why-us.html): filosofía y diferenciales.
-- [Proceso](https://blackscale.consulting/process.html): metodología de 6 pasos en 90 días.
+- [Proceso](https://blackscale.consulting/process.html): metodología de 6 pasos para activar el pipeline en semanas.
 - [Diagnóstico Gratuito](https://blackscale.consulting/diagnostico.html): herramienta de autodiagnóstico de operación comercial B2B.
 - [Contacto](https://blackscale.consulting/contact.html): formulario y agenda de sesión gratuita.
 - [Blog](https://blackscale.consulting/blog/): artículos sobre ventas B2B, pipeline, marketing y operaciones comerciales en Colombia.
+- [Modelo comercial](https://blackscale.consulting/pricing.md): cómo cobramos y qué incluye el engagement de BlackScale.
 
 ## Recursos del blog
 
