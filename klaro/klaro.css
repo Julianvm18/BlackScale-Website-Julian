@@ -113,8 +113,78 @@
   letter-spacing: 0.05em !important;
 }
 
+/* ============================================================
+   MODAL OBLIGATORIO (mustConsent) - máxima visibilidad
+   ============================================================ */
+/* Overlay que cubre toda la pantalla apenas entra */
+.klaro .cookie-modal {
+  background: rgba(0,0,0,0.82) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  z-index: 100000 !important;
+}
+
+/* Caja del modal: centrada, grande, acento dorado arriba */
+.klaro .cookie-modal .cm-modal {
+  max-width: 560px !important;
+  width: calc(100% - 2.5rem) !important;
+  margin: 0 auto !important;
+  border: 1px solid #6B2737 !important;
+  border-top: 4px solid #C9A84C !important;
+  border-radius: 10px !important;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.7) !important;
+  animation: klaroPop 0.28s ease-out both !important;
+}
+@keyframes klaroPop {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Título grande y claro */
+.klaro .cookie-modal .cm-modal .cm-header h1,
+.klaro .cookie-modal .cm-modal .cm-header h1.title {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.75rem !important;
+}
+.klaro .cookie-modal .cm-modal .cm-body p {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
+/* Botón "Aceptar todas": dorado, grande, el más visible */
+.klaro .cookie-modal .cm-btn.cm-btn-success,
+.klaro .cookie-modal .cm-btn.cm-btn-accept-all,
+.klaro .cookie-modal .cm-btn.cm-btn-accept {
+  background: #C9A84C !important;
+  color: #0D0D0D !important;
+  border: none !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding: 12px 22px !important;
+  box-shadow: 0 6px 20px rgba(201,168,76,0.35) !important;
+}
+.klaro .cookie-modal .cm-btn.cm-btn-success:hover,
+.klaro .cookie-modal .cm-btn.cm-btn-accept-all:hover,
+.klaro .cookie-modal .cm-btn.cm-btn-accept:hover {
+  background: #d9b85e !important;
+  opacity: 1 !important;
+}
+
+/* Footer de botones del modal con buen espacio */
+.klaro .cookie-modal .cm-modal .cm-footer .cm-footer-buttons {
+  display: flex !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-end !important;
+}
+
 /* Mobile */
 @media (max-width: 480px) {
+  .klaro .cookie-modal .cm-modal {
+    width: calc(100% - 1.5rem) !important;
+    max-width: 100% !important;
+  }
   .klaro .cookie-notice {
     bottom: 0 !important;
     right: 0 !important;
