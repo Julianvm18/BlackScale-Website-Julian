@@ -7,7 +7,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://blackscale.consulting/services</loc>
+    <loc>https://blackscale.consulting/servicios</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,13 +19,13 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://blackscale.consulting/why-us</loc>
+    <loc>https://blackscale.consulting/por-que-nosotros</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackscale.consulting/process</loc>
+    <loc>https://blackscale.consulting/proceso</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -37,7 +37,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackscale.consulting/contact</loc>
+    <loc>https://blackscale.consulting/contacto</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

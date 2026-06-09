@@ -398,15 +398,15 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 <header class="nav">
   <div class="container nav__inner">
     <a href="index.html" class="logo">
-      <img src="Horizontal Blanco.svg" class="logo__img" alt="BlackScale" fetchpriority="high" width="160" height="40">
+      <img src="logo-horizontal-blanco.svg" class="logo__img" alt="BlackScale" fetchpriority="high" width="160" height="40">
     </a>
     <nav class="nav__links">
-      <a href="services.html">Qué hacemos</a>
-      <a href="why-us.html">Por qué nosotros</a>
-      <a href="process.html">Proceso</a>
+      <a href="servicios.html">Qué hacemos</a>
+      <a href="por-que-nosotros.html">Por qué nosotros</a>
+      <a href="proceso.html">Proceso</a>
       <a href="blog/">Blog</a>
       <a href="diagnostico.html" class="active">Diagnóstico</a>
-      <a href="contact.html" class="btn btn--outline">Contáctanos</a>
+      <a href="contacto.html" class="btn btn--outline">Contáctanos</a>
     </nav>
     <button class="nav__burger" aria-label="Abrir menú">
       <span></span><span></span><span></span>
@@ -415,12 +415,12 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="services.html">Qué hacemos</a>
-  <a href="why-us.html">Por qué nosotros</a>
-  <a href="process.html">Proceso</a>
+  <a href="servicios.html">Qué hacemos</a>
+  <a href="por-que-nosotros.html">Por qué nosotros</a>
+  <a href="proceso.html">Proceso</a>
   <a href="blog/">Blog</a>
   <a href="diagnostico.html">Diagnóstico</a>
-  <a href="contact.html">Contáctanos</a>
+  <a href="contacto.html">Contáctanos</a>
 </div>
 
 <!-- HERO -->
@@ -583,6 +583,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <input type="text" id="captureName" placeholder="Tu nombre" autocomplete="given-name">
             <input type="email" id="captureEmail" placeholder="Tu email corporativo" autocomplete="email">
           </div>
+          <div class="form-consent">
+            <input type="checkbox" id="habeas-diagnostico" name="habeas" required>
+            <label for="habeas-diagnostico">Autorizo a BlackScale Consulting el tratamiento de mis datos personales conforme a la <a href="legal.html#privacy">Política de Privacidad</a>, de acuerdo con la Ley 1581 de 2012.</label>
+          </div>
           <button class="diag-btn diag-btn--outline" onclick="submitCapture()" id="captureBtn">Que me contacten →</button>
           <p class="capture-note" id="captureNote">Te escribimos en menos de un día hábil.</p>
         </div>
@@ -670,6 +674,8 @@ function submitCapture(){
   var name=document.getElementById('captureName').value.trim();
   var email=document.getElementById('captureEmail').value.trim();
   if(!email){document.getElementById('captureNote').textContent='Ingresa tu email para continuar.';return;}
+  var hb=document.getElementById('habeas-diagnostico');
+  if(!hb||!hb.checked){document.getElementById('captureNote').textContent='Debes autorizar el tratamiento de datos para continuar.';return;}
   var btn=document.getElementById('captureBtn');
   btn.disabled=true; btn.textContent='Enviando...';
   // Build score summary for context

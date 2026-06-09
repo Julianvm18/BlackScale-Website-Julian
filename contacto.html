@@ -51,10 +51,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <title>Contáctanos | BlackScale Consulting Colombia</title>
   <meta name="description" content="Habla con un especialista en ventas B2B en Bogotá. Diagnosticamos tu pipeline y diseñamos una estrategia de generación de demanda para empresas en Colombia. Respuesta en menos de 24 horas." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://blackscale.consulting/contact" />
+  <link rel="canonical" href="https://blackscale.consulting/contacto" />
   <meta property="og:title" content="Contáctanos | BlackScale Consulting Colombia" />
   <meta property="og:description" content="Habla directo con un especialista B2B. Diagnosticamos tu pipeline y te respondemos en menos de 24 horas para agendar tu sesión gratuita." />
-  <meta property="og:url" content="https://blackscale.consulting/contact" />
+  <meta property="og:url" content="https://blackscale.consulting/contacto" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CO" />
   <meta property="og:site_name" content="BlackScale Consulting" />
@@ -71,10 +71,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     "@graph": [
       {
         "@type": "ContactPage",
-        "@id": "https://blackscale.consulting/contact.html",
+        "@id": "https://blackscale.consulting/contacto.html",
         "name": "Contáctanos | BlackScale Consulting Colombia",
         "description": "Página de contacto de BlackScale Consulting. Consultoría B2B especializada en generación de demanda, revenue operations y habilitación comercial para empresas en Colombia.",
-        "url": "https://blackscale.consulting/contact.html",
+        "url": "https://blackscale.consulting/contacto.html",
         "inLanguage": "es-CO",
         "isPartOf": {
           "@id": "https://blackscale.consulting/"
@@ -165,15 +165,15 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <header class="nav">
     <div class="container nav__inner">
       <a href="index.html" class="logo">
-        <img src="Horizontal Blanco.svg" class="logo__img" alt="BlackScale" fetchpriority="high" width="160" height="40">
+        <img src="logo-horizontal-blanco.svg" class="logo__img" alt="BlackScale" fetchpriority="high" width="160" height="40">
       </a>
       <nav class="nav__links">
-        <a href="services.html" data-i18n="nav.services">Qué hacemos</a>
-        <a href="why-us.html" data-i18n="nav.why">Por qué nosotros</a>
-        <a href="process.html" data-i18n="nav.process">Proceso</a>
+        <a href="servicios.html" data-i18n="nav.services">Qué hacemos</a>
+        <a href="por-que-nosotros.html" data-i18n="nav.why">Por qué nosotros</a>
+        <a href="proceso.html" data-i18n="nav.process">Proceso</a>
         <a href="blog/" data-i18n="nav.blog">Blog</a>
         <a href="diagnostico.html" data-i18n="nav.diag">Diagnóstico</a>
-        <a href="contact.html" class="btn btn--outline active" data-i18n="nav.cta">Contáctanos</a>
+        <a href="contacto.html" class="btn btn--outline active" data-i18n="nav.cta">Contáctanos</a>
       </nav>
       <button class="nav__burger" aria-label="Abrir menú">
         <span></span><span></span><span></span>
@@ -183,12 +183,12 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="services.html" data-i18n="nav.services">Qué hacemos</a>
-    <a href="why-us.html" data-i18n="nav.why">Por qué nosotros</a>
-    <a href="process.html" data-i18n="nav.process">Proceso</a>
+    <a href="servicios.html" data-i18n="nav.services">Qué hacemos</a>
+    <a href="por-que-nosotros.html" data-i18n="nav.why">Por qué nosotros</a>
+    <a href="proceso.html" data-i18n="nav.process">Proceso</a>
     <a href="blog/" data-i18n="nav.blog">Blog</a>
     <a href="diagnostico.html" data-i18n="nav.diag">Diagnóstico</a>
-    <a href="contact.html" data-i18n="nav.cta">Contáctanos</a>
+    <a href="contacto.html" data-i18n="nav.cta">Contáctanos</a>
     </div>
 
   <!-- PAGE HEADER con imagen ambiental -->
@@ -278,6 +278,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     <label for="website_url">Website</label>
     <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off" value="">
   </div>
+  <div class="form-consent">
+    <input type="checkbox" id="habeas-contact" name="habeas" required>
+    <label for="habeas-contact">Autorizo a BlackScale Consulting el tratamiento de mis datos personales conforme a la <a href="legal.html#privacy">Política de Privacidad</a>, de acuerdo con la Ley 1581 de 2012.</label>
+  </div>
   <div class="form-error" id="bsFormError" role="alert" aria-live="polite" style="display:none; color:#ff8a8a; margin-bottom:1rem; font-size:0.9rem;"></div>
   <button type="submit" class="btn btn--primary" id="bsFormSubmit">Solicitar diagnóstico gratuito</button>
 </form>
@@ -302,6 +306,12 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     var nombre = form.nombre.value.trim();
     if (!nombre) {
       errorBox.textContent = 'Por favor ingresa tu nombre.';
+      errorBox.style.display = 'block';
+      return;
+    }
+
+    if (!form.habeas || !form.habeas.checked) {
+      errorBox.textContent = 'Debes autorizar el tratamiento de datos para continuar.';
       errorBox.style.display = 'block';
       return;
     }
@@ -380,7 +390,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
       <div class="container footer__grid">
         <div class="footer__col footer__col--brand">
           <a href="index.html" class="logo logo--footer">
-            <img src="Horizontal Blanco.svg" class="logo__img" alt="BlackScale" loading="lazy" width="160" height="40">
+            <img src="logo-horizontal-blanco.svg" class="logo__img" alt="BlackScale" loading="lazy" width="160" height="40">
           </a>
           <p class="footer__desc" data-i18n="footer.desc">Agencia B2B con base en Bogotá, Colombia. Especialistas en generación de demanda, revenue operations y habilitación comercial.</p>
           <div class="footer__contact-info">
@@ -396,22 +406,22 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
         <div class="footer__col" style="display:none">
           <h4 class="footer__col-title" data-i18n="footer.col.services">Servicios</h4>
           <ul class="footer__col-links">
-            <li><a href="services.html#demand" data-i18n="footer.svc.demand">Generación de Demanda</a></li>
-            <li><a href="services.html#revops" data-i18n="footer.svc.revops">Revenue Operations</a></li>
-            <li><a href="services.html#sales" data-i18n="footer.svc.sales">Habilitación Comercial</a></li>
-            <li><a href="services.html#abm" data-i18n="footer.svc.abm">Marketing ABM</a></li>
-            <li><a href="services.html#gtm" data-i18n="footer.svc.gtm">Estrategia Go-to-Market</a></li>
-            <li><a href="services.html#analytics" data-i18n="footer.svc.analytics">Analítica de Desempeño</a></li>
+            <li><a href="servicios.html#demand" data-i18n="footer.svc.demand">Generación de Demanda</a></li>
+            <li><a href="servicios.html#revops" data-i18n="footer.svc.revops">Revenue Operations</a></li>
+            <li><a href="servicios.html#sales" data-i18n="footer.svc.sales">Habilitación Comercial</a></li>
+            <li><a href="servicios.html#abm" data-i18n="footer.svc.abm">Marketing ABM</a></li>
+            <li><a href="servicios.html#gtm" data-i18n="footer.svc.gtm">Estrategia Go-to-Market</a></li>
+            <li><a href="servicios.html#analytics" data-i18n="footer.svc.analytics">Analítica de Desempeño</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title" data-i18n="footer.col.company">Empresa</h4>
           <ul class="footer__col-links">
-            <li><a href="why-us.html" data-i18n="footer.co.why">Por Qué BlackScale</a></li>
-            <li><a href="process.html" data-i18n="footer.co.process">Nuestro Proceso</a></li>
-            <li style="display:none"><a href="why-us.html" data-i18n="footer.co.success">Casos de Éxito</a></li>
-            <li style="display:none"><a href="contact.html" data-i18n="footer.co.careers">Únete</a></li>
-            <li><a href="contact.html" data-i18n="footer.co.contact">Contacto</a></li>
+            <li><a href="por-que-nosotros.html" data-i18n="footer.co.why">Por Qué BlackScale</a></li>
+            <li><a href="proceso.html" data-i18n="footer.co.process">Nuestro Proceso</a></li>
+            <li style="display:none"><a href="por-que-nosotros.html" data-i18n="footer.co.success">Casos de Éxito</a></li>
+            <li style="display:none"><a href="contacto.html" data-i18n="footer.co.careers">Únete</a></li>
+            <li><a href="contacto.html" data-i18n="footer.co.contact">Contacto</a></li>
           </ul>
         </div>
         <div class="footer__col">
