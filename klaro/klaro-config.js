@@ -11,7 +11,7 @@ var klaroConfig = {
   mustConsent: false,
   acceptAll: true,
   hideDeclineAll: false,
-  hideLearnMore: false,
+  hideLearnMore: true,
   noticeAsModal: false,
   translations: {
     es: {
