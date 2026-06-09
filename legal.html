@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/klaro/klaro.css">
 <script defer src="/klaro/klaro-config.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/klaro@0.7.18/dist/klaro-no-css.js"></script>
-
+<!-- Google tag (gtag.js) -->
 <!-- Google Analytics 4 — bloqueado hasta consentimiento (Res. SIC 32.126) -->
 <script type="text/plain"
         data-type="application/javascript"
@@ -20,7 +20,7 @@
   gtag('js', new Date());
   gtag('config', 'G-NF8WJBGXBX', { 'anonymize_ip': true });
 </script>
-
+<!-- Meta Pixel Code -->
 <!-- Meta Pixel — bloqueado hasta consentimiento -->
 <script type="text/plain"
         data-type="application/javascript"
@@ -39,8 +39,6 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 /></noscript>
-
-
 <!-- End Meta Pixel Code -->
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="logo.svg">
@@ -58,6 +56,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CO" />
   <meta property="og:site_name" content="BlackScale Consulting" />
+  <!-- Fuentes (preconnect + carga optimizada, evita @import render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
   <link rel="stylesheet" href="style.css" />
   <style>
     /* ── LEGAL PAGE LAYOUT ──────────────────────────────── */
@@ -102,8 +104,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
       transition: color 0.2s, border-color 0.2s;
       text-decoration: none;
     }
-    .legal-nav__list a:hover,
-    .legal-nav__list a.active {
+    .legal-nav__list a:hover.legal-nav__list a.active {
       color: var(--cream);
       border-left-color: var(--burgundy-mid);
     }
@@ -166,8 +167,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
       line-height: 1.8;
       margin-bottom: 14px;
     }
-    .legal-section ul,
-    .legal-section ol {
+    .legal-section ul.legal-section ol {
       padding-left: 0;
       list-style: none;
       margin-bottom: 16px;
@@ -175,8 +175,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
       flex-direction: column;
       gap: 8px;
     }
-    .legal-section ul li,
-    .legal-section ol li {
+    .legal-section ul li.legal-section ol li {
       font-family: var(--sans);
       font-size: 13px;
       font-weight: 300;
@@ -263,8 +262,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
         padding: 4px 0;
         font-size: 12px;
       }
-      .legal-nav__list a:hover,
-      .legal-nav__list a.active {
+      .legal-nav__list a:hover.legal-nav__list a.active {
         border-left-color: transparent;
         border-bottom-color: var(--burgundy-mid);
       }
@@ -282,13 +280,14 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   <header class="nav">
     <div class="container nav__inner">
       <a href="index.html" class="logo">
-        <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale">
+        <img src="Horizontal Blanco.svg" class="logo__img" alt="BlackScale">
       </a>
       <nav class="nav__links">
-        <a href="services.html" data-i18n="nav.services">Servicios</a>
-        <a href="why-us.html" data-i18n="nav.why">Por Qué Nosotros</a>
+        <a href="services.html" data-i18n="nav.services">Qué hacemos</a>
+        <a href="why-us.html" data-i18n="nav.why">Por qué nosotros</a>
         <a href="process.html" data-i18n="nav.process">Proceso</a>
         <a href="blog/" data-i18n="nav.blog">Blog</a>
+        <a href="diagnostico.html" data-i18n="nav.diag">Diagnóstico</a>
         <a href="contact.html" class="btn btn--outline" data-i18n="nav.cta">Contáctanos</a>
       </nav>
       <button class="nav__burger" aria-label="Open menu">
@@ -299,10 +298,11 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="services.html" data-i18n="nav.services">Servicios</a>
-    <a href="why-us.html" data-i18n="nav.why">Por Qué Nosotros</a>
+    <a href="services.html" data-i18n="nav.services">Qué hacemos</a>
+    <a href="why-us.html" data-i18n="nav.why">Por qué nosotros</a>
     <a href="process.html" data-i18n="nav.process">Proceso</a>
     <a href="blog/" data-i18n="nav.blog">Blog</a>
+    <a href="diagnostico.html" data-i18n="nav.diag">Diagnóstico</a>
     <a href="contact.html" data-i18n="nav.cta">Contáctanos</a>
     </div>
 
@@ -347,10 +347,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <h2>Política de <em>Privacidad</em></h2>
             <p class="legal-meta">Última actualización: Marzo 2026</p>
 
-            <p>Blackscale Consulting SAS ("<strong>Blackscale</strong>", "nosotros", "nuestro") está comprometida con la protección de tus datos personales de conformidad con la Ley colombiana 1581 de 2012 (Protección de Datos Personales) y el Decreto Reglamentario 1377 de 2013. Esta Política de Privacidad explica qué información recopilamos, cómo la utilizamos y los derechos que tienes como titular de los datos.</p>
+            <p>BlackScale Consulting SAS ("<strong>BlackScale</strong>", "nosotros", "nuestro") está comprometida con la protección de tus datos personales de conformidad con la Ley colombiana 1581 de 2012 (Protección de Datos Personales) y el Decreto Reglamentario 1377 de 2013. Esta Política de Privacidad explica qué información recopilamos, cómo la utilizamos y los derechos que tienes como titular de los datos.</p>
 
             <h3>1.1 Identidad del Responsable del Tratamiento</h3>
-            <p>La entidad responsable del tratamiento de datos personales es <strong>Blackscale Consulting SAS</strong>, domiciliada en Colombia. Para consultas, solicitudes o reclamos relacionados con tus datos personales, contáctanos en <a href="mailto:Servicio@blackscale.consulting">Servicio@blackscale.consulting</a>.</p>
+            <p>La entidad responsable del tratamiento de datos personales es <strong>BlackScale Consulting SAS</strong>, domiciliada en Colombia. Para consultas, solicitudes o reclamos relacionados con tus datos personales, contáctanos en <a href="mailto:Servicio@blackscale.consulting">Servicio@blackscale.consulting</a>.</p>
 
             <h3>1.2 Datos Personales que Recopilamos</h3>
             <ul>
@@ -373,30 +373,30 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <h3>1.4 Tus Derechos como Titular</h3>
             <p>Conforme a los Artículos 8 y 21 de la Ley 1581 de 2012, tienes derecho a:</p>
             <ul>
-              <li><strong>Conocer</strong> — Acceder gratuitamente a los datos personales que tenemos sobre ti.</li>
-              <li><strong>Actualizar y Rectificar</strong> — Solicitar la corrección de datos inexactos, incompletos o desactualizados.</li>
-              <li><strong>Suprimir</strong> — Solicitar la eliminación de tus datos cuando ya no sean necesarios para el fin declarado, sujeto a obligaciones legales de conservación.</li>
-              <li><strong>Revocar la Autorización</strong> — Retirar el consentimiento para el tratamiento de datos en cualquier momento, excepto cuando el tratamiento sea exigido por ley.</li>
-              <li><strong>Presentar Queja</strong> — Interponer queja ante la Superintendencia de Industria y Comercio (SIC) si consideras que tus derechos han sido vulnerados. Contacto SIC: <a href="https://www.sic.gov.co" target="_blank" rel="noopener">www.sic.gov.co</a>.</li>
+              <li><strong>Conocer</strong>: Acceder gratuitamente a los datos personales que tenemos sobre ti.</li>
+              <li><strong>Actualizar y Rectificar</strong>: Solicitar la corrección de datos inexactos, incompletos o desactualizados.</li>
+              <li><strong>Suprimir</strong>: Solicitar la eliminación de tus datos cuando ya no sean necesarios para el fin declarado, sujeto a obligaciones legales de conservación.</li>
+              <li><strong>Revocar la Autorización</strong>: Retirar el consentimiento para el tratamiento de datos en cualquier momento, excepto cuando el tratamiento sea exigido por ley.</li>
+              <li><strong>Presentar Queja</strong>: Interponer queja ante la Superintendencia de Industria y Comercio (SIC) si consideras que tus derechos han sido vulnerados. Contacto SIC: <a href="https://www.sic.gov.co" target="_blank" rel="noopener">www.sic.gov.co</a>.</li>
             </ul>
 
             <h3>1.5 Cómo Ejercer tus Derechos</h3>
             <p>Para ejercer cualquiera de los derechos anteriores, envía una solicitud escrita a <a href="mailto:Servicio@blackscale.consulting">Servicio@blackscale.consulting</a> con el asunto "Solicitud Habeas Data". Para consultas, responderemos dentro de los diez (10) días hábiles siguientes, prorrogables por cinco (5) días más con previo aviso. Para reclamos formales, responderemos dentro de los quince (15) días hábiles siguientes, prorrogables por ocho (8) días más, conforme al Artículo 14 de la Ley 1581 de 2012.</p>
 
             <h3>1.6 Conservación de Datos</h3>
-            <p>Los datos personales se conservan únicamente durante el tiempo necesario para cumplir los fines declarados o según lo exijan las obligaciones legales colombianas (p.ej., registros contables bajo el Código de Comercio — Decreto 410 de 1971). Una vez vencido el período de conservación, los datos se eliminan de forma segura o se anonimizan.</p>
+            <p>Los datos personales se conservan únicamente durante el tiempo necesario para cumplir los fines declarados o según lo exijan las obligaciones legales colombianas (p.ej., registros contables bajo el Código de Comercio, Decreto 410 de 1971). Una vez vencido el período de conservación, los datos se eliminan de forma segura o se anonimizan.</p>
 
             <h3>1.7 Transferencias Internacionales de Datos</h3>
             <p>En el marco de la prestación de nuestros servicios, tus datos pueden ser transferidos a proveedores de servicios ubicados fuera de Colombia (p.ej., plataformas CRM, herramientas de email marketing, proveedores de analítica). Todas estas transferencias cumplen con el Artículo 26 de la Ley 1581 de 2012, que exige que los países receptores ofrezcan un nivel adecuado de protección de datos o que existan garantías suficientes (como cláusulas contractuales).</p>
 
             <h3>1.8 Aviso de Privacidad</h3>
-            <p>Cuando no sea práctico mostrar esta Política completa en el momento de la recopilación de datos (p.ej., en un formulario de contacto), se muestra un Aviso de Privacidad condensado en el punto de recopilación, conforme a los Artículos 14 y 15 del Decreto 1377 de 2013. Este aviso identifica a Blackscale Consulting como el responsable del tratamiento, declara el fin de la recopilación y proporciona un enlace a esta política completa.</p>
+            <p>Cuando no sea práctico mostrar esta Política completa en el momento de la recopilación de datos (p.ej., en un formulario de contacto), se muestra un Aviso de Privacidad condensado en el punto de recopilación, conforme a los Artículos 14 y 15 del Decreto 1377 de 2013. Este aviso identifica a BlackScale Consulting como el responsable del tratamiento, declara el fin de la recopilación y proporciona un enlace a esta política completa.</p>
 
             <h3>1.9 Actualizaciones de la Política</h3>
             <p>Esta Política de Privacidad entró en vigor el 1 de marzo de 2026. Cualquier cambio material será comunicado a los titulares a través de nuestro sitio web o notificación directa antes de que entre en vigor la nueva política, conforme al Artículo 13 del Decreto 1377 de 2013.</p>
 
             <div class="legal-highlight">
-              <p>Blackscale no vende, arrienda ni comercializa tus datos personales a terceros para sus propios fines de marketing. Los datos se comparten con proveedores de servicios únicamente para prestar los servicios que has solicitado.</p>
+              <p>BlackScale no vende, arrienda ni comercializa tus datos personales a terceros para sus propios fines de marketing. Los datos se comparten con proveedores de servicios únicamente para prestar los servicios que has solicitado.</p>
             </div>
           </div>
 
@@ -406,10 +406,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <h2>Gestión de <em>Datos</em></h2>
             <p class="legal-meta">Última actualización: Marzo 2026</p>
 
-            <p>Esta sección describe cómo Blackscale Consulting gestiona los datos personales a nivel operativo, incluyendo medidas de seguridad, registro de bases de datos, prácticas de minimización de datos y relaciones con encargados del tratamiento.</p>
+            <p>Esta sección describe cómo BlackScale Consulting gestiona los datos personales a nivel operativo, incluyendo medidas de seguridad, registro de bases de datos, prácticas de minimización de datos y relaciones con encargados del tratamiento.</p>
 
             <h3>2.1 Registro de Bases de Datos</h3>
-            <p>De conformidad con el Artículo 25 de la Ley 1581 de 2012 y el Decreto 090 de 2018, Blackscale Consulting mantiene el registro de sus bases de datos personales en el Registro Nacional de Bases de Datos (RNBD) administrado por la Superintendencia de Industria y Comercio (SIC), según corresponda en función del volumen y sensibilidad de los datos tratados.</p>
+            <p>De conformidad con el Artículo 25 de la Ley 1581 de 2012 y el Decreto 090 de 2018, BlackScale Consulting mantiene el registro de sus bases de datos personales en el Registro Nacional de Bases de Datos (RNBD) administrado por la Superintendencia de Industria y Comercio (SIC), según corresponda en función del volumen y sensibilidad de los datos tratados.</p>
 
             <h3>2.2 Medidas de Seguridad</h3>
             <p>Implementamos salvaguardas técnicas, administrativas y físicas proporcionales a la naturaleza y sensibilidad de los datos personales que tratamos. Estas incluyen:</p>
@@ -428,7 +428,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <p>Contamos con proveedores de servicios externos que tratan datos personales en nuestro nombre como Encargados del Tratamiento. Estos incluyen plataformas CRM, proveedores de servicios de correo electrónico, almacenamiento en la nube y herramientas de analítica. Cada encargado está sujeto a un contrato de tratamiento de datos que garantiza el cumplimiento de la Ley 1581 de 2012 y estándares de protección equivalentes.</p>
 
             <h3>2.5 Notificación de Violaciones de Datos</h3>
-            <p>En caso de una violación de la seguridad de datos personales que pueda afectar los derechos y libertades de los titulares, Blackscale notificará a los afectados y reportará el incidente a la SIC dentro de los plazos establecidos por la normativa colombiana vigente. La notificación incluirá la naturaleza de la violación, los datos afectados y las medidas correctivas adoptadas.</p>
+            <p>En caso de una violación de la seguridad de datos personales que pueda afectar los derechos y libertades de los titulares, BlackScale notificará a los afectados y reportará el incidente a la SIC dentro de los plazos establecidos por la normativa colombiana vigente. La notificación incluirá la naturaleza de la violación, los datos afectados y las medidas correctivas adoptadas.</p>
           </div>
 
           <!-- 3. TÉRMINOS DE SERVICIO -->
@@ -437,32 +437,32 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <h2>Términos de <em>Servicio</em></h2>
             <p class="legal-meta">Última actualización: Marzo 2026</p>
 
-            <p>Estos Términos de Servicio regulan el uso del sitio web de Blackscale Consulting (<em>el Sitio</em>) y la contratación de nuestros servicios de consultoría y marketing. Al acceder al Sitio o iniciar una relación comercial con Blackscale Consulting SAS, aceptas estos términos.</p>
+            <p>Estos Términos de Servicio regulan el uso del sitio web de BlackScale Consulting (<em>el Sitio</em>) y la contratación de nuestros servicios de consultoría y marketing. Al acceder al Sitio o iniciar una relación comercial con BlackScale Consulting SAS, aceptas estos términos.</p>
 
             <h3>3.1 Base Legal</h3>
             <p>Estos términos se rigen por la legislación colombiana, incluyendo la Ley 527 de 1999 (Comercio Electrónico), el Código de Comercio colombiano (Decreto 410 de 1971) y la Ley 1480 de 2011 (Estatuto del Consumidor), en la medida aplicable a relaciones de servicios B2B.</p>
 
             <h3>3.2 Descripción de los Servicios</h3>
-            <p>Blackscale Consulting presta servicios de consultoría en estrategia de marketing B2B, operaciones de ingresos, habilitación de ventas, marketing basado en cuentas, estrategia go-to-market y analítica de rendimiento. El alcance específico, los entregables, los plazos y los honorarios de cada compromiso se definen en un Contrato de Servicios o Declaración de Trabajo firmado por ambas partes.</p>
+            <p>BlackScale Consulting presta servicios de consultoría en estrategia de marketing B2B, operaciones de ingresos, habilitación de ventas, marketing basado en cuentas, estrategia go-to-market y analítica de rendimiento. El alcance específico, los entregables, los plazos y los honorarios de cada compromiso se definen en un Contrato de Servicios o Declaración de Trabajo firmado por ambas partes.</p>
 
             <h3>3.3 Uso del Sitio Web</h3>
             <ul>
               <li>El Sitio se proporciona con fines informativos. El acceso se otorga de manera temporal y puede ser retirado en cualquier momento sin previo aviso.</li>
               <li>Aceptas no utilizar el Sitio para ningún fin ilícito, no transmitir contenido dañino ni intentar obtener acceso no autorizado a ninguna parte del Sitio o su infraestructura.</li>
-              <li>Todo el contenido del Sitio —incluyendo textos, gráficos, logotipos y marcos de estrategia— es propiedad intelectual de Blackscale Consulting SAS y está protegido por la legislación colombiana de derechos de autor (Ley 23 de 1982 y Decisión 351 de la Comunidad Andina).</li>
+              <li>Todo el contenido del Sitio, incluyendo textos, gráficos, logotipos y marcos de estrategia, es propiedad intelectual de BlackScale Consulting SAS y está protegido por la legislación colombiana de derechos de autor (Ley 23 de 1982 y Decisión 351 de la Comunidad Andina).</li>
             </ul>
 
             <h3>3.4 Comunicaciones Electrónicas</h3>
             <p>De conformidad con la Ley 527 de 1999, reconoces que las comunicaciones electrónicas (correos, envíos de formularios, firmas digitales) tienen la misma validez legal que los documentos escritos. El envío de un formulario de contacto constituye un mensaje electrónico válido con efectos legales bajo la legislación colombiana.</p>
 
             <h3>3.5 Contratos de Servicios</h3>
-            <p>Cualquier compromiso de consultoría requiere un contrato de servicios escrito suscrito por representantes autorizados de ambas partes. Las propuestas presentadas por Blackscale son válidas por treinta (30) días calendario desde la fecha de emisión, salvo indicación contraria. La aceptación de una propuesta constituye un contrato vinculante bajo el derecho comercial colombiano.</p>
+            <p>Cualquier compromiso de consultoría requiere un contrato de servicios escrito suscrito por representantes autorizados de ambas partes. Las propuestas presentadas por BlackScale son válidas por treinta (30) días calendario desde la fecha de emisión, salvo indicación contraria. La aceptación de una propuesta constituye un contrato vinculante bajo el derecho comercial colombiano.</p>
 
             <h3>3.6 Limitación de Responsabilidad</h3>
-            <p>Blackscale Consulting presta sus servicios con la diligencia debida. Si bien estamos comprometidos con la obtención de resultados medibles, los resultados empresariales dependen de numerosos factores fuera de nuestro control. Nuestra responsabilidad por cualquier reclamación derivada de nuestros servicios se limita a los honorarios pagados por el cliente para el compromiso específico que origina la reclamación, de conformidad con el Artículo 1616 del Código Civil colombiano.</p>
+            <p>BlackScale Consulting presta sus servicios con la diligencia debida. Si bien estamos comprometidos con la obtención de resultados medibles, los resultados empresariales dependen de numerosos factores fuera de nuestro control. Nuestra responsabilidad por cualquier reclamación derivada de nuestros servicios se limita a los honorarios pagados por el cliente para el compromiso específico que origina la reclamación, de conformidad con el Artículo 1616 del Código Civil colombiano.</p>
 
             <h3>3.7 Propiedad Intelectual de los Entregables</h3>
-            <p>Previa cancelación total de los honorarios, Blackscale transfiere al cliente el derecho de uso de todos los entregables producidos bajo un contrato de servicios. Blackscale conserva el derecho de utilizar metodologías anonimizadas, marcos de trabajo y aprendizajes agregados para futuros compromisos con clientes, sin divulgar información confidencial del cliente.</p>
+            <p>Previa cancelación total de los honorarios, BlackScale transfiere al cliente el derecho de uso de todos los entregables producidos bajo un contrato de servicios. BlackScale conserva el derecho de utilizar metodologías anonimizadas, marcos de trabajo y aprendizajes agregados para futuros compromisos con clientes, sin divulgar información confidencial del cliente.</p>
 
             <h3>3.8 Ley Aplicable y Resolución de Controversias</h3>
             <p>Estos Términos se rigen por las leyes de la República de Colombia. Cualquier disputa derivada de o relacionada con estos Términos o cualquier contrato de servicios se abordará primero mediante negociación de buena fe. Si no se resuelve en treinta (30) días, las disputas se someterán al Centro de Arbitraje y Conciliación de la Cámara de Comercio de Bogotá, conforme a sus reglamentos.</p>
@@ -474,7 +474,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <h2>Política de <em>Cookies</em></h2>
             <p class="legal-meta">Última actualización: Marzo 2026</p>
 
-            <p>Esta Política de Cookies explica cómo Blackscale Consulting utiliza cookies y tecnologías de seguimiento similares en nuestro sitio web. En Colombia, la Superintendencia de Industria y Comercio (SIC) ha confirmado mediante la <strong>Resolución 32.126 de 2022</strong> que las cookies que recopilan datos personales están regidas en su totalidad por la Ley 1581 de 2012 —incluyendo el requisito de consentimiento previo, expreso e informado.</p>
+            <p>Esta Política de Cookies explica cómo BlackScale Consulting utiliza cookies y tecnologías de seguimiento similares en nuestro sitio web. En Colombia, la Superintendencia de Industria y Comercio (SIC) ha confirmado mediante la <strong>Resolución 32.126 de 2022</strong> que las cookies que recopilan datos personales están regidas en su totalidad por la Ley 1581 de 2012, incluyendo el requisito de consentimiento previo, expreso e informado.</p>
 
             <h3>4.1 ¿Qué son las Cookies?</h3>
             <p>Las cookies son pequeños archivos de texto almacenados en tu dispositivo cuando visitas un sitio web. Permiten que el sitio recuerde tus preferencias y acciones a lo largo del tiempo. También utilizamos tecnologías de seguimiento similares como balizas web, píxeles y almacenamiento local. Cuando estas tecnologías recopilan información que puede identificarte, se tratan como datos personales bajo la Ley 1581 de 2012.</p>
@@ -488,7 +488,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             </ul>
 
             <h3>4.3 Requisitos de Consentimiento bajo la Legislación Colombiana</h3>
-            <p>Conforme a la <strong>Resolución SIC 32.126 de 2022</strong>, el consentimiento para cookies en Colombia debe ser <strong>previo</strong> (antes de instalar cualquier cookie), <strong>expreso</strong> (una acción afirmativa — las casillas premarcadas y el consentimiento implícito son inválidos) e <strong>informado</strong> (debes saber exactamente qué se instala y por qué). A diferencia del RGPD, en Colombia no existe exención de consentimiento para cookies "estrictamente necesarias".</p>
+            <p>Conforme a la <strong>Resolución SIC 32.126 de 2022</strong>, el consentimiento para cookies en Colombia debe ser <strong>previo</strong> (antes de instalar cualquier cookie), <strong>expreso</strong> (una acción afirmativa, las casillas premarcadas y el consentimiento implícito son inválidos) e <strong>informado</strong> (debes saber exactamente qué se instala y por qué). A diferencia del RGPD, en Colombia no existe exención de consentimiento para cookies "estrictamente necesarias".</p>
 
             <h3>4.4 Tus Opciones de Cookies</h3>
             <p>En tu primera visita, nuestro banner de consentimiento te permite aceptar o rechazar cada categoría de cookies individualmente. Puedes actualizar tus preferencias en cualquier momento borrando las cookies en la configuración de tu navegador o contactándonos en <a href="mailto:Servicio@blackscale.consulting">Servicio@blackscale.consulting</a>.</p>
@@ -511,10 +511,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
               Aplicable cuando se atienden clientes con sede en la UE/EEE o se tratan datos de residentes de la UE
             </div>
 
-            <p>Aunque Blackscale Consulting está constituida y opera en Colombia, el Reglamento General de Protección de Datos de la Unión Europea (RGPD — Reglamento 2016/679) puede aplicarse a nuestras actividades de tratamiento cuando ofrecemos servicios a clientes o contactos ubicados en la Unión Europea o el Espacio Económico Europeo (EEE), conforme al Artículo 3(2) del RGPD (alcance extraterritorial).</p>
+            <p>Aunque BlackScale Consulting está constituida y opera en Colombia, el Reglamento General de Protección de Datos de la Unión Europea (RGPD, Reglamento 2016/679) puede aplicarse a nuestras actividades de tratamiento cuando ofrecemos servicios a clientes o contactos ubicados en la Unión Europea o el Espacio Económico Europeo (EEE), conforme al Artículo 3(2) del RGPD (alcance extraterritorial).</p>
 
             <h3>5.1 Estatus de Adecuación de Colombia</h3>
-            <p>Colombia <strong>no</strong> cuenta con una decisión de adecuación de la UE bajo el Artículo 45 del RGPD. Esto significa que las transferencias de datos personales desde la UE/EEE a Blackscale en Colombia requieren una salvaguarda legal válida bajo el Artículo 46 del RGPD. Abordamos esto mediante <strong>Cláusulas Contractuales Estándar (CCE)</strong> incorporadas en los contratos de tratamiento de datos con clientes de la UE a pedido.</p>
+            <p>Colombia <strong>no</strong> cuenta con una decisión de adecuación de la UE bajo el Artículo 45 del RGPD. Esto significa que las transferencias de datos personales desde la UE/EEE a BlackScale en Colombia requieren una salvaguarda legal válida bajo el Artículo 46 del RGPD. Abordamos esto mediante <strong>Cláusulas Contractuales Estándar (CCE)</strong> incorporadas en los contratos de tratamiento de datos con clientes de la UE a pedido.</p>
 
             <h3>5.2 Base Legal para el Tratamiento de Datos de Residentes de la UE</h3>
             <p>Al tratar datos personales de residentes de la UE/EEE, nos basamos en una o más de las siguientes bases legales del Artículo 6 del RGPD:</p>
@@ -529,7 +529,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <p>Además de los derechos bajo la legislación colombiana (Sección 1.4), los residentes de la UE/EEE tienen derecho al olvido (Art. 17), limitación del tratamiento (Art. 18), portabilidad de datos (Art. 20), oposición (Art. 21) y a no ser objeto de decisiones automatizadas con efectos significativos (Art. 22).</p>
 
             <h3>5.4 Delegado de Protección de Datos</h3>
-            <p>Blackscale Consulting no alcanza los umbrales que exigen un Delegado de Protección de Datos obligatorio bajo el Artículo 37 del RGPD. Todas las consultas sobre protección de datos son atendidas directamente por nuestro equipo fundador. Contacto: <a href="mailto:Servicio@blackscale.consulting">Servicio@blackscale.consulting</a>.</p>
+            <p>BlackScale Consulting no alcanza los umbrales que exigen un Delegado de Protección de Datos obligatorio bajo el Artículo 37 del RGPD. Todas las consultas sobre protección de datos son atendidas directamente por nuestro equipo fundador. Contacto: <a href="mailto:Servicio@blackscale.consulting">Servicio@blackscale.consulting</a>.</p>
 
             <h3>5.5 Autoridad de Control</h3>
             <p>Si estás ubicado en la UE/EEE y consideras que no hemos cumplido el RGPD, tienes derecho a presentar una reclamación ante tu autoridad de control local. La lista de autoridades de protección de datos de la UE está disponible en el sitio web del Comité Europeo de Protección de Datos.</p>
@@ -545,15 +545,15 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <h2><em>Declaración de</em> Accesibilidad</h2>
             <p class="legal-meta">Última actualización: Marzo 2026</p>
 
-            <p>Blackscale Consulting está comprometida con garantizar la accesibilidad digital para personas con discapacidad. Creemos que todos los usuarios —independientemente de su capacidad— merecen igual acceso a nuestros contenidos y servicios. Mejoramos continuamente la experiencia del usuario y aplicamos los estándares de accesibilidad relevantes.</p>
+            <p>BlackScale Consulting está comprometida con garantizar la accesibilidad digital para personas con discapacidad. Creemos que todos los usuarios, independientemente de su capacidad, merecen igual acceso a nuestros contenidos y servicios. Mejoramos continuamente la experiencia del usuario y aplicamos los estándares de accesibilidad relevantes.</p>
 
             <h3>6.1 Marco Legal</h3>
             <p>Nuestro compromiso de accesibilidad se fundamenta en las siguientes normas colombianas e internacionales:</p>
             <ul>
-              <li><strong>Ley Estatutaria 1618 de 2013</strong> — Garantiza el pleno ejercicio de los derechos de las personas con discapacidad en Colombia, implementando la Convención de la ONU sobre los Derechos de las Personas con Discapacidad. El Artículo 16, numeral 11 exige específicamente que las entidades públicas y privadas adopten estándares de accesibilidad web.</li>
-              <li><strong>NTC 5854</strong> — La Norma Técnica Colombiana de Accesibilidad Web, ratificada por ICONTEC el 15 de junio de 2011, basada en las WCAG 2.0. Define tres niveles de conformidad (A, AA, AAA), siendo el Nivel AA el requerido en Colombia.</li>
-              <li><strong>Resolución MinTIC 1519 de 2020</strong> — Actualizó la norma colombiana operativa de accesibilidad para alinearse con las <strong>WCAG 2.1</strong>, exigiendo conformidad de Nivel AA.</li>
-              <li><strong>WCAG 2.1 (Nivel AA)</strong> — Nuestro nivel de cumplimiento objetivo, coherente con la Resolución 1519 de 2020 y las mejores prácticas internacionales.</li>
+              <li><strong>Ley Estatutaria 1618 de 2013</strong>: Garantiza el pleno ejercicio de los derechos de las personas con discapacidad en Colombia, implementando la Convención de la ONU sobre los Derechos de las Personas con Discapacidad. El Artículo 16, numeral 11 exige específicamente que las entidades públicas y privadas adopten estándares de accesibilidad web.</li>
+              <li><strong>NTC 5854</strong>: La Norma Técnica Colombiana de Accesibilidad Web, ratificada por ICONTEC el 15 de junio de 2011, basada en las WCAG 2.0. Define tres niveles de conformidad (A, AA, AAA), siendo el Nivel AA el requerido en Colombia.</li>
+              <li><strong>Resolución MinTIC 1519 de 2020</strong>: Actualizó la norma colombiana operativa de accesibilidad para alinearse con las <strong>WCAG 2.1</strong>, exigiendo conformidad de Nivel AA.</li>
+              <li><strong>WCAG 2.1 (Nivel AA)</strong>: Nuestro nivel de cumplimiento objetivo, coherente con la Resolución 1519 de 2020 y las mejores prácticas internacionales.</li>
             </ul>
 
             <h3>6.2 Nuestras Medidas de Accesibilidad</h3>
@@ -579,7 +579,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <p>Responderemos en un plazo de cinco (5) días hábiles y haremos esfuerzos razonables para atender tu solicitud o proporcionar una alternativa accesible.</p>
 
             <div class="legal-highlight">
-              <p>Este es un documento vivo. A medida que continuamos desarrollando y mejorando el sitio web de Blackscale, revisaremos y actualizaremos periódicamente nuestras prácticas de accesibilidad para reflejar los avances en estándares y tecnología.</p>
+              <p>Este es un documento vivo. A medida que continuamos desarrollando y mejorando el sitio web de BlackScale, revisaremos y actualizaremos periódicamente nuestras prácticas de accesibilidad para reflejar los avances en estándares y tecnología.</p>
             </div>
           </div>
 
@@ -603,7 +603,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
       <div class="container footer__grid">
         <div class="footer__col footer__col--brand">
           <a href="index.html" class="logo logo--footer">
-            <img src="Horizontal Blanco.svg" class="logo__img" alt="Blackscale">
+            <img src="Horizontal Blanco.svg" class="logo__img" alt="BlackScale">
           </a>
           <p class="footer__desc" data-i18n="footer.desc">Agencia B2B con base en Bogotá, Colombia. Especialistas en generación de demanda, revenue operations y habilitación comercial.</p>
           <div class="footer__contact-info">
@@ -614,9 +614,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 
           </div>
           <div class="footer__social">
-            <a href="https://www.linkedin.com/in/blackscale-consulting-0686a83b8/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-            <a href="https://www.instagram.com/blackscale_con/" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-            <a href="https://www.facebook.com/profile.php?id=61578534510595" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.linkedin.com/company/blackscale-consulting/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
         <div class="footer__col" style="display:none">
@@ -647,8 +645,8 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             <li><a href="legal.html#privacy" data-i18n="footer.legal.privacy">Política de Privacidad</a></li>
             <li><a href="legal.html#data-management" data-i18n="footer.legal.data">Gestión de Datos</a></li>
             <li><a href="legal.html#terms" data-i18n="footer.legal.terms">Términos de Servicio</a></li>
-            <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;">Preferencias de Cookies</a></li>
             <li><a href="legal.html#cookies" data-i18n="footer.legal.cookie">Política de Cookies</a></li>
+            <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;" data-i18n="footer.legal.prefs">Preferencias de Cookies</a></li>
             <li><a href="legal.html#accessibility" data-i18n="footer.legal.access">Accesibilidad</a></li>
           </ul>
         </div>
@@ -656,7 +654,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     </div>
     <div class="footer__bottom">
       <div class="container footer__bottom-inner">
-        <p class="footer__copy" data-i18n="footer.copy">© 2026 Blackscale Consulting. Todos los derechos reservados.</p>
+        <p class="footer__copy" data-i18n="footer.copy">© 2026 BlackScale Consulting. Todos los derechos reservados.</p>
         <div class="footer__bottom-links">
           <a href="legal.html#privacy" data-i18n="footer.bottom.privacy">Privacidad</a>
           <a href="legal.html#terms" data-i18n="footer.bottom.terms">Términos</a>
