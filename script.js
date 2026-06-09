@@ -128,7 +128,7 @@ if (form) {
 (function(){var groups=document.querySelectorAll('[data-stagger]');if(!groups.length)return;
   var sio=new IntersectionObserver(function(es){es.forEach(function(e){
     if(!e.isIntersecting)return;
-    e.target.querySelectorAll('.reveal').forEach(function(c,i){c.style.transitionDelay=(i*100)+'ms';});
+    e.target.querySelectorAll('.reveal').forEach(function(c,i){c.style.transitionDelay=(Math.min(i,8)*55)+'ms';});
     sio.unobserve(e.target);});},{threshold:.2});
   groups.forEach(function(g){sio.observe(g);});})();
 
