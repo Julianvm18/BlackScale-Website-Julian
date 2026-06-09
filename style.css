@@ -1,10 +1,10 @@
 /* =========================================
-   BLACKSCALE CONSULTING — BRAND STYLESHEET
+   BLACKSCALE CONSULTING - BRAND STYLESHEET
    Brand colors from Manual de Marca v1.0
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+/* Fuentes movidas a <link> en el <head> de cada página (evita @import
+   render-blocking en cadena, mejora LCP/Core Web Vitals). */
 
 /* NOTA: Juana Light SVG (deprecado, ~484KB) ELIMINADO.
    Chrome/Firefox no soportan SVG fonts. Se usa Cormorant Garamond como
@@ -16,17 +16,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Brand Colors — Pantone system */
-  --burgundy:        #551C25;   /* Pantone 4102 — primary brand */
+  /* Brand Colors - Pantone system */
+  --burgundy:        #551C25;   /* Pantone 4102 - primary brand */
   --burgundy-dark:   #3d1319;
   --burgundy-mid:    #6e2430;
   --burgundy-subtle: rgba(85, 28, 37, 0.14);
   --burgundy-glow:   rgba(85, 28, 37, 0.40);
-  --cream:           #D7D2CB;   /* Pantone Cool Gray 1 — light surfaces */
+  --cream:           #D7D2CB;   /* Pantone Cool Gray 1 - light surfaces */
   --cream-light:     #EDEAE5;
   --brand-black:     #11110F;   /* Pantone Black */
   --brand-black2:    #1a1a17;
-  --gold:            #D19C15;   /* Pantone 7555 — accent */
+  --gold:            #D19C15;   /* Pantone 7555 - accent */
   --gold-dim:        #b88a10;
   --white:           #ffffff;
 
@@ -39,7 +39,7 @@
   --muted-light:  #cfc9c1;
   --text:         #ECE8E2;
 
-  /* Typography — Brand Font: Juana Light */
+  /* Typography - Brand Font: Juana Light */
   --serif: 'Juana Light', 'Cormorant Garamond', Georgia, serif;   /* Headings */
   --sans:  'Juana Light', 'Cormorant Garamond', Georgia, serif;   /* Body text (legacy, headings only) */
   --body:  'Poppins', system-ui, -apple-system, sans-serif;       /* Complementary body/UI text */
@@ -100,7 +100,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 20px;
 }
 
-/* Contact form section-tag — 18% larger than base */
+/* Contact form section-tag - 18% larger than base */
 .contact-inline .section-tag,
 .contact .section-tag {
   font-size: 16px;
@@ -193,6 +193,19 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--burgundy-mid);
   color: var(--cream-light);
   background: var(--burgundy-subtle);
+}
+
+.btn--ghost-gold {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid rgba(209,156,21,0.55);
+  font-size: 15px;
+  padding: 12px 26px;
+}
+.btn--ghost-gold:hover {
+  background: rgba(209,156,21,0.12);
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 .btn--outline-burgundy {
@@ -448,15 +461,15 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(17,17,15,0.88) 0%,
-    rgba(17,17,15,0.80) 40%,
-    rgba(17,17,15,0.95) 100%
+    rgba(17,17,15,0.90) 0%,
+    rgba(17,17,15,0.86) 40%,
+    rgba(17,17,15,0.96) 100%
   );
   pointer-events: none;
   z-index: 0;
 }
 
-/* Radial burgundy glow — stronger */
+/* Radial burgundy glow - stronger */
 .hero::before {
   content: '';
   position: absolute;
@@ -577,7 +590,7 @@ a { color: inherit; text-decoration: none; }
    SERVICES
    ========================================= */
 .services {
-  padding: 130px 0;
+  padding: 92px 0;
   border-top: 1px solid var(--border);
   position: relative;
   overflow: hidden;
@@ -630,22 +643,32 @@ a { color: inherit; text-decoration: none; }
 .card {
   background: var(--surface);
   padding: 40px 36px;
-  transition: background var(--transition);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  transition: background var(--transition), transform var(--transition),
+              border-color var(--transition), box-shadow var(--transition);
   position: relative;
+  overflow: hidden;
 }
 
 .card::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 36px; right: 36px;
-  height: 2px;
-  background: var(--burgundy);
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gold);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
 }
 
-.card:hover { background: var(--surface-2); }
+.card:hover {
+  background: var(--surface-2);
+  transform: translateY(-4px);
+  border-color: rgba(209,156,21,0.45);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.45);
+}
 .card:hover::after { transform: scaleX(1); }
 
 .card__icon {
@@ -679,7 +702,7 @@ a { color: inherit; text-decoration: none; }
    WHY US
    ========================================= */
 .why {
-  padding: 130px 0;
+  padding: 92px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   position: relative;
@@ -706,7 +729,7 @@ a { color: inherit; text-decoration: none; }
   z-index: 0;
 }
 
-/* Sutil glow burgundy en la esquina superior derecha — refuerza identidad de marca */
+/* Sutil glow burgundy en la esquina superior derecha - refuerza identidad de marca */
 .why::after {
   content: '';
   position: absolute;
@@ -865,7 +888,7 @@ a { color: inherit; text-decoration: none; }
    FOUNDERS
    ========================================= */
 .founders {
-  padding: 130px 0;
+  padding: 92px 0;
   background: var(--surface);
   border-top: 1px solid var(--border);
   position: relative;
@@ -915,11 +938,17 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   gap: 28px;
   align-items: flex-start;
-  transition: background var(--transition);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  transition: background var(--transition), transform var(--transition),
+              border-color var(--transition), box-shadow var(--transition);
 }
 
 .founder-card:hover {
   background: var(--surface-2);
+  transform: translateY(-4px);
+  border-color: rgba(209,156,21,0.45);
+  border-top-color: var(--gold);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.45);
 }
 .founder-card:hover .founder-card__photo { border-color: var(--gold); }
 .founder-card:hover h3 { color: var(--gold); }
@@ -988,7 +1017,7 @@ a { color: inherit; text-decoration: none; }
    PROCESS
    ========================================= */
 .process {
-  padding: 130px 0;
+  padding: 92px 0;
   border-top: 1px solid var(--border);
   position: relative;
   overflow: hidden;
@@ -1027,7 +1056,8 @@ a { color: inherit; text-decoration: none; }
   background: var(--brand-black);
   border: 1px solid var(--border);
   position: relative;
-  transition: border-color var(--transition), background var(--transition);
+  transition: border-color var(--transition), background var(--transition),
+              transform var(--transition), box-shadow var(--transition);
 }
 
 /* 6-step grid: top-left, top-right, bottom-left, bottom-right corners */
@@ -1037,17 +1067,20 @@ a { color: inherit; text-decoration: none; }
 .step:last-child    { border-radius: 0 0 var(--radius-lg) 0; }
 
 .step:hover {
-  border-color: var(--burgundy);
+  border-color: rgba(209,156,21,0.45);
   background: var(--surface);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.45);
+  z-index: 2;
 }
 
-/* Burgundy top accent on hover */
+/* Gold top accent on hover */
 .step::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: var(--burgundy);
+  background: var(--gold);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -1161,7 +1194,7 @@ a { color: inherit; text-decoration: none; }
    CONTACT
    ========================================= */
 .contact {
-  padding: 130px 0;
+  padding: 92px 0;
   background: var(--brand-black);
   border-top: 1px solid var(--border);
   position: relative;
@@ -1495,7 +1528,7 @@ form button[type="submit"] {
 }
 
 /* =========================================
-   WHY US — FULL PAGE EXTRA CONTENT
+   WHY US - FULL PAGE EXTRA CONTENT
    ========================================= */
 .values {
   padding: 100px 0;
@@ -1518,9 +1551,17 @@ form button[type="submit"] {
   border-left: 3px solid var(--burgundy);
   border-radius: var(--radius-lg);
   padding: 36px 32px;
-  transition: background var(--transition);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  transition: background var(--transition), transform var(--transition),
+              border-color var(--transition), box-shadow var(--transition);
 }
-.value-card:hover { background: var(--surface-2); }
+.value-card:hover {
+  background: var(--surface-2);
+  transform: translateY(-4px);
+  border-color: rgba(209,156,21,0.45);
+  border-left-color: var(--gold);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.45);
+}
 
 .value-card h3 {
   font-family: var(--serif);
@@ -1539,7 +1580,7 @@ form button[type="submit"] {
 }
 
 /* =========================================
-   PROCESS — FULL PAGE EXTRA CONTENT
+   PROCESS - FULL PAGE EXTRA CONTENT
    ========================================= */
 .process-detail {
   padding: 100px 0;
@@ -1561,7 +1602,20 @@ form button[type="submit"] {
   display: flex;
   gap: 24px;
   align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 30px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  transition: transform var(--transition), border-color var(--transition),
+              box-shadow var(--transition);
 }
+.process-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(209,156,21,0.45);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.45);
+}
+.process-item:hover .process-item__num { color: var(--gold); opacity: 1; }
 
 .process-item__num {
   font-family: var(--serif);
@@ -1571,6 +1625,7 @@ form button[type="submit"] {
   line-height: 1;
   flex-shrink: 0;
   opacity: 0.6;
+  transition: color var(--transition), opacity var(--transition);
 }
 
 .process-item h3 {
@@ -1623,14 +1678,17 @@ form button[type="submit"] {
   .hero__cta .btn { width: 100%; }
   }
 
-/* Nav button override for burgundy background */
+/* Nav button override for burgundy background - solid gold CTA */
 .nav .btn--outline {
-  border-color: rgba(237, 234, 229, 0.45);
+  background: var(--gold);
+  color: var(--brand-black);
+  border-color: var(--gold);
+  font-weight: 600;
 }
 .nav .btn--outline:hover {
-  border-color: var(--cream-light);
-  background: rgba(237, 234, 229, 0.12);
-  color: var(--white);
+  background: var(--gold-dim);
+  border-color: var(--gold-dim);
+  color: var(--brand-black);
 }
 
 /* =========================================
@@ -1653,7 +1711,7 @@ form button[type="submit"] {
 }
 
 /* =========================================
-   FLORITURAS — brand decorative elements
+   FLORITURAS - brand decorative elements
    Low-opacity SVG ornaments used as subtle
    background support graphics (brand guide)
    ========================================= */
@@ -1666,7 +1724,7 @@ form button[type="submit"] {
   will-change: transform;
 }
 
-/* Section bridges — zero-height divs between sections that let
+/* Section bridges - zero-height divs between sections that let
    florituras span across the boundary (escapes each section's overflow:hidden) */
 .section-bridge {
   position: relative;
@@ -1674,6 +1732,14 @@ form button[type="submit"] {
   overflow: visible;
   z-index: 10;
 }
+/* Defensive: a hidden section must not leave a black void, and the bridges
+   around it should collapse so no dead space remains between live sections. */
+section[style*="display:none"],
+section[style*="display: none"] { display: none !important; }
+section[style*="display:none"] + .section-bridge,
+section[style*="display: none"] + .section-bridge,
+.section-bridge:has(+ section[style*="display:none"]),
+.section-bridge:has(+ section[style*="display: none"]) { display: none; }
 .section-bridge .floritura {
   position: absolute;
   opacity: 0.32;
@@ -1711,7 +1777,7 @@ form button[type="submit"] {
 
 
 /* =============================================
-   FIX 1 — Blog article readability
+   FIX 1 - Blog article readability
    ============================================= */
 .blog-article p,
 .article-content p,
@@ -1722,7 +1788,7 @@ form button[type="submit"] {
 }
 
 /* =============================================
-   FIX 2 — Mobile hero overflow fix
+   FIX 2 - Mobile hero overflow fix
    ============================================= */
 body { overflow-x: hidden; }
 .hero, .hero__inner, section {
@@ -1741,7 +1807,7 @@ body { overflow-x: hidden; }
     word-break: break-word;
   }
 
-/* Key stats — desktop 3-col, mobile untouched */
+/* Key stats - desktop 3-col, mobile untouched */
 }
 
 /* Key Stats Strip */
@@ -1799,7 +1865,7 @@ body { overflow-x: hidden; }
   .btn--ghost { margin-left: 0; margin-top: 0.75rem; display: block; text-align: center; }
 }
 
-/* ── PAIN HOOK LABEL / TITLE — inherits all layout from .why ── */
+/* ── PAIN HOOK LABEL / TITLE - inherits all layout from .why ── */
 .pain-hook__label {
   display: block;
   font-family: var(--body);
@@ -1823,16 +1889,16 @@ body { overflow-x: hidden; }
   line-height: 1.3;
 }
 
-/* ── WHY CTA — full-width grid row so text-align:center is page-centered ── */
+/* ── WHY CTA - full-width grid row so text-align:center is page-centered ── */
 .why__inner > .section-cta {
   grid-column: 1 / -1;
 }
 
 /* ============================================================
-   ===== AÑADIDOS v3 — IMÁGENES EN HOME Y BLOG ==============
+   ===== AÑADIDOS v3 - IMÁGENES EN HOME Y BLOG ==============
    ============================================================ */
 
-/* ── PROBLEM SECTION (Home) — V2: banner imagen + cards ── */
+/* ── PROBLEM SECTION (Home) - V2: banner imagen + cards ── */
 .problem-section{
   background:var(--brand-black, #11110F);
   border-top:1px solid rgba(85,28,37,0.3);
@@ -1963,7 +2029,7 @@ body { overflow-x: hidden; }
   .problem-content{padding:48px 16px 60px;}
 }
 
-/* ── BLOG INDEX — Grid A1: 3 columnas con imagen arriba ── */
+/* ── BLOG INDEX - Grid A1: 3 columnas con imagen arriba ── */
 .blog-grid--a1{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -2213,7 +2279,7 @@ body { overflow-x: hidden; }
 }
 
 /* ============================================================
-   v4 — TIPOGRAFÍA BLOG igual al preview aprobado
+   v4 - TIPOGRAFÍA BLOG igual al preview aprobado
    ============================================================ */
 
 /* H2 en el cuerpo del blog (como en el preview: 30px serif, line 1.22) */
@@ -2240,7 +2306,7 @@ body { overflow-x: hidden; }
   margin: 40px 0 16px !important;
 }
 
-/* Párrafos del blog — tamaño y respiración del preview */
+/* Párrafos del blog - tamaño y respiración del preview */
 .blog-article p,
 .article-content p,
 .post-content p {
@@ -2289,7 +2355,7 @@ body { overflow-x: hidden; }
 }
 
 /* ============================================================
-   v4 — WHY-EXPANDED-V2 — bloques con imagen + bullets
+   v4 - WHY-EXPANDED-V2 - bloques con imagen + bullets
    ============================================================ */
 .why-expanded-v2 {
   background: var(--brand-black, #11110F);
@@ -2445,7 +2511,7 @@ body { overflow-x: hidden; }
 }
 
 /* ============================================================
-   v5 — CONTACT HERO con imagen ambiental
+   v5 - CONTACT HERO con imagen ambiental
    ============================================================ */
 .contact-hero {
   position: relative;
@@ -2548,49 +2614,208 @@ body { overflow-x: hidden; }
   font-weight: 500;
 }
 
-/* ── Habeas Data Consent Checkbox ───────────────────────────────────── */
-.form-consent {
-  margin: 16px 0 20px 0;
-  padding: 12px 14px;
-  background: rgba(107, 39, 55, 0.08);
-  border-left: 3px solid #C9A84C;
-  border-radius: 4px;
+/* =============================================
+   Core Web Vitals - anti-CLS para imágenes
+   Los atributos width/height del HTML dan al navegador
+   el aspect-ratio para reservar espacio. Donde el CSS
+   ya fija tamaño con object-fit:cover, esas reglas mandan.
+   Esta regla evita que las imágenes con dimensiones
+   intrínsecas se deformen en contenedores fluidos.
+   ============================================= */
+img[width][height]{ max-width:100%; }
+.problem-banner img,
+.why-block__image img,
+.founder-card__photo img,
+.contact-hero__bg{ height:100%; }
+
+/* =============================================
+   SECCIÓN: RETOS QUE RESOLVEMOS (objeciones)
+   ============================================= */
+.challenges{
+  padding:92px 0;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(85,28,37,0.18), transparent 60%),
+    var(--brand-black2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
 }
-.consent-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  cursor: pointer;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #F5F5F5;
+.challenge-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:48px;
 }
-.consent-checkbox {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  margin-top: 2px;
-  accent-color: #C9A84C;
-  cursor: pointer;
+.challenge-card{
+  background:rgba(85,28,37,0.08);
+  border:1px solid rgba(209,156,21,0.15);
+  border-radius:4px;
+  padding:32px 28px;
+  transition:transform .35s ease, border-color .35s ease, background .35s ease;
 }
-.consent-text {
-  flex: 1;
-  color: #F5F5F5;
+.challenge-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(209,156,21,0.45);
+  background:rgba(85,28,37,0.14);
 }
-.consent-text a {
-  color: #C9A84C;
-  text-decoration: underline;
+.challenge-card__icon{
+  width:34px;
+  height:34px;
+  color:var(--gold);
+  margin-bottom:18px;
+  transition:color .35s ease, transform .35s ease;
 }
-.consent-text strong {
-  color: #C9A84C;
+.challenge-card__icon svg{ width:100%; height:100%; display:block; }
+.challenge-card:hover .challenge-card__icon{ transform:translateY(-2px); }
+.challenge-card h3{
+  font-size:1.25rem;
+  margin:0 0 10px;
+  color:var(--cream-light);
 }
-.form-consent.consent-error {
-  background: rgba(220, 38, 38, 0.12);
-  border-left-color: #DC2626;
-  animation: shake 0.4s;
+.challenge-card p{
+  font-size:1rem;
+  line-height:1.7;
+  color:#cfcac3;
+  margin:0;
 }
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  75% { transform: translateX(4px); }
+
+/* =============================================
+   SECCIÓN: EMBUDO NUMÉRICO (cómo se ve tu pipeline)
+   Estética alineada al sitio: grid con líneas border,
+   serif en títulos, acento burgundy/gold en hover.
+   ============================================= */
+.funnel{
+  padding:92px 0;
+  background:
+    radial-gradient(100% 100% at 50% 0%, rgba(85,28,37,0.22), transparent 65%),
+    var(--brand-black);
+  border-top:1px solid var(--border);
+}
+.funnel-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  margin-top:56px;
+}
+.funnel-cell{
+  background:var(--surface);
+  padding:38px 30px 34px;
+  position:relative;
+  transition:background var(--transition);
+}
+.funnel-cell:hover{ background:var(--surface-2); }
+.funnel-cell__step{
+  font-family:var(--body);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted, #8a847b);
+  display:block;
+  margin-bottom:18px;
+}
+.funnel-cell--gold .funnel-cell__step{ color:var(--gold); }
+.funnel-cell__figure{
+  font-family:var(--serif);
+  font-size:42px;
+  line-height:1;
+  font-weight:400;
+  letter-spacing:-0.02em;
+  color:var(--cream-light);
+  margin-bottom:10px;
+}
+.funnel-cell--gold .funnel-cell__figure{ color:var(--gold); }
+.funnel-cell__plus{
+  color:var(--gold);
+  font-size:24px;
+  vertical-align:super;
+  margin-left:1px;
+}
+.funnel-cell__name{
+  font-family:var(--serif);
+  font-size:21px;
+  font-weight:400;
+  line-height:1.2;
+  color:var(--cream-light);
+  letter-spacing:-0.01em;
+  margin-bottom:20px;
+  min-height:auto;
+}
+.funnel-cell--gold .funnel-cell__name{ color:var(--gold); }
+.funnel-cell__track{
+  height:6px;
+  width:100%;
+  background:rgba(255,255,255,0.05);
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:22px;
+}
+.funnel-cell__fill{
+  display:block;
+  height:100%;
+  border-radius:20px;
+  background:linear-gradient(90deg,var(--burgundy-mid),var(--burgundy));
+  transform:scaleX(1);
+  transform-origin:left;
+  animation:funnelGrow 1.1s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes funnelGrow{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+.funnel-cell__fill--gold{
+  background:linear-gradient(90deg,var(--gold-dim),var(--gold));
+}
+.funnel-cell__desc{
+  font-family:var(--body);
+  font-size:15.5px;
+  line-height:1.7;
+  color:var(--muted-light);
+  margin:0;
+}
+.funnel-cell::before{
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:3px;
+  background:var(--burgundy);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.3s ease;
+}
+.funnel-cell--gold::before{ background:var(--gold); }
+.funnel-cell:hover::before{ transform:scaleX(1); }
+.funnel-note{
+  max-width:680px;
+  margin:36px auto 0;
+  text-align:center;
+  font-size:0.9rem;
+  font-style:italic;
+  color:rgba(245,245,242,0.5);
+}
+
+/* Responsive: objeciones + embudo */
+@media(max-width:900px){
+  .challenge-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:600px){
+  .challenge-grid{ grid-template-columns:1fr; }
+  .funnel-grid{ grid-template-columns:1fr; }
+  .funnel-grid{ grid-template-columns:repeat(2,1fr); }
+  .funnel-cell__name{ min-height:auto; }
+}
+
+/* Card de servicio a ancho completo (SEO destacado, cierra fila impar) */
+.card--wide{
+  grid-column:1 / -1;
+  display:flex;
+  align-items:center;
+  gap:28px;
+  padding:34px 36px;
+}
+.card--wide .card__icon{ margin-bottom:0; flex-shrink:0; }
+.card--wide h3{ margin-bottom:8px; }
+.card--wide .card__text{ flex:1; }
+.card--wide p{ margin:0; max-width:760px; }
+@media(max-width:980px){
+  .card--wide{ flex-direction:column; align-items:flex-start; gap:14px; }
 }
