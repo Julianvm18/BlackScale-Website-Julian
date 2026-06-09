@@ -427,9 +427,9 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 <!-- HERO -->
 <section class="diag-hero">
   <div class="container">
-    <div class="diag-hero__tag">Solo toma 3 minutos</div>
-    <h1>¿Dónde está perdiendo dinero<br><em>tu operación comercial?</em></h1>
-    <p class="diag-hero__sub">5 preguntas sobre tu proceso comercial B2B. Diagnóstico inmediato con los puntos exactos donde tu pipeline está perdiendo oportunidades, diseñado para empresas en Colombia.</p>
+    <div class="diag-hero__tag reveal">Solo toma 3 minutos</div>
+    <h1 class="reveal">¿Dónde está perdiendo dinero<br><em>tu operación comercial?</em></h1>
+    <p class="diag-hero__sub reveal">5 preguntas sobre tu proceso comercial B2B. Diagnóstico inmediato con los puntos exactos donde tu pipeline está perdiendo oportunidades, diseñado para empresas en Colombia.</p>
     <div class="diag-hero__stats">
       <div class="diag-stat">
         <span class="diag-stat__num">5</span>
@@ -459,10 +459,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
 </div>
 
 <!-- FORM -->
-<div class="form-container" id="formContainer">
+<div class="form-container" id="formContainer" data-stagger>
 
   <div class="diag-step active" id="stepStart">
-    <div class="step-card" style="text-align:center">
+    <div class="step-card reveal" style="text-align:center">
       <div style="font-size:2.5rem;margin-bottom:16px">📊</div>
       <div class="step-question">Tu diagnóstico comercial empieza aquí</div>
       <div class="step-hint">Evaluaremos la conexión entre tu marketing y ventas, el estado de tu pipeline B2B y tu motor de generación de demanda. En menos de 3 minutos sabrás exactamente dónde están las fugas en tu operación comercial. Diseñado para empresas B2B en Colombia.</div>
@@ -473,7 +473,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   </div>
 
   <div class="diag-step" id="step1">
-    <div class="step-card">
+    <div class="step-card reveal">
       <div class="step-number">Pregunta 1 de 5</div>
       <div class="step-question">¿Sabes cuánto revenue generó tu marketing este trimestre?</div>
       <div class="step-hint">Si no puedes medirlo, no puedes mejorarlo.</div>
@@ -491,7 +491,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   </div>
 
   <div class="diag-step" id="step2">
-    <div class="step-card">
+    <div class="step-card reveal">
       <div class="step-number">Pregunta 2 de 5</div>
       <div class="step-question">¿Tu pipeline de ventas tiene etapas claras y se gestiona con datos?</div>
       <div class="step-hint">Un pipeline sin estructura es solo una lista de esperanzas.</div>
@@ -509,7 +509,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   </div>
 
   <div class="diag-step" id="step3">
-    <div class="step-card">
+    <div class="step-card reveal">
       <div class="step-number">Pregunta 3 de 5</div>
       <div class="step-question">¿Marketing y ventas trabajan hacia los mismos objetivos?</div>
       <div class="step-hint">La mayoría del pipeline perdido ocurre en el handoff entre marketing y ventas.</div>
@@ -527,7 +527,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   </div>
 
   <div class="diag-step" id="step4">
-    <div class="step-card">
+    <div class="step-card reveal">
       <div class="step-number">Pregunta 4 de 5</div>
       <div class="step-question">¿Cómo consigue tu empresa nuevos prospectos hoy?</div>
       <div class="step-hint">La forma en que generas demanda determina la calidad de tu pipeline.</div>
@@ -545,7 +545,7 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
   </div>
 
   <div class="diag-step" id="step5">
-    <div class="step-card">
+    <div class="step-card reveal">
       <div class="step-number">Pregunta 5 de 5</div>
       <div class="step-question">¿Cuál es el problema más urgente en tu operación comercial?</div>
       <div class="step-hint">Elige el que más te quita el sueño hoy.</div>
@@ -722,5 +722,6 @@ function submitCapture(){
 // Mobile menu
 (function(){var burger=document.querySelector('.nav__burger');var menu=document.getElementById('mobileMenu');if(!burger||!menu)return;burger.addEventListener('click',function(){menu.classList.toggle('open');burger.classList.toggle('open');});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!burger.contains(e.target)){menu.classList.remove('open');burger.classList.remove('open');}});})();
 </script>
+<script defer src="/script.js"></script>
 </body>
 </html>
