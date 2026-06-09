@@ -8,11 +8,11 @@ var klaroConfig = {
   cookieName: 'klaro-blackscale',
   cookieExpiresAfterDays: 365,
   default: false,
-  mustConsent: true,
+  mustConsent: false,
   acceptAll: true,
   hideDeclineAll: false,
   hideLearnMore: false,
-  noticeAsModal: true,
+  noticeAsModal: false,
   translations: {
     es: {
       consentModal: {
@@ -21,7 +21,7 @@ var klaroConfig = {
       },
       consentNotice: {
         title: 'Cookies',
-        description: 'Usamos cookies de analítica y marketing. {purposes}.',
+        description: '<strong class="cn-lead">Tu privacidad importa.</strong> Usamos cookies para analizar el tráfico y mejorar tu experiencia. <a href="/legal#cookies">Más información</a>.',
         changeDescription: 'Hemos actualizado nuestras cookies. Revisa tus preferencias.',
         learnMore: 'Personalizar'
       },
@@ -42,7 +42,7 @@ var klaroConfig = {
         purposes: 'Finalidades',
         purpose: 'Finalidad'
       },
-      poweredBy: ''
+      poweredBy: ' '
     }
   },
   services: [
