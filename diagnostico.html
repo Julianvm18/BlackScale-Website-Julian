@@ -128,7 +128,8 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     .progress-bar-fill { height: 100%; width: 0; background: var(--gold); border-radius: 3px; transition: width var(--t-med) var(--ease); }
     .progress-text { display: flex; justify-content: space-between; margin-top: 10px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 
-    .form-container { max-width: 680px; margin: var(--sp-4) auto var(--sp-9); padding: 0 28px; position: relative; z-index: 2; }
+    .form-container { max-width: 680px; margin: var(--sp-4) auto var(--sp-9); padding: 0 28px; position: relative; z-index: 2; scroll-margin-top: 96px; }
+    #progressWrap { scroll-margin-top: 84px; }
     .diag-step { display: none; }
     .diag-step.active { display: block; animation: fadeUp 0.45s var(--ease); }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
@@ -385,12 +386,13 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     };
     function startDiag(){ hide('stepStart'); show('step1'); document.getElementById('progressWrap').style.display='block'; C=1; prog(); }
     function sel(el,s){ el.closest('.step-card').querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected')); el.classList.add('selected'); A[s]={label:el.querySelector('.opt-label').textContent.trim(),score:parseInt(el.dataset.score)||0}; var b=document.getElementById('btn'+s); if(b)b.disabled=false; }
-    function next(s){ hide('step'+(s-1)); if(s<=T){ show('step'+s); C=s; prog(); } window.scrollTo({top:0,behavior:'smooth'}); }
-    function back(s){ if(s===0){ hide('step1'); show('stepStart'); document.getElementById('progressWrap').style.display='none'; C=0; } else { hide('step'+(s+1)); show('step'+s); C=s; } prog(); window.scrollTo({top:0,behavior:'smooth'}); }
+    function next(s){ hide('step'+(s-1)); if(s<=T){ show('step'+s); C=s; prog(); } scrollQuiz(); }
+    function back(s){ if(s===0){ hide('step1'); show('stepStart'); document.getElementById('progressWrap').style.display='none'; C=0; } else { hide('step'+(s+1)); show('step'+s); C=s; } prog(); scrollQuiz(); }
+    function scrollQuiz(){ var t=document.getElementById('progressWrap'); if(!t||getComputedStyle(t).display==='none'){ t=document.querySelector('.form-container'); } if(t){ t.scrollIntoView({behavior:'smooth',block:'start'}); } }
     function prog(){ if(!C)return; var p=Math.round(C/T*100); document.getElementById('progressFill').style.width=p+'%'; document.getElementById('progressLabel').textContent='Pregunta '+C+' de '+T; document.getElementById('progressPct').textContent=p+'%'; }
     function hide(id){ var el=document.getElementById(id); if(el)el.classList.remove('active'); }
     function show(id){ var el=document.getElementById(id); if(el)el.classList.add('active'); }
-    function goToResults(){ hide('step5'); show('stepResults'); document.getElementById('progressWrap').style.display='none'; var t=0; for(var i=1;i<=4;i++) if(A[i]) t+=A[i].score; renderResults(Math.round(t/16*100)); window.scrollTo({top:0,behavior:'smooth'}); }
+    function goToResults(){ hide('step5'); show('stepResults'); document.getElementById('progressWrap').style.display='none'; var t=0; for(var i=1;i<=4;i++) if(A[i]) t+=A[i].score; renderResults(Math.round(t/16*100)); scrollQuiz(); }
     function renderResults(p){
       var sc=document.getElementById('scoreCircle');
       document.getElementById('scoreNumber').textContent=p+'/100';
