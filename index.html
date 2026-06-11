@@ -189,6 +189,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   <link rel="icon" type="image/svg+xml" href="assets/simbolo-blanco.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
   <link rel="stylesheet" href="bs.css">
   <script>
     window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -224,7 +225,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     }
     .hero__cta { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-bottom: var(--sp-6); }
     .hero .stat-panel { max-width: 860px; margin: 0 auto; }
-    .hero-underline { position: absolute; z-index: 1; pointer-events: none; overflow: visible; left: 50%; transform: translateX(-50%); width: 560px; }
+    .hero-underline { position: absolute; z-index: 1; pointer-events: none; overflow: visible; left: 50%; transform: translateX(-50%); width: min(540px, 82vw); max-width: 100%; }
     .hero-underline path { fill: none; stroke: var(--gold); stroke-width: 2.6; stroke-linecap: round; opacity: 0.85; }
     .hero .flor--tr { top: 86px; right: -60px; width: 300px; }
     .hero .flor--bl { bottom: -30px; left: -70px; width: 340px; transform: scaleX(-1); }
