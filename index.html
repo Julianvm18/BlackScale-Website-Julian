@@ -698,12 +698,12 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
       if (!h1 || !ul || !path) return;
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       function place() {
-        var ir = h1.parentElement.getBoundingClientRect();
-        var hr = h1.getBoundingClientRect();
-        var w = Math.min(560, hr.width * 0.66);
+        /* Usar offset* (coordenadas de layout, inmunes al zoom global del body) */
+        var inner = h1.parentElement;
+        var w = Math.min(560, h1.offsetWidth * 0.66);
         ul.style.width = w + 'px';
-        ul.style.left = (ir.width / 2) + 'px';
-        ul.style.top = ((hr.bottom - ir.top) - 41) + 'px';
+        ul.style.left = (inner.offsetWidth / 2) + 'px';
+        ul.style.top = (h1.offsetTop + h1.offsetHeight - 41) + 'px';
       }
       var drawn = false;
       function draw() {
