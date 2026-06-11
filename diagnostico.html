@@ -434,6 +434,9 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
       fetch('https://nexus.blackscale.consulting/api/webhook',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
         .then(function(r){
           if(r.status===201||r.ok){
+            /* Conversión: solo si hay consentimiento (fbq/gtag existen tras Klaro). */
+            try { if(window.fbq) window.fbq('track','Lead',{content_name:'diagnostico'}); } catch(e){}
+            try { if(window.gtag) window.gtag('event','generate_lead',{currency:'COP',value:0}); } catch(e){}
             note.textContent='Recibido. Te contactamos en menos de un día hábil.';
             note.className='capture-note sent';
             document.getElementById('captureForm').style.display='none';

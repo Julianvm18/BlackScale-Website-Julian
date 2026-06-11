@@ -194,6 +194,10 @@
           body: JSON.stringify(payload)
         }).then(function (response) {
           if (response.status === 201 || response.ok) {
+            /* Conversión: solo se dispara si el usuario ya dio consentimiento
+               (fbq/gtag únicamente existen tras activarse vía Klaro). */
+            try { if (window.fbq) window.fbq('track', 'Lead', { content_name: payload.source }); } catch (e) { /* noop */ }
+            try { if (window.gtag) window.gtag('event', 'generate_lead', { currency: 'COP', value: 0 }); } catch (e) { /* noop */ }
             form.reset();
             form.style.display = 'none';
             var success = form.parentElement.querySelector('.form-success');
