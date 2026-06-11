@@ -129,12 +129,10 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
     .post:hover::before { transform: scaleX(1); }
 
     /* Imagen editorial B/N + overlay burgundy */
-    .post__media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(135deg, #1a1512, #11110f); }
-    .post__media image-slot { width: 100%; height: 100%; display: block; }
-    .post__media image-slot::part(frame) { background: linear-gradient(135deg, rgba(85,28,37,0.4), rgba(13,13,13,0.65)); }
-    .post__media image-slot::part(image) { filter: grayscale(1) contrast(1.05) brightness(0.72); }
-    .post__media image-slot::part(empty) { color: var(--muted-light); }
-    .post__media::after {
+    .post__media { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(135deg, #1a1512, #11110f); }
+    .post__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--t-med) var(--ease); }
+    .post:hover .post__media img { transform: scale(1.04); }
+                    .post__media::after {
       content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
       background:
         linear-gradient(180deg, rgba(13,13,13,0) 40%, rgba(13,13,13,0.7)),
@@ -213,6 +211,11 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
       <div class="container">
         <div class="blog-grid" data-stagger>
           <article class="post post--featured reveal">
+            <a class="post__media" href="puntos-de-fuga-marketing-ventas-b2b.html" aria-label="Leer: Los 7 puntos de fuga entre marketing y ventas B2B">
+              <img src="img/puntos-de-fuga-marketing-ventas-b2b.jpg" alt="" loading="lazy" width="1200" height="900">
+              <span class="post__tag">Destacado</span>
+            </a>
+            
             <div class="post__body">
               <div class="post__meta"><span>22 May 2026</span><span>12 min de lectura</span></div>
               <h2 class="post__title"><a href="puntos-de-fuga-marketing-ventas-b2b.html">Los 7 puntos de fuga entre marketing y ventas B2B</a></h2>
@@ -221,6 +224,11 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             </div>
           </article>
           <article class="post reveal">
+            <a class="post__media" href="indicadores-salud-pipeline-b2b.html" aria-label="Leer: 4 indicadores de salud del pipeline B2B">
+              <img src="img/indicadores-salud-pipeline-b2b.jpg" alt="" loading="lazy" width="1200" height="750">
+              <span class="post__tag">Pipeline</span>
+            </a>
+            
             <div class="post__body">
               <div class="post__meta"><span>23 May 2026</span><span>9 min</span></div>
               <h2 class="post__title"><a href="indicadores-salud-pipeline-b2b.html">4 indicadores de salud del pipeline B2B</a></h2>
@@ -229,6 +237,11 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             </div>
           </article>
           <article class="post reveal">
+            <a class="post__media" href="checklist-habilitacion-comercial-b2b.html" aria-label="Leer: Checklist de habilitación comercial B2B">
+              <img src="img/checklist-habilitacion-comercial-b2b.jpg" alt="" loading="lazy" width="1200" height="750">
+              <span class="post__tag">Habilitación</span>
+            </a>
+            
             <div class="post__body">
               <div class="post__meta"><span>23 May 2026</span><span>11 min</span></div>
               <h2 class="post__title"><a href="checklist-habilitacion-comercial-b2b.html">Checklist de habilitación comercial B2B</a></h2>
@@ -237,6 +250,11 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             </div>
           </article>
           <article class="post reveal">
+            <a class="post__media" href="revops-para-pymes-que-es.html" aria-label="Leer: RevOps para PYMEs">
+              <img src="img/revops-para-pymes-que-es.jpg" alt="" loading="lazy" width="1200" height="750">
+              <span class="post__tag">RevOps</span>
+            </a>
+            
             <div class="post__body">
               <div class="post__meta"><span>3 Jun 2026</span><span>8 min</span></div>
               <h2 class="post__title"><a href="revops-para-pymes-que-es.html">RevOps para PYMEs: qué es y por qué tu empresa lo necesita ahora</a></h2>
@@ -245,6 +263,11 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             </div>
           </article>
           <article class="post reveal">
+            <a class="post__media" href="consultoria-ventas-b2b-colombia.html" aria-label="Leer: Consultoría de ventas B2B en Colombia">
+              <img src="img/consultoria-ventas-b2b-colombia.jpg" alt="" loading="lazy" width="1200" height="750">
+              <span class="post__tag">Consultoría</span>
+            </a>
+            
             <div class="post__body">
               <div class="post__meta"><span>5 Jun 2026</span><span>10 min</span></div>
               <h2 class="post__title"><a href="consultoria-ventas-b2b-colombia.html">Consultoría de ventas B2B en Colombia: cuándo conviene</a></h2>
@@ -253,6 +276,11 @@ src="https://www.facebook.com/tr?id=1753512212293395&ev=PageView&noscript=1"
             </div>
           </article>
           <article class="post reveal">
+            <a class="post__media" href="agencia-marketing-b2b-colombia.html" aria-label="Leer: Agencia de marketing B2B en Colombia">
+              <img src="img/agencia-marketing-b2b-colombia.jpg" alt="" loading="lazy" width="1200" height="750">
+              <span class="post__tag">Marketing B2B</span>
+            </a>
+            
             <div class="post__body">
               <div class="post__meta"><span>6 Jun 2026</span><span>9 min</span></div>
               <h2 class="post__title"><a href="agencia-marketing-b2b-colombia.html">Agencia de marketing B2B en Colombia: qué exigirle</a></h2>
