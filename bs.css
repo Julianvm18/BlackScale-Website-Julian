@@ -836,3 +836,10 @@ strong { font-weight: 600; color: var(--cream-light); }
     padding-bottom: var(--sp-4);
   }
 }
+
+/* Imagenes internas del blog en B/N (regla de marca: blog en B/N + velo caoba).
+   Cubre las figuras hotlinkeadas para que rendericen en escala de grises. */
+.c3-figure__img img,
+.inline-figure__img img {
+  filter: grayscale(1) contrast(1.03);
+}
