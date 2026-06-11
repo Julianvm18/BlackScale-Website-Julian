@@ -2,6 +2,20 @@
 
 Guía para retomar el proyecto en cualquier sesión nueva. Léela completa antes de hacer cambios.
 
+## ⚡ Actualización (rediseño v2 aplicado)
+Se integró el rediseño completo (nivel Awwwards/Directive) sobre el sitio de producción:
+- **Stylesheet único nuevo: `bs.css`** (tokens del manual + componentes). **JS único: `bs.js`** (reveal on scroll,
+  spotlight en cards, magnetic CTAs, nav móvil, back-to-top, validación + envío real de forms al webhook de Nexus).
+- Se ELIMINARON `style.css`, `script.js` y `translations.js` (el i18n ya estaba inerte; el sitio quedó solo en ES).
+- Includes compartidos: `footer.js` y `contact-cta.js` (se inyectan en `[data-include="footer"]` / `[data-include="contact"]`
+  en páginas interiores). `image-slot.js` solo se usaría para imágenes del blog (hoy el blog NO usa fotos).
+- Assets del rediseño en `assets/` (florituras del manual, `logo-horizontal-blanco.svg`, `simbolo-blanco.svg`, `fig-floritura.svg`).
+- **Compliance conservado**: Klaro + GA4/Meta Pixel gateados, schema JSON-LD, canonicals/OG, Habeas Data en los forms,
+  link "Preferencias de Cookies" (footer.js + footer inline de index). Se quitó el `cookie-consent.js` del handoff (Klaro lo reemplaza).
+- `sistema.html` = documentación viva del design system (marcada `noindex`, no va en sitemap ni nav).
+- Las páginas mantienen las MISMAS URLs en español y el blog sigue en `/blog/` (índice en `blog/index.html`, 6 posts re-estilizados a `bs.css`).
+- En este entorno gestionado el push SÍ funciona vía `origin` (rama de trabajo); el deploy a producción (main → Hostinger) sigue igual.
+
 ## Qué es
 Sitio web estático (HTML + CSS + JS vanilla) de **BlackScale Consulting**, posicionado como
 **"acelerador de ventas B2B para empresas en Colombia"** (marketing + ventas + revenue ops).

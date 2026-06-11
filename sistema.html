@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sistema de Componentes | BlackScale Redesign</title>
+  <meta name="description" content="Documentación del sistema de diseño y componentes reutilizables del rediseño de BlackScale Consulting.">
+  <link rel="icon" type="image/svg+xml" href="assets/simbolo-blanco.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="bs.css">
+  <style>
+    .ds-section { padding: var(--sp-7) 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .ds-section__head { margin-bottom: var(--sp-5); }
+    .ds-section__head h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 8px; }
+    .ds-section__head p { font-size: 16px; color: var(--muted-light); max-width: 640px; }
+    .ds-label { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: var(--sp-3); }
+
+    .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3); }
+    .swatch { border: 1px solid var(--border); border-radius: var(--r-card); overflow: hidden; background: var(--surface); }
+    .swatch__chip { height: 96px; }
+    .swatch__body { padding: 14px 16px; }
+    .swatch__name { font-size: 14px; font-weight: 600; color: var(--cream-light); }
+    .swatch__hex { font-size: 13px; color: var(--muted); font-family: ui-monospace, monospace; margin-top: 2px; }
+    .swatch__use { font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+
+    .type-row { padding: var(--sp-3) 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: grid; grid-template-columns: 160px 1fr; gap: var(--sp-3); align-items: baseline; }
+    .type-row:last-child { border-bottom: 0; }
+    .type-row .meta { font-size: 12.5px; color: var(--muted); font-family: ui-monospace, monospace; }
+
+    .specimen { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; }
+    .scale-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
+    .scale-box { background: var(--burgundy-soft); border: 1px solid rgba(85,28,37,0.4); border-radius: 6px; display: flex; align-items: flex-end; justify-content: center; color: var(--muted-light); font-size: 11px; padding: 6px; }
+    .demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); }
+    .tok-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tok { font-size: 12.5px; font-family: ui-monospace, monospace; color: var(--muted-light); background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-pill); padding: 7px 14px; }
+    .nav-demo { border: 1px solid var(--border); border-radius: var(--r-card); overflow: hidden; }
+    @media (max-width: 880px) { .swatches { grid-template-columns: repeat(2, 1fr); } .demo-grid { grid-template-columns: 1fr; } .type-row { grid-template-columns: 1fr; gap: 6px; } }
+  </style>
+</head>
+<body>
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="BlackScale, inicio"><img src="assets/logo-horizontal-blanco.svg" alt="BlackScale" width="160" height="34"></a>
+      <nav class="nav__links" aria-label="Principal">
+        <a href="servicios.html">Qué hacemos</a>
+        <a href="por-que-nosotros.html">Por qué nosotros</a>
+        <a href="proceso.html">Proceso</a>
+        <a href="blog/">Blog</a>
+        <a href="diagnostico.html">Diagnóstico</a>
+        <a href="contacto.html" class="btn btn--ghost-gold nav__cta">Contáctanos</a>
+      </nav>
+      <button class="nav__burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="servicios.html">Qué hacemos</a>
+    <a href="por-que-nosotros.html">Por qué nosotros</a>
+    <a href="proceso.html">Proceso</a>
+    <a href="blog/">Blog</a>
+    <a href="diagnostico.html">Diagnóstico</a>
+    <a href="contacto.html">Contáctanos</a>
+  </div>
+
+  <main id="contenido">
+    <section class="page-header" data-screen-label="Sistema / Header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Ruta"><a href="index.html">Inicio</a><span>/</span><span>Sistema de componentes</span></nav>
+        <span class="tag">Design System</span>
+        <h1>Sistema de <em>componentes</em></h1>
+        <p>El lenguaje visual reutilizable que mantiene las 7 páginas como una sola pieza. Estos componentes aplican el manual de marca BlackScale al pie de la letra.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- COLORES -->
+      <section class="ds-section" data-screen-label="Sistema / Color">
+        <div class="ds-section__head">
+          <p class="ds-label">01 · Fundamentos</p>
+          <h2>Paleta de marca</h2>
+          <p>Cuatro tintas Pantone. El dorado es solo acento: líneas, hover y micro-detalles, nunca fondos de bloques grandes ni texto largo.</p>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch__chip" style="background:#551C25;"></div><div class="swatch__body"><div class="swatch__name">Burgundy</div><div class="swatch__hex">#551C25</div><div class="swatch__use">Primario · superficies, botones, profundidad</div></div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#D19C15;"></div><div class="swatch__body"><div class="swatch__name">Gold</div><div class="swatch__hex">#D19C15</div><div class="swatch__use">Acento · líneas, hover, underlines, lazo</div></div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#11110F;"></div><div class="swatch__body"><div class="swatch__name">Negro</div><div class="swatch__hex">#11110F</div><div class="swatch__use">Canvas base · fondo por defecto</div></div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#D7D2CB;"></div><div class="swatch__body"><div class="swatch__name">Cream</div><div class="swatch__hex">#D7D2CB</div><div class="swatch__use">Texto claro, secciones claras alternas</div></div></div>
+        </div>
+        <p class="ds-label" style="margin-top:var(--sp-4);">Superficies escalonadas</p>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch__chip" style="background:#11110F;"></div><div class="swatch__body"><div class="swatch__name">bg</div><div class="swatch__hex">#11110F</div></div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#1c1b18;"></div><div class="swatch__body"><div class="swatch__name">surface</div><div class="swatch__hex">#1c1b18</div></div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#242320;"></div><div class="swatch__body"><div class="swatch__name">surface-2</div><div class="swatch__hex">#242320</div></div></div>
+          <div class="swatch"><div class="swatch__chip" style="background:#2e2c28;"></div><div class="swatch__body"><div class="swatch__name">border</div><div class="swatch__hex">#2e2c28</div></div></div>
+        </div>
+      </section>
+
+      <!-- TIPOGRAFÍA -->
+      <section class="ds-section" data-screen-label="Sistema / Tipografía">
+        <div class="ds-section__head">
+          <p class="ds-label">02 · Fundamentos</p>
+          <h2>Tipografía</h2>
+          <p>Cormorant Garamond (sustituto de Juana Light) para títulos, con cursiva de énfasis en la segunda cláusula. Poppins para subtítulos, body, CTA y anotaciones.</p>
+        </div>
+        <div class="type-row"><span class="meta">Display · serif 300</span><span class="display" style="font-size:48px;">Escalar es <em>estructurar</em></span></div>
+        <div class="type-row"><span class="meta">H1 · serif 300</span><h1 style="font-size:40px;">El acelerador de ventas B2B</h1></div>
+        <div class="type-row"><span class="meta">H2 · serif 300</span><h2 style="font-size:32px;">Convierte visión en resultados</h2></div>
+        <div class="type-row"><span class="meta">H3 · Poppins 600</span><h3>Generación de Demanda</h3></div>
+        <div class="type-row"><span class="meta">Body · Poppins 300 · 18px</span><p class="p" style="max-width:520px;">Construimos el sistema completo de marketing y ventas para que tu pipeline B2B sea predecible y medible.</p></div>
+        <div class="type-row"><span class="meta">Eyebrow · Poppins 600</span><span class="tag">Lo Que Hacemos</span></div>
+      </section>
+
+      <!-- ESPACIADO Y RADIOS -->
+      <section class="ds-section" data-screen-label="Sistema / Spacing">
+        <div class="ds-section__head">
+          <p class="ds-label">03 · Fundamentos</p>
+          <h2>Spacing y radios</h2>
+          <p>Escala matemática de 8px. Radios coherentes: 14px en cards, full (pill) en botones y badges.</p>
+        </div>
+        <div class="scale-row">
+          <div class="scale-box" style="width:8px;height:48px;">8</div>
+          <div class="scale-box" style="width:16px;height:60px;">16</div>
+          <div class="scale-box" style="width:24px;height:72px;">24</div>
+          <div class="scale-box" style="width:32px;height:84px;">32</div>
+          <div class="scale-box" style="width:40px;height:96px;">40</div>
+          <div class="scale-box" style="width:56px;height:108px;">56</div>
+          <div class="scale-box" style="width:72px;height:120px;">72</div>
+          <div class="scale-box" style="width:96px;height:132px;">96</div>
+        </div>
+        <div class="tok-list" style="margin-top:var(--sp-4);">
+          <span class="tok">--r-card: 14px</span>
+          <span class="tok">--r-pill: 999px</span>
+          <span class="tok">--r-sm: 8px</span>
+          <span class="tok">--ease: cubic-bezier(.16,1,.3,1)</span>
+        </div>
+      </section>
+
+      <!-- BOTONES -->
+      <section class="ds-section" data-screen-label="Sistema / Botones">
+        <div class="ds-section__head">
+          <p class="ds-label">04 · Componentes</p>
+          <h2>Botones</h2>
+          <p>Fill burgundy → gold desde abajo en el primario. Variantes ghost cream y ghost gold. Pasa el cursor para ver la transición física.</p>
+        </div>
+        <div class="specimen">
+          <a href="#" class="btn btn--primary">Diagnostica tu pipeline</a>
+          <a href="#" class="btn btn--ghost">Habla con un especialista</a>
+          <a href="#" class="btn btn--ghost-gold">Evalúa tu operación</a>
+        </div>
+      </section>
+
+      <!-- TAGS Y ENLACES -->
+      <section class="ds-section" data-screen-label="Sistema / Tags">
+        <div class="ds-section__head">
+          <p class="ds-label">05 · Componentes</p>
+          <h2>Eyebrows, tags y enlaces</h2>
+          <p>Mayúsculas con tracking amplio en gold. El enlace dorado crece desde la izquierda al hover.</p>
+        </div>
+        <div class="specimen">
+          <span class="tag">Lo Que Hacemos</span>
+          <span class="tag">Retos Que Resolvemos</span>
+          <a href="#" class="link-gold">Identifica tu cuello de botella</a>
+        </div>
+      </section>
+
+      <!-- CARDS -->
+      <section class="ds-section" data-screen-label="Sistema / Cards">
+        <div class="ds-section__head">
+          <p class="ds-label">06 · Componentes</p>
+          <h2>Cards y spotlight</h2>
+          <p>Superficie sobre canvas oscuro como elevación. Hover: elevación -6px, hairline dorado que se dibuja y spotlight que sigue el mouse.</p>
+        </div>
+        <div class="demo-grid">
+          <div class="card">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 3h18M3 9h18M3 15h12M3 21h8"/></svg></div>
+            <h3>Card de servicio</h3>
+            <p>Icono de línea, título y body. El icono pasa de burgundy a gold al hover.</p>
+          </div>
+          <div class="card step-card">
+            <span class="step-num">01</span>
+            <h3>Card de paso</h3>
+            <p>Número en serif con contorno dorado para la secuencia del proceso.</p>
+          </div>
+          <div class="card" style="border-left:3px solid var(--burgundy);">
+            <h3 style="margin-bottom:10px;">Value card</h3>
+            <p>Acento de borde izquierdo burgundy, atado a la marca y usado con medida.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLORITURAS Y LAZO -->
+      <section class="ds-section" data-screen-label="Sistema / Florituras">
+        <div class="ds-section__head">
+          <p class="ds-label">07 · Marca</p>
+          <h2>Florituras y el lazo conductor</h2>
+          <p>Ornamentos de la librería de marca a baja opacidad. El lazo es el trazo continuo que se dibuja al hacer scroll y conecta secciones, en gold o cream.</p>
+        </div>
+        <div class="card" style="position:relative; min-height:200px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+          <svg class="lazo" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:90%;" viewBox="0 0 800 160" aria-hidden="true">
+            <path data-draw="0" d="M 20 100 C 180 30, 300 140, 420 90 C 500 56, 540 130, 470 136 C 420 140, 440 70, 540 74 C 660 80, 720 40, 780 80"></path>
+          </svg>
+          <img class="flor" style="left:5%; top:10%; width:160px;" src="assets/floritura-gold-1.svg" alt="" aria-hidden="true">
+          <img class="flor flor--faint" style="right:5%; bottom:6%; width:150px;" src="assets/floritura-cream-8.svg" alt="" aria-hidden="true">
+          <span class="tag" style="position:relative; z-index:2;">Hilo conductor</span>
+        </div>
+      </section>
+
+      <!-- FORMULARIOS -->
+      <section class="ds-section" data-screen-label="Sistema / Formularios" style="border-bottom:0;">
+        <div class="ds-section__head">
+          <p class="ds-label">08 · Componentes</p>
+          <h2>Campos de formulario</h2>
+          <p>Validación visual: borde burgundy al foco, dorado válido, rojo vacío. Hit targets de 44px mínimo.</p>
+        </div>
+        <div style="max-width:440px;">
+          <div class="form">
+            <div class="form-group">
+              <label for="ds-name">Nombre</label>
+              <input type="text" id="ds-name" class="valid" value="Alejandro García">
+            </div>
+            <div class="form-group">
+              <label for="ds-email">Email</label>
+              <input type="email" id="ds-email" class="invalid" value="correo-incompleto">
+              <span class="field-error" style="display:block;">Ingresa un correo válido.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <button id="back-to-top" aria-label="Volver arriba"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
+  <script src="footer.js"></script>
+  <script src="bs.js"></script>
+</body>
+</html>
