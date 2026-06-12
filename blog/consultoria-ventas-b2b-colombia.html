@@ -62,46 +62,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
   <link rel="stylesheet" href="../bs.css"/>
   <style>body{font-size:18px;padding-top:88px;}</style>
-  <style>
-    .blog-page-header{padding:3.5rem 0 3rem;border-bottom:1px solid rgba(85,28,37,0.4);font-family:var(--serif);}
-    .blog-page-header .section-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D19C15;border:1px solid rgba(209,156,21,.35);padding:.25rem .75rem;border-radius:2px;margin-bottom:1.25rem;}
-    .blog-page-header h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;color:#F5F2EE;margin:0 0 .75rem;line-height:1.2;}
-    .blog-page-header h1 em{font-style:normal;color:#D19C15;}
-    .blog-page-header p{font-size:1rem;color:#a09891;max-width:560px;line-height:1.7;margin:0;}
-    .blog-layout{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;padding:3.5rem 0 5rem;}
-    @media(max-width:900px){.blog-layout{grid-template-columns:1fr;}.blog-sidebar{display:none;}}
-    article h2{font-size:1.5rem;font-weight:700;color:#F5F2EE;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(85,28,37,.4);}
-    article h3{font-size:1.15rem;font-weight:700;color:#D19C15;margin:1.75rem 0 .65rem;}
-    article p{font-size:1.05rem;line-height:1.85;color:#dedad4;margin:0 0 1.25rem;}
-    article ul,article ol{padding-left:1.5rem;margin:0 0 1.25rem;}
-    article li{font-size:1.05rem;line-height:1.85;color:#dedad4;margin-bottom:.5rem;}
-    .callout-impact{background:rgba(109,31,46,.12);border:1px solid rgba(109,31,46,.35);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
-    .callout-impact .label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#D19C15;margin-bottom:.5rem;}
-    .callout-impact .stat{font-size:2.2rem;font-weight:800;color:#C39A4C;line-height:1.1;margin:.25rem 0 .5rem;}
-    .callout-action{background:rgba(195,154,76,.06);border:1px solid rgba(195,154,76,.2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
-    .callout-action .label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C39A4C;margin-bottom:.5rem;}
-    .mid-cta{background:rgba(109,31,46,.12);border:1px solid rgba(109,31,46,.35);border-radius:6px;padding:1.5rem 1.75rem;margin:2.5rem 0;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;}
-    .mid-cta p{margin:0;color:#F5F2EE;font-size:1rem;font-weight:700;}
-    .mid-cta span{font-size:.9rem;color:#a09891;font-weight:400;display:block;margin-top:.25rem;}
-    .mid-cta a{background:#6D1F2E;color:#f5f0e8;font-size:.9rem;font-weight:600;padding:.65rem 1.25rem;border-radius:4px;white-space:nowrap;text-decoration:none;}
-    .toc{background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,.25);border-radius:6px;padding:1.25rem 1.5rem;position:sticky;top:108px;}
-    .toc__title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a6355;margin-bottom:1rem;}
-    .toc ol{padding-left:1.25rem;margin:0;}
-    .toc li{margin-bottom:.5rem;}
-    .toc a{font-size:.88rem;color:#a09891;text-decoration:none;line-height:1.5;}
-    .toc a:hover{color:#D19C15;}
-    .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-    @media(max-width:600px){.related-grid{grid-template-columns:1fr;}}
-    .related-card{display:block;background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,0.35);border-radius:6px;padding:1rem 1.1rem;text-decoration:none;}
-    .related-card__tag{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c9a87c;margin-bottom:.5rem;}
-    .related-card__title{font-size:.9rem;color:#e8e0d5;line-height:1.45;margin-bottom:.65rem;}
-    .related-card__arrow{font-size:.85rem;color:#6D1F2E;}
-    .article-h1{font-size:clamp(1.75rem,4vw,2.4rem);font-weight:800;color:#F5F2EE;line-height:1.2;margin:0 0 .75rem;}
-    .article-h1 em{font-style:normal;color:#D19C15;}
-    .article-meta{font-size:.85rem;color:#7a6355;margin-bottom:2rem;}
-    .sources{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07);font-size:.85rem;color:#7a6355;}
-    .sources-label{font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;color:#5a5048;}
-  </style>
+  <link rel="stylesheet" href="blog-article.css">
 </head>
 <body>
   <a href="#contenido" class="skip-link">Saltar al contenido</a>
@@ -128,25 +89,50 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <a href="../contacto.html">Contáctanos</a>
   </div>
 
-  <div class="blog-page-header">
-    <div class="container">
-      <div class="breadcrumb"><a href="../index.html">Inicio</a><span>/</span><a href="../blog/">Blog</a><span>/</span><span>Consultoría Ventas B2B</span></div>
-      <span class="section-tag">Consultoría Comercial</span>
-      <h1 class="article-h1">Consultoría de Ventas B2B en Colombia:<br /><em>Cuándo la Necesitas y Qué Esperar</em></h1>
-      <p>Señales claras de que tu equipo comercial necesita apoyo externo, qué hace una buena consultoría de ventas B2B en Colombia y cómo medir si está funcionando.</p>
-      <div class="article-meta">BlackScale Consulting · Mayo 2026 · 9 min de lectura</div>
+  <section id="contenido" class="post-hero-b2">
+    <img src="img/consultoria-ventas-b2b-colombia.jpg" alt="" loading="eager" width="1600" height="900">
+    <div class="post-hero-b2__overlay"></div>
+    <div class="container post-hero-b2__content">
+      <nav class="breadcrumb post-hero-b2__breadcrumb" aria-label="breadcrumb">
+        <a href="../index.html">Inicio</a><span>›</span>
+        <a href="../blog/">Blog</a><span>›</span>
+        <span>Consultoría Ventas B2B</span>
+      </nav>
+      <div class="post-hero-b2__meta">15 May 2026 · 9 min de lectura</div>
+      <h1 class="post-hero-b2__title">Consultoría de Ventas B2B en Colombia: <em>Cuándo la Necesitas y Qué Esperar</em></h1>
+      <p class="post-hero-b2__lead">Señales claras de que tu equipo comercial necesita apoyo externo, qué hace una buena consultoría de ventas B2B y cómo medir si está funcionando.</p>
     </div>
-  </div>
+  </section>
 
   <div class="container">
     <div class="blog-layout">
-      <article>
+      <article class="blog-article">
 
-        <section id="contenido" id="intro">
+        <nav class="toc-mobile">
+          <p class="toc__title">En este artículo</p>
+          <ol>
+            <li><a href="#intro">Introducción</a></li>
+            <li><a href="#señales">6 señales que necesitas consultoría</a></li>
+            <li><a href="#que-hace">Qué hace una consultoría B2B</a></li>
+            <li><a href="#roi">Cómo medir el ROI</a></li>
+            <li><a href="#proceso-blackscale">El proceso BlackScale</a></li>
+            <li><a href="#conclusion">Conclusión</a></li>
+          </ol>
+        </nav>
+
+        <section id="intro">
           <p>Hay un momento en la vida de toda empresa B2B colombiana donde el equipo de ventas trabaja duro, las reuniones suceden, las propuestas se envían, y aun así los números no cierran. La cuota no se cumple. Los deals se alargan. El pipeline se infla pero no convierte.</p>
           <p>En ese momento aparecen dos diagnósticos erróneos: o "necesitamos más vendedores" o "necesitamos cambiar al equipo". La mayoría de las veces, ninguno es correcto.</p>
           <p>El problema real suele ser de proceso, no de talento. Y ahí es donde entra la consultoría de ventas B2B.</p>
         </section>
+
+        <figure class="c3-figure">
+          <div class="c3-figure__img"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1000&q=80&auto=format&fit=crop" alt="Equipo revisando indicadores comerciales" loading="lazy" width="1000" height="667"></div>
+          <div class="c3-figure__quote">
+            <span class="c3-figure__mark">”</span>
+            <p>El problema casi nunca es el talento. Es el proceso que ese talento está obligado a improvisar.</p>
+          </div>
+        </figure>
 
         <section id="señales">
           <h2>6 señales de que necesitas una consultoría de ventas B2B</h2>
@@ -191,6 +177,11 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
           <h3>Auditoría del proceso comercial actual</h3>
           <p>El primer paso es entender exactamente qué está pasando, no lo que el equipo cree que está pasando. Eso incluye revisar el CRM, entrevistar a los vendedores, escuchar grabaciones de llamadas, revisar las propuestas y mapear el pipeline stage-by-stage para identificar dónde se caen los deals.</p>
 
+          <figure class="inline-figure">
+            <div class="inline-figure__img"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1400&q=80&auto=format&fit=crop" alt="Auditoría de proceso comercial sobre documentos y datos" loading="lazy" width="1400" height="933"></div>
+            <figcaption>Una auditoría comercial mira lo que pasa de verdad en el CRM, no lo que el equipo cree que pasa.</figcaption>
+          </figure>
+
           <h3>Definición de ICP y criterios de calificación</h3>
           <p>La mayoría de los equipos B2B en Colombia no tiene un criterio escrito de qué hace a un prospecto estar listo para ventas. El resultado: el equipo persigue oportunidades que nunca van a cerrar mientras deja enfriar las que sí podrían. Una consultoría define ese criterio en conjunto con marketing y ventas, por escrito, con ejemplos reales.</p>
 
@@ -214,6 +205,14 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
             <p style="margin-top:.75rem;"><strong style="color:#D19C15;">Semanas 5-8:</strong> Mejora en velocidad de respuesta a leads, mayor adopción del CRM, primeros cambios en tasa de conversión stage-to-stage.</p>
             <p style="margin-top:.75rem;"><strong style="color:#D19C15;">Semanas 9-12:</strong> Impacto medible en win rate, reducción en deals que mueren sin motivo claro, pipeline más limpio y más predecible.</p>
           </div>
+
+          <figure class="c3-figure c3-figure--reverse">
+            <div class="c3-figure__img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80&auto=format&fit=crop" alt="Tablero con métricas de pipeline" loading="lazy" width="1000" height="667"></div>
+            <div class="c3-figure__quote">
+              <span class="c3-figure__mark">”</span>
+              <p>Una consultoría que no muestra impacto en pipeline antes de 90 días no vale lo que cobra.</p>
+            </div>
+          </figure>
 
           <p>Si después de 90 días no hay ningún cambio en estas métricas, hay tres posibilidades: la consultoría no está ejecutando bien, el equipo no está adoptando los cambios, o hay un problema de liderazgo más profundo que la consultoría no puede resolver sola. Una consultoría honesta te dirá cuál de las tres es.</p>
         </section>

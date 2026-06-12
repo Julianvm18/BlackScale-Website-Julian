@@ -76,46 +76,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
   <link rel="stylesheet" href="../bs.css" />
   <style>body{font-size:18px;padding-top:88px;}</style>
-  <style>
-    .blog-page-header{padding:3.5rem 0 3rem;border-bottom:1px solid rgba(85,28,37,0.4);font-family:var(--serif);}
-    .blog-page-header .section-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D19C15;border:1px solid rgba(209,156,21,.35);padding:.25rem .75rem;border-radius:2px;margin-bottom:1.25rem;}
-    .blog-page-header h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;color:#F5F2EE;margin:0 0 .75rem;line-height:1.2;}
-    .blog-page-header h1 em{font-style:normal;color:#D19C15;}
-    .blog-page-header p{font-size:1rem;color:#a09891;max-width:560px;line-height:1.7;margin:0;}
-    .blog-layout{display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;padding:3.5rem 0 5rem;}
-    @media(max-width:900px){.blog-layout{grid-template-columns:1fr;}.blog-sidebar{display:none;}}
-    article h2{font-size:1.5rem;font-weight:700;color:#F5F2EE;margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid rgba(85,28,37,.4);}
-    article h3{font-size:1.15rem;font-weight:700;color:#D19C15;margin:1.75rem 0 .65rem;}
-    article p{font-size:1.05rem;line-height:1.85;color:#dedad4;margin:0 0 1.25rem;}
-    article ul,article ol{padding-left:1.5rem;margin:0 0 1.25rem;}
-    article li{font-size:1.05rem;line-height:1.85;color:#dedad4;margin-bottom:.5rem;}
-    .callout-impact{background:rgba(109,31,46,.12);border:1px solid rgba(109,31,46,.35);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
-    .callout-impact .label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#D19C15;margin-bottom:.5rem;}
-    .callout-impact .stat{font-size:2.2rem;font-weight:800;color:#C39A4C;line-height:1.1;margin:.25rem 0 .5rem;}
-    .callout-action{background:rgba(195,154,76,.06);border:1px solid rgba(195,154,76,.2);border-radius:6px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
-    .callout-action .label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C39A4C;margin-bottom:.5rem;}
-    .mid-cta{background:rgba(109,31,46,.12);border:1px solid rgba(109,31,46,.35);border-radius:6px;padding:1.5rem 1.75rem;margin:2.5rem 0;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;}
-    .mid-cta p{margin:0;color:#F5F2EE;font-size:1rem;font-weight:700;}
-    .mid-cta span{font-size:.9rem;color:#a09891;font-weight:400;display:block;margin-top:.25rem;}
-    .mid-cta a{background:#6D1F2E;color:#f5f0e8;font-size:.9rem;font-weight:600;padding:.65rem 1.25rem;border-radius:4px;white-space:nowrap;text-decoration:none;}
-    .sources{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07);font-size:.85rem;color:#7a6355;}
-    .sources-label{font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;color:#5a5048;}
-    .toc{background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,.25);border-radius:6px;padding:1.25rem 1.5rem;position:sticky;top:108px;}
-    .toc__title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a6355;margin-bottom:1rem;}
-    .toc ol{padding-left:1.25rem;margin:0;}
-    .toc li{margin-bottom:.5rem;}
-    .toc a{font-size:.88rem;color:#a09891;text-decoration:none;line-height:1.5;}
-    .toc a:hover{color:#D19C15;}
-    .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-    @media(max-width:600px){.related-grid{grid-template-columns:1fr;}}
-    .related-card{display:block;background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,0.35);border-radius:6px;padding:1rem 1.1rem;text-decoration:none;}
-    .related-card__tag{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c9a87c;margin-bottom:.5rem;}
-    .related-card__title{font-size:.9rem;color:#e8e0d5;line-height:1.45;margin-bottom:.65rem;}
-    .related-card__arrow{font-size:.85rem;color:#6D1F2E;}
-    .article-h1{font-size:clamp(1.75rem,4vw,2.4rem);font-weight:800;color:#F5F2EE;line-height:1.2;margin:0 0 .75rem;}
-    .article-h1 em{font-style:normal;color:#D19C15;}
-    .article-meta{font-size:.85rem;color:#7a6355;margin-bottom:2rem;}
-  </style>
+  <link rel="stylesheet" href="blog-article.css">
 </head>
 <body>
   <a href="#contenido" class="skip-link">Saltar al contenido</a>
@@ -142,25 +103,51 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <a href="../contacto.html">Contáctanos</a>
   </div>
 
-  <div class="blog-page-header">
-    <div class="container">
-      <div class="breadcrumb"><a href="../index.html">Inicio</a><span>/</span><a href="../blog/">Blog</a><span>/</span><span>Agencia Marketing B2B</span></div>
-      <span class="section-tag">Estrategia Comercial</span>
-      <h1 class="article-h1">Agencia de Marketing B2B en Colombia:<br /><em>Cómo Elegir la Correcta en 2026</em></h1>
-      <p>Guía práctica para empresas colombianas que buscan contratar una agencia B2B. Criterios reales, señales de alerta y las preguntas que debes hacer antes de firmar.</p>
-      <div class="article-meta">BlackScale Consulting · Mayo 2026 · 9 min de lectura</div>
+  <section id="contenido" class="post-hero-b2">
+    <img src="img/agencia-marketing-b2b-colombia.jpg" alt="" loading="eager" width="1600" height="900">
+    <div class="post-hero-b2__overlay"></div>
+    <div class="container post-hero-b2__content">
+      <nav class="breadcrumb post-hero-b2__breadcrumb" aria-label="breadcrumb">
+        <a href="../index.html">Inicio</a><span>›</span>
+        <a href="../blog/">Blog</a><span>›</span>
+        <span>Agencia Marketing B2B</span>
+      </nav>
+      <div class="post-hero-b2__meta">6 Jun 2026 · 9 min de lectura</div>
+      <h1 class="post-hero-b2__title">Agencia de Marketing B2B en Colombia: <em>Cómo Elegir la Correcta en 2026</em></h1>
+      <p class="post-hero-b2__lead">Guía práctica para empresas colombianas que buscan contratar una agencia B2B. Criterios reales, señales de alerta y las preguntas que debes hacer antes de firmar.</p>
     </div>
-  </div>
+  </section>
 
   <div class="container">
     <div class="blog-layout">
-      <article>
+      <article class="blog-article">
 
-        <section id="contenido" id="intro">
+        <nav class="toc-mobile">
+          <p class="toc__title">En este artículo</p>
+          <ol>
+            <li><a href="#intro">Introducción</a></li>
+            <li><a href="#diferencia">Agencia B2B vs generalista</a></li>
+            <li><a href="#criterios">5 criterios de selección</a></li>
+            <li><a href="#señales">5 señales de alerta</a></li>
+            <li><a href="#preguntas">Preguntas antes de firmar</a></li>
+            <li><a href="#blackscale">Por qué BlackScale</a></li>
+            <li><a href="#conclusion">Conclusión</a></li>
+          </ol>
+        </nav>
+
+        <section id="intro">
           <p>Colombia tiene cientos de agencias de marketing. Pero si tu empresa vende a otras empresas, con ciclos de venta de 30 a 180 días, múltiples tomadores de decisión y tickets de $10 millones en adelante, la mayoría de esas agencias no está construida para ti.</p>
           <p>Una agencia generalista te puede dar alcance, impresiones y seguidores. Lo que no te puede dar es pipeline predecible, leads que tu equipo comercial realmente quiera atender, y alineación entre lo que marketing promete y lo que ventas puede cerrar.</p>
           <p>Esta guía existe para que no cometas el error más caro del marketing B2B en Colombia: contratar la agencia equivocada porque hizo una buena presentación.</p>
         </section>
+
+        <figure class="c3-figure">
+          <div class="c3-figure__img"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1000&q=80&auto=format&fit=crop" alt="Ejecutivo en entorno corporativo" loading="lazy" width="1000" height="667"></div>
+          <div class="c3-figure__quote">
+            <span class="c3-figure__mark">”</span>
+            <p>Una agencia generalista te da alcance. Una agencia B2B te da pipeline que tu equipo de ventas quiere atender.</p>
+          </div>
+        </figure>
 
         <section id="diferencia">
           <h2>La diferencia real entre una agencia B2B y una agencia generalista</h2>
@@ -212,6 +199,11 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
           <h3>3. Experiencia en tu industria o en industrias comparables</h3>
           <p>El ciclo de venta de una empresa de seguros no es igual al de una empresa de SaaS. El perfil de comprador de logística no es el mismo que el de fintech. Una agencia con experiencia en tu industria llega con benchmarks reales, no con suposiciones. No necesitas que hayan trabajado exactamente en tu sector, pero sí en sectores con ciclos, tickets y estructuras de decisión similares.</p>
 
+          <figure class="inline-figure">
+            <div class="inline-figure__img"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80&auto=format&fit=crop" alt="Equipo de agencia trabajando en una estrategia comercial" loading="lazy" width="1400" height="933"></div>
+            <figcaption>El criterio que más separa a las agencias: ¿miden pipeline real o miden actividad?</figcaption>
+          </figure>
+
           <h3>4. Claridad sobre quién ejecuta el trabajo</h3>
           <p>Una de las trampas más comunes en Colombia: la agencia presenta con sus mejores seniors, pero el trabajo lo ejecutan juniors sin supervisión. Pregunta directamente: ¿quién ejecuta el trabajo día a día? ¿Puedo hablar con esa persona antes de firmar? Si no tienen respuesta directa, es una señal de alerta.</p>
 
@@ -221,6 +213,14 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 
         <section id="señales">
           <h2>5 señales de alerta que debes detectar antes de firmar</h2>
+
+          <figure class="c3-figure c3-figure--reverse">
+            <div class="c3-figure__img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80&auto=format&fit=crop" alt="Reporte con métricas en pantalla" loading="lazy" width="1000" height="667"></div>
+            <div class="c3-figure__quote">
+              <span class="c3-figure__mark">”</span>
+              <p>Si el primer reporte habla de impresiones en vez de pipeline, ya te dio la respuesta.</p>
+            </div>
+          </figure>
 
           <h3>1. Te prometen resultados sin entender tu proceso de ventas</h3>
           <p>Ninguna agencia puede prometerte X leads por mes si no entiende tu ciclo de venta, tu ticket promedio, tu equipo comercial y tu proceso de calificación. Las promesas genéricas de volumen sin contexto son una señal de que van a optimizar para la métrica más fácil de medir, no la que importa.</p>
