@@ -14,6 +14,17 @@ Options -MultiViews
 # Indice por defecto
 DirectoryIndex index.html
 
+# ---- BLOQUEO DE ARCHIVOS INTERNOS --------------------------
+# Hostinger despliega con git pull dentro de public_html, por lo que
+# /.git/ queda en la raiz web: bloquear los archivos ocultos (todo lo
+# que empieza por punto, salvo /.well-known/ que usa el SSL) evita que
+# se descargue el codigo fuente y el historial completo. CLAUDE.md y
+# README.md son documentacion interna y no deben servirse. Se responde
+# 404 (no 403) para no confirmar que existen. pricing.md y llms.txt SI
+# son publicos a proposito (motores de IA): no agregarlos aqui.
+RewriteRule (^|/)\.(?!well-known(/|$)) - [R=404,L,NC]
+RewriteRule ^(CLAUDE|README)\.md$ - [R=404,L,NC]
+
 # ---- FORCE HTTPS -------------------------------------------
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
