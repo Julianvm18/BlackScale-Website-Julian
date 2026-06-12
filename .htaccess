@@ -45,6 +45,27 @@ RewriteRule ^process(\.html)?/?$ /proceso [R=301,L]
 RewriteRule ^contact(\.html)?/?$ /contacto [R=301,L]
 
 # ============================================================
+# REDIRECTS 301: URLs historicas del blog
+# 1) Tres posts vivieron en la raiz del sitio antes de moverse a
+#    /blog/ y Google los rastreo: sin estas reglas, la version
+#    .html redirige a la URL limpia y esta termina en 404
+#    (redireccion rota en Search Console).
+# 2) Tambien existio un directorio duplicado /blog/blog/ que se
+#    borro: se colapsa a /blog/.
+# ============================================================
+RewriteRule ^(puntos-de-fuga-marketing-ventas-b2b|indicadores-salud-pipeline-b2b|checklist-habilitacion-comercial-b2b)(\.html)?/?$ /blog/$1 [R=301,L]
+RewriteRule ^temp-blog1-ref(\.html)?/?$ /blog/ [R=301,L]
+RewriteRule ^blog/blog/index(\.html)?/?$ /blog/ [R=301,L]
+RewriteRule ^blog/blog/(.+?)(\.html)?/?$ /blog/$1 [R=301,L]
+
+# ---- TRAILING SLASH ----------------------------------------
+# /pagina/ (con barra final) devolvia 404 porque la regla de clean
+# URLs busca "pagina/.html". Se redirige 301 a /pagina. Solo aplica
+# a rutas que NO son directorios reales (no afecta /blog/).
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+?)/+$ /$1 [R=301,L]
+
+# ============================================================
 # CLEAN URLS  ->  UNA SOLA CONVENCION
 # La URL publica es SIN extension (coincide con los canonicals).
 #   - /pagina.html  se redirige 301 a  /pagina

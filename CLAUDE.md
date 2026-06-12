@@ -88,8 +88,11 @@ Dominio: https://blackscale.consulting
   `/diagnostico`, `/legal`. El home queda en `/`.
 - Los enlaces internos en el HTML usan `.html` (ej. `servicios.html`); el `.htaccess` limpia la extensión.
 - `.htaccess`: fuerza HTTPS + non-www, redirects 301 de las URLs viejas en inglés a las nuevas en
-  español (ANTES de las reglas de clean URLs), clean URLs, GZIP, cache, security headers, charset UTF-8,
-  ErrorDocument 404. NO romper ese orden.
+  español (ANTES de las reglas de clean URLs), redirects 301 de URLs históricas del blog (3 posts que
+  vivieron en la raíz → `/blog/`, y el directorio duplicado `/blog/blog/` → `/blog/`), redirect de
+  barra final (`/pagina/` → `/pagina`), clean URLs, GZIP, cache, security headers, charset UTF-8,
+  ErrorDocument 404. NO romper ese orden. (Las redirecciones históricas corrigen los errores de
+  "página con redirección" y el 404 que reportaba Search Console en jun 2026.)
 
 ## Compliance (Colombia)
 - **Klaro** gestiona cookies en las 14 páginas. GA4 (`G-NF8WJBGXBX`) y Meta Pixel (`1753512212293395`)
