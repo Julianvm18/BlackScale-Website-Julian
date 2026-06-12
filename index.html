@@ -738,6 +738,11 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       }
       place(); draw();
       window.addEventListener('resize', place);
+      window.addEventListener('orientationchange', function () { setTimeout(place, 120); });
+      window.addEventListener('load', place);
+      /* Safari/iPad asienta el layout y los webfonts tarde: re-medir un par de veces */
+      setTimeout(place, 200);
+      setTimeout(place, 600);
       if (document.fonts && document.fonts.ready) { document.fonts.ready.then(place); }
     })();
   </script>
