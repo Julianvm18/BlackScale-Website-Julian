@@ -714,9 +714,12 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         /* Usar offset* (coordenadas de layout, inmunes al zoom global del body) */
         var inner = h1.parentElement;
         var w = Math.min(560, h1.offsetWidth * 0.66);
+        var svgH = w * (80 / 560);   /* alto renderizado del SVG (viewBox 560x80) */
         ul.style.width = w + 'px';
         ul.style.left = (inner.offsetWidth / 2) + 'px';
-        ul.style.top = (h1.offsetTop + h1.offsetHeight - 41) + 'px';
+        /* Offset vertical proporcional al SVG (escala con la fuente, no un -41 fijo
+           que descuadra en mobile donde el titular es mas pequeno). */
+        ul.style.top = (h1.offsetTop + h1.offsetHeight - svgH * 0.5 - 1) + 'px';
       }
       var drawn = false;
       function draw() {
