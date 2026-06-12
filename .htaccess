@@ -155,6 +155,11 @@ RewriteRule ^(.+?)/?$ $1.html [L]
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+  # CSP conservadora: solo directivas que no afectan los scripts/estilos
+  # actuales (GA4, Pixel, Klaro, fuentes). NO agregar script-src sin
+  # poder probar el sitio en vivo: una lista incompleta rompe analytics
+  # o formularios en silencio.
+  Header set Content-Security-Policy "frame-ancestors 'self'; object-src 'none'; base-uri 'self'"
 </IfModule>
 
 # ---- CHARSET -----------------------------------------------

@@ -14,7 +14,9 @@ Se integró el rediseño completo (nivel Awwwards/Directive) sobre el sitio de p
   link "Preferencias de Cookies" (footer.js + footer inline de index). Se quitó el `cookie-consent.js` del handoff (Klaro lo reemplaza).
 - `sistema.html` = documentación viva del design system (marcada `noindex`, no va en sitemap ni nav).
 - Las páginas mantienen las MISMAS URLs en español y el blog sigue en `/blog/` (índice en `blog/index.html`, 6 posts re-estilizados a `bs.css`).
-- En este entorno gestionado el push SÍ funciona vía `origin` (rama de trabajo); el deploy a producción (main → Hostinger) sigue igual.
+- El push vía `origin` funciona en algunas sesiones y en otras da 403 (depende de los permisos que tenga
+  la GitHub App ese día): si falla, usar el PAT como describe "Cómo subir cambios". El deploy a producción
+  (main → Hostinger) sigue igual.
 
 ## Qué es
 Sitio web estático (HTML + CSS + JS vanilla) de **BlackScale Consulting**, posicionado como
@@ -41,6 +43,21 @@ Dominio: https://blackscale.consulting
 - Pendiente recomendado: configurar el webhook de auto-deploy de Hostinger en GitHub.
 - El entorno NO puede ver el sitio en vivo (Hostinger bloquea el acceso con WAF/403). Para estética,
   pedir capturas a Julian.
+
+## Seguridad (auditoría jun 2026, aplicada)
+- Historial de git auditado completo: **cero llaves, tokens o secretos commiteados** (mantenerlo así).
+- `.htaccess` responde **404** a `/.git/`, a todo archivo oculto (excepto `/.well-known/`, lo usa el SSL)
+  y a `CLAUDE.md`/`README.md`. Razón: Hostinger hace git pull dentro de public_html y `.git/` queda en la
+  raíz web. `pricing.md` y `llms.txt` SÍ son públicos a propósito. NO quitar estas reglas.
+- **Klaro auto-hospedado**: `klaro/klaro-no-css-0.7.18.js` (extraído del paquete oficial de npm, sha512
+  verificado contra el registro). Ya NO se carga desde cdn.jsdelivr.net. Para actualizar versión: bajar el
+  tgz de npm, verificar integrity, guardar con el número de versión en el nombre (el caché de JS es de 1 año
+  immutable) y actualizar el `<script>` en las 14 páginas.
+- CSP conservadora en `.htaccess` (`frame-ancestors`/`object-src`/`base-uri`). NO agregar `script-src`
+  sin poder probar el sitio en vivo.
+- El webhook de Nexus (`nexus.blackscale.consulting/api/webhook`) es público sin auth: el rate limiting y
+  la validación van del lado de Nexus, no de este repo.
+- Tras cada redeploy verificar: `/.git/config` y `/CLAUDE.md` deben devolver 404 en el sitio en vivo.
 
 ## Reglas de marca (INVIOLABLES)
 - **Cero guiones largos (—) ni medios (–)** en texto visible ni meta tags. Usar coma o dos puntos.
