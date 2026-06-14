@@ -67,11 +67,21 @@
 
 /* ============ BASE ============ */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* Escala global +10% aplicada al documento (no al body): equivale al zoom
+     110% del navegador y reflowea de forma responsive. Va en <html> a proposito.
+     Si se pone en <body>, el viewport visual (el que cambia con el pinch-to-zoom
+     en movil) queda desincronizado del contenido magnificado, y al hacer zoom y
+     volver la pagina se descuadra. En <html> el contenedor de scroll y la escala
+     coinciden y el gesto de zoom se comporta de forma estable. */
+  zoom: 1.1;
+  /* clip (no hidden): recorta el sangrado horizontal de las florituras/lazos sin
+     crear un contenedor de scroll que atrape el offset del pinch en movil. */
+  overflow-x: clip;
+}
 body {
   margin: 0;
-  /* Escala global +10% (equivale al zoom 110%, horneado y responsive) */
-  zoom: 1.1;
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
@@ -79,7 +89,7 @@ body {
   font-weight: 300;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }

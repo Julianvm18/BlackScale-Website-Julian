@@ -122,5 +122,11 @@ Dominio: https://blackscale.consulting
 - Pendiente: afinar tipografía, espaciados y ritmo entre secciones con feedback visual (capturas) de Julian.
 
 ## Notas técnicas
+- **Escala global +10%**: el sitio se renderiza al 110% vía `zoom: 1.1` en `bs.css`. Va en `html`
+  (NO en `body`): puesto en `body` desincronizaba el viewport visual del pinch-to-zoom en móvil y la
+  página se descuadraba al hacer zoom y volver. El `overflow-x` es `clip` (no `hidden`) por la misma
+  razón: `hidden` crea un contenedor de scroll que atrapa el offset del pinch. NO mover el `zoom` al
+  `body` ni volver a `overflow-x: hidden`. El JS del subrayado del hero (index.html) usa `offset*`
+  (coordenadas de layout, inmunes al zoom) a propósito: NO cambiarlo a `getBoundingClientRect`.
 - Los commits salen como "Unverified" en GitHub (sin firma GPG): es solo cosmético, no afecta nada.
 - No incluir el identificador del modelo ni secretos en commits/PRs.
