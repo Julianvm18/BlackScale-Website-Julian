@@ -122,12 +122,19 @@ Dominio: https://blackscale.consulting
 - Pendiente: afinar tipografía, espaciados y ritmo entre secciones con feedback visual (capturas) de Julian.
 
 ## Notas técnicas
-- **NO usar `zoom` para escalar el sitio.** Hubo un `zoom: 1.1` en `bs.css` (un "+10% global") que
-  descuadraba la página en móvil: al hacer pinch-to-zoom y volver, el viewport visual quedaba
-  desincronizado del de layout (el contenido se apretaba a la izquierda con franja negra a la derecha
-  y el nav fijo se veía a todo el ancho). El `zoom` es incompatible con el pinch en móvil sin importar
-  el elemento, así que se ELIMINÓ y el sitio quedó a su tamaño real (100%). Si Julian quiere recuperar
-  el +10%, hay que hacer escalado real (rem/tokens), NO volver a `zoom`. `overflow-x` es `clip` (no
-  `hidden`) para recortar el sangrado de florituras sin crear contenedor de scroll.
+- **Descuadre en móvil (causa real = overflow horizontal de decoraciones, NO el zoom).** Síntoma: el
+  contenido se apretaba a la izquierda (~60%) con franja negra a la derecha. Causa: florituras `.flor`
+  y `lazo` son `position: absolute` y más anchos que el viewport (vw / clamp grandes); al sangrar por
+  un costado, el navegador MÓVIL ensancha el viewport de layout (medido: 390→610px en la home) y
+  aprieta todo. El `body { overflow-x: hidden }` NO lo evita en móvil (el body ya quedó ancho). Fix:
+  `overflow-x: clip` en **`html`** (su ancho siempre es el del dispositivo, así que recorta de verdad)
+  y también en body. Verificado con Playwright (iPhone 390px): overflow 0 en todas las páginas.
+  El `zoom: 1.1` del body (escala +10% del sitio) SE MANTIENE: no era la causa. NO quitarlo (rompe la
+  escala del desktop) ni moverlo a `html` (probado, no ayuda). Para escalar a futuro, usar rem/tokens.
+- **Cache-busting del CSS (IMPORTANTE).** `bs.css`/`blog-article.css` se sirven `immutable` por 1 año
+  (ver .htaccess) y el nombre no lleva hash: un cambio en el CSS NO llega a navegadores que ya lo
+  cachearon (esto enmascaró fixes previos en móvil). Los `<link>` llevan `?v=AAAAMMDD`. **Al cambiar
+  el CSS, subir el número de versión (`?v=`) en las 15 páginas**, o el cambio no se verá en dispositivos
+  con caché. (Solución de fondo pendiente: poner un hash en el nombre del archivo.)
 - Los commits salen como "Unverified" en GitHub (sin firma GPG): es solo cosmético, no afecta nada.
 - No incluir el identificador del modelo ni secretos en commits/PRs.

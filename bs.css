@@ -69,9 +69,20 @@
 *, *::before, *::after { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
+  /* Recorta en el documento el sangrado horizontal de florituras/lazos
+     decorativos (absolutos, mas anchos que el viewport). En MOVIL es
+     imprescindible: si una decoracion se sale por un costado, el navegador
+     ensancha el viewport de layout y aprieta todo el contenido a la izquierda
+     con una franja negra a la derecha. El `overflow-x:hidden` del body NO lo
+     evita (ya quedo ensanchado); hay que recortar en <html>, cuyo ancho
+     siempre es el del dispositivo. `clip` (no `hidden`) no crea contenedor de
+     scroll, asi que no afecta el nav fijo ni el pinch-to-zoom. */
+  overflow-x: clip;
 }
 body {
   margin: 0;
+  /* Escala global +10% (equivale al zoom 110%, horneado y responsive) */
+  zoom: 1.1;
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
@@ -79,9 +90,6 @@ body {
   font-weight: 300;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
-  /* clip (no hidden): recorta el sangrado horizontal de florituras/lazos sin
-     crear un contenedor de scroll. NO usar zoom para escalar el sitio: el zoom
-     desincroniza el viewport visual del pinch en movil y descuadra la pagina. */
   overflow-x: clip;
 }
 img { max-width: 100%; display: block; }
