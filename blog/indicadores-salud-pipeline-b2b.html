@@ -81,6 +81,13 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuál es el pipeline coverage ratio óptimo para una empresa B2B en Colombia?","acceptedAnswer":{"@type":"Answer","text":"Entre 3x y 4x para empresas B2B mid-market en Colombia con ciclos de 60 a 90 días. Significa que por cada $100M de meta de ventas, debes tener $300M a $400M en oportunidades activas y calificadas. Para SMB colombiano con ciclos de 30 a 45 días el mínimo saludable es 2.5x."}},{"@type":"Question","name":"¿Cómo se calcula la velocidad del pipeline B2B?","acceptedAnswer":{"@type":"Answer","text":"Pipeline Velocity = (Número de Oportunidades × Ticket Promedio × Win Rate) ÷ Ciclo de Ventas en días. Ejemplo: 40 oportunidades × $20.000 × 25% ÷ 60 días = $3.333/día de revenue potencial. Esta fórmula tiene 4 palancas: más oportunidades, ticket más alto, mejor win rate, o ciclo más corto."}},{"@type":"Question","name":"¿Con qué frecuencia debo revisar el pipeline de ventas en mi empresa B2B en Colombia?","acceptedAnswer":{"@type":"Answer","text":"Semanalmente, con 30 minutos y agenda fija. Los equipos con revisiones semanales estructuradas tienen un 18% más de win rate que los que revisan mensualmente. En Colombia, donde los ciclos B2B pueden alargarse por factores culturales, la revisión semanal mantiene los deals activos."}},{"@type":"Question","name":"¿Cómo sé si mi pipeline B2B tiene deals zombies?","acceptedAnswer":{"@type":"Answer","text":"Un deal zombie lleva más de 180 días sin actividad real, no tiene un siguiente paso acordado, y el vendedor no puede explicar en 30 segundos por qué va a cerrar y cuándo. Elimínalos del forecast activo. Un pipeline limpio de 10 deals reales supera uno inflado con 50 deals dudosos."}}]}
   </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Inicio","item":"https://blackscale.consulting/"},
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://blackscale.consulting/blog/"},
+    {"@type":"ListItem","position":3,"name":"Los 4 Indicadores Que Revelan Si Tu Pipeline B2B Está Sano o Se Está Muriendo","item":"https://blackscale.consulting/blog/indicadores-salud-pipeline-b2b"}
+  ]}
+  </script>
   <!-- Fuentes (preconnect + carga optimizada, evita @import render-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,14 +102,14 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   <!-- NAV -->
     <header class="nav">
     <div class="container nav__inner">
-      <a href="../index.html" class="nav__logo" aria-label="BlackScale, inicio"><img src="../assets/logo-horizontal-blanco.svg" alt="BlackScale" width="160" height="34"></a>
+      <a href="/" class="nav__logo" aria-label="BlackScale, inicio"><img src="../assets/logo-horizontal-blanco.svg" alt="BlackScale" width="160" height="34"></a>
       <nav class="nav__links" aria-label="Principal">
-        <a href="../servicios.html">Qué hacemos</a>
-        <a href="../por-que-nosotros.html">Por qué nosotros</a>
-        <a href="../proceso.html">Proceso</a>
+        <a href="../servicios">Qué hacemos</a>
+        <a href="../por-que-nosotros">Por qué nosotros</a>
+        <a href="../proceso">Proceso</a>
         <a href="../blog/" class="active">Blog</a>
-        <a href="../diagnostico.html">Diagnóstico</a>
-        <a href="../contacto.html" class="btn btn--ghost-gold nav__cta">Contáctanos</a>
+        <a href="../diagnostico">Diagnóstico</a>
+        <a href="../contacto" class="btn btn--ghost-gold nav__cta">Contáctanos</a>
       </nav>
       <button class="nav__burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
     </div>
@@ -110,12 +117,12 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 
   <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
-    <a href="../servicios.html">Qué hacemos</a>
-    <a href="../por-que-nosotros.html">Por qué nosotros</a>
-    <a href="../proceso.html">Proceso</a>
+    <a href="../servicios">Qué hacemos</a>
+    <a href="../por-que-nosotros">Por qué nosotros</a>
+    <a href="../proceso">Proceso</a>
     <a href="../blog/">Blog</a>
-    <a href="../diagnostico.html">Diagnóstico</a>
-    <a href="../contacto.html">Contáctanos</a>
+    <a href="../diagnostico">Diagnóstico</a>
+    <a href="../contacto">Contáctanos</a>
   </div>
 
   <!-- HERO -->
@@ -125,7 +132,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <div class="post-hero-b2__overlay"></div>
     <div class="container post-hero-b2__content">
       <nav class="breadcrumb post-hero-b2__breadcrumb" aria-label="breadcrumb">
-        <a href="../index.html">Inicio</a><span>›</span>
+        <a href="/">Inicio</a><span>›</span>
         <a href="../blog/">Blog</a><span>›</span>
         <span>Indicadores salud pipeline B2B</span>
       </nav>
@@ -243,9 +250,9 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         <div style="margin:2.5rem 0;padding:1.5rem 1.75rem;background:rgba(109,31,46,0.12);border:1px solid rgba(109,31,46,0.35);border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;">
           <div>
             <p style="font-size:1rem;font-weight:700;color:#F5F2EE;margin:0 0 .35rem;">¿Quieres calcular la velocidad real de tu pipeline?</p>
-            <p style="font-size:.9rem;color:#a09891;margin:0;">Te ayudamos a construir el dashboard de <a href="../servicios.html#revops" style="color:#c9a87c;border-bottom:1px solid rgba(201,168,124,.3);">revenue operations</a> en tu primera sesión.</p>
+            <p style="font-size:.9rem;color:#a09891;margin:0;">Te ayudamos a construir el dashboard de <a href="../servicios#revops" style="color:#c9a87c;border-bottom:1px solid rgba(201,168,124,.3);">revenue operations</a> en tu primera sesión.</p>
           </div>
-          <a href="../diagnostico.html" style="background:#6D1F2E;color:#f5f0e8;font-size:.9rem;font-weight:600;padding:.65rem 1.25rem;border-radius:4px;white-space:nowrap;text-decoration:none;">Diagnóstico gratuito →</a>
+          <a href="../diagnostico" style="background:#6D1F2E;color:#f5f0e8;font-size:.9rem;font-weight:600;padding:.65rem 1.25rem;border-radius:4px;white-space:nowrap;text-decoration:none;">Diagnóstico gratuito →</a>
         </div>
 
         
@@ -364,7 +371,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
           <div class="cta-block">
             <h3>¿Quieres que auditemos tu pipeline?</h3>
             <p>Diagnosticamos tus 4 indicadores contra benchmarks de la industria. Sin compromiso. Solo datos y dirección.</p>
-            <a href="../contacto.html" class="btn btn--primary">Agendar Auditoría Gratuita</a>
+            <a href="../contacto" class="btn btn--primary">Agendar Auditoría Gratuita</a>
           </div>
         </section>
 
@@ -372,22 +379,22 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
           <p class="sources-label">Artículos relacionados</p>
           <p style="margin-bottom:.75rem;font-size:.9rem;color:#8a847c;">Si este artículo te fue útil, estos dos complementan el diagnóstico:</p>
           <ul style="padding-left:1.25rem;margin:0 0 .5rem;">
-            <li style="margin-bottom:.5rem;font-size:.88rem;color:#dedad4;"><a href="puntos-de-fuga-marketing-ventas-b2b.html" style="color:#D19C15;border-bottom:1px solid rgba(209,156,21,.3);">Los 7 puntos de fuga entre marketing y ventas que están matando tu ROI →</a></li>
-            <li style="margin-bottom:.5rem;font-size:.88rem;color:#dedad4;"><a href="checklist-habilitacion-comercial-b2b.html" style="color:#D19C15;border-bottom:1px solid rgba(209,156,21,.3);">Checklist de habilitación comercial B2B: 25 puntos para mejorar tu equipo →</a></li>
-            <li style="font-size:.88rem;color:#dedad4;"><a href="revops-para-pymes-que-es.html" style="color:#D19C15;border-bottom:1px solid rgba(209,156,21,.3);">RevOps para PYMEs: qué es y por qué tu empresa lo necesita ahora →</a></li>
+            <li style="margin-bottom:.5rem;font-size:.88rem;color:#dedad4;"><a href="puntos-de-fuga-marketing-ventas-b2b" style="color:#D19C15;border-bottom:1px solid rgba(209,156,21,.3);">Los 7 puntos de fuga entre marketing y ventas que están matando tu ROI →</a></li>
+            <li style="margin-bottom:.5rem;font-size:.88rem;color:#dedad4;"><a href="checklist-habilitacion-comercial-b2b" style="color:#D19C15;border-bottom:1px solid rgba(209,156,21,.3);">Checklist de habilitación comercial B2B: 25 puntos para mejorar tu equipo →</a></li>
+            <li style="font-size:.88rem;color:#dedad4;"><a href="revops-para-pymes-que-es" style="color:#D19C15;border-bottom:1px solid rgba(209,156,21,.3);">RevOps para PYMEs: qué es y por qué tu empresa lo necesita ahora →</a></li>
           </ul>
-          <p style="margin-top:.75rem;font-size:.88rem;color:#8a847c;">¿Quieres un diagnóstico real de tu pipeline? <a href="../diagnostico.html" style="color:#D19C15;border-bottom:1px solid rgba(209,156,21,.3);">Accede al diagnóstico gratuito de BlackScale →</a></p>
+          <p style="margin-top:.75rem;font-size:.88rem;color:#8a847c;">¿Quieres un diagnóstico real de tu pipeline? <a href="../diagnostico" style="color:#D19C15;border-bottom:1px solid rgba(209,156,21,.3);">Accede al diagnóstico gratuito de BlackScale →</a></p>
         </div>
 
         <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.07);">
           <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a6355;margin-bottom:1rem;">Continúa leyendo</p>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-            <a href="puntos-de-fuga-marketing-ventas-b2b.html" style="display:block;background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,0.35);border-radius:6px;padding:1rem 1.1rem;text-decoration:none;">
+            <a href="puntos-de-fuga-marketing-ventas-b2b" style="display:block;background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,0.35);border-radius:6px;padding:1rem 1.1rem;text-decoration:none;">
               <p style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c9a87c;margin:0 0 .5rem;">Marketing & Ventas B2B</p>
               <p style="font-size:.9rem;color:#e8e0d5;line-height:1.45;margin:0 0 .65rem;">Los 7 Puntos de Fuga Entre Marketing y Ventas Que Están Matando Tu ROI</p>
               <p style="font-size:.85rem;color:#6D1F2E;margin:0;">Leer artículo →</p>
             </a>
-            <a href="checklist-habilitacion-comercial-b2b.html" style="display:block;background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,0.35);border-radius:6px;padding:1rem 1.1rem;text-decoration:none;">
+            <a href="checklist-habilitacion-comercial-b2b" style="display:block;background:rgba(255,255,255,.03);border:1px solid rgba(109,31,46,0.35);border-radius:6px;padding:1rem 1.1rem;text-decoration:none;">
               <p style="font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c9a87c;margin:0 0 .5rem;">Sales Enablement</p>
               <p style="font-size:.9rem;color:#e8e0d5;line-height:1.45;margin:0 0 .65rem;">Checklist de Habilitación Comercial B2B: 25 Puntos Para Mejorar Tu Equipo Sin Reemplazarlo</p>
               <p style="font-size:.85rem;color:#6D1F2E;margin:0;">Leer artículo →</p>
@@ -415,7 +422,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 
           <div>
             <h3 style="font-size:1.05rem;font-weight:700;color:#D19C15;margin:0 0 .65rem;">¿Qué herramientas uso para medir la salud del pipeline B2B en Colombia?</h3>
-            <p style="font-size:1.08rem;line-height:1.85;color:#dedad4;margin:0;">Cualquier CRM configurable (HubSpot, Pipedrive, Salesforce) puede calcular estos 4 indicadores si los datos están limpios. El problema en la mayoría de empresas B2B en Colombia no es la herramienta sino que el CRM tiene datos incompletos o desactualizados. BlackScale audita el estado de tu pipeline gratuitamente: <a href="../diagnostico.html" style="color:#D19C15;border-bottom:1px solid rgba(209,156,21,.3);">ver diagnóstico →</a></p>
+            <p style="font-size:1.08rem;line-height:1.85;color:#dedad4;margin:0;">Cualquier CRM configurable (HubSpot, Pipedrive, Salesforce) puede calcular estos 4 indicadores si los datos están limpios. El problema en la mayoría de empresas B2B en Colombia no es la herramienta sino que el CRM tiene datos incompletos o desactualizados. BlackScale audita el estado de tu pipeline gratuitamente: <a href="../diagnostico" style="color:#D19C15;border-bottom:1px solid rgba(209,156,21,.3);">ver diagnóstico →</a></p>
           </div>
         </div>
 
@@ -462,12 +469,12 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
           <h3>¿Listo para escalar tu revenue?</h3>
           <p>Hablemos de tus objetivos de crecimiento. Sin presentación corporativa, solo estrategia.</p>
         </div>
-        <a href="../contacto.html" class="btn btn--primary" data-magnetic>Contáctanos</a>
+        <a href="../contacto" class="btn btn--primary" data-magnetic>Contáctanos</a>
       </div>
     </div>
     <div class="container footer__grid">
       <div class="footer__brand">
-        <a href="../index.html" aria-label="BlackScale, inicio"><img src="../assets/logo-horizontal-blanco.svg" alt="BlackScale" width="160" height="32"></a>
+        <a href="/" aria-label="BlackScale, inicio"><img src="../assets/logo-horizontal-blanco.svg" alt="BlackScale" width="160" height="32"></a>
         <p>Agencia B2B con base en Bogotá, Colombia. Especialistas en generación de demanda, revenue operations y habilitación comercial.</p>
         <a class="footer__contact" href="mailto:servicio@blackscale.consulting">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -480,20 +487,20 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       <div class="footer__col">
         <h4>Empresa</h4>
         <ul>
-          <li><a href="../por-que-nosotros.html">Por Qué BlackScale</a></li>
-          <li><a href="../proceso.html">Nuestro Proceso</a></li>
-          <li><a href="../contacto.html">Contacto</a></li>
+          <li><a href="../por-que-nosotros">Por Qué BlackScale</a></li>
+          <li><a href="../proceso">Nuestro Proceso</a></li>
+          <li><a href="../contacto">Contacto</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h4>Legal y Políticas</h4>
         <ul>
-          <li><a href="../legal.html#privacy">Política de Privacidad</a></li>
-          <li><a href="../legal.html#data-management">Gestión de Datos</a></li>
-          <li><a href="../legal.html#terms">Términos de Servicio</a></li>
-          <li><a href="../legal.html#cookies">Política de Cookies</a></li>
+          <li><a href="../legal#privacy">Política de Privacidad</a></li>
+          <li><a href="../legal#data-management">Gestión de Datos</a></li>
+          <li><a href="../legal#terms">Términos de Servicio</a></li>
+          <li><a href="../legal#cookies">Política de Cookies</a></li>
           <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;">Preferencias de Cookies</a></li>
-          <li><a href="../legal.html#accessibility">Accesibilidad</a></li>
+          <li><a href="../legal#accessibility">Accesibilidad</a></li>
         </ul>
       </div>
     </div>
@@ -501,9 +508,9 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       <div class="container footer__bottom-inner">
         <p>&copy; 2026 BlackScale Consulting. Todos los derechos reservados.</p>
         <div>
-          <a href="../legal.html#privacy">Privacidad</a>
-          <a href="../legal.html#terms">Términos</a>
-          <a href="../legal.html#cookies">Cookies</a>
+          <a href="../legal#privacy">Privacidad</a>
+          <a href="../legal#terms">Términos</a>
+          <a href="../legal#cookies">Cookies</a>
         </div>
       </div>
     </div>
