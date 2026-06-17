@@ -1,4 +1,4 @@
-/* Footer compartido — inyectado en páginas interiores */
+/* Footer compartido - inyectado en páginas interiores */
 (function () {
   var html = '\
   <footer class="footer" data-screen-label="Footer">\

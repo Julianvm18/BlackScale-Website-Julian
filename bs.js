@@ -1,5 +1,5 @@
 /* ============================================================
-   BLACKSCALE — interacciones compartidas (mockup)
+   BLACKSCALE - interacciones compartidas (mockup)
    Solo transform / opacity. Sin librerías.
    ============================================================ */
 (function () {

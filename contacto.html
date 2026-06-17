@@ -165,7 +165,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         <a href="por-que-nosotros">Por qué nosotros</a>
         <a href="proceso">Proceso</a>
         <a href="blog/">Blog</a>
-        <a href="contacto" class="active">Diagnóstico</a>
+        <a href="diagnostico">Diagnóstico</a>
         <a href="contacto" class="btn btn--ghost-gold nav__cta">Contáctanos</a>
       </nav>
       <button class="nav__burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -221,6 +221,11 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
               <h2>Solicita tu diagnóstico</h2>
               <p>Tres campos. Sin compromiso.</p>
               <form class="form" data-validate novalidate>
+                <div class="hp-field" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                  <label for="cf-website-contacto">No llenar este campo</label>
+                  <input type="text" id="cf-website-contacto" name="website_url" tabindex="-1" autocomplete="off">
+                  <input type="text" id="cf-honey-contacto" name="_honey" tabindex="-1" autocomplete="off">
+                </div>
                 <div class="form-group">
                   <label for="nombre">Nombre</label>
                   <input type="text" id="nombre" name="nombre" placeholder="Alejandro García" required autocomplete="name">

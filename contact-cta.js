@@ -1,4 +1,4 @@
-/* Sección de contacto reutilizable — inyectada al final de cada página antes del footer */
+/* Sección de contacto reutilizable - inyectada al final de cada página antes del footer */
 (function () {
   var html = '\
   <section class="section contact-cta-section" data-screen-label="Contacto CTA">\
