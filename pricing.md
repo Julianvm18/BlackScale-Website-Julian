@@ -20,6 +20,6 @@ Seguros, SaaS y tecnología, fintech, logística y servicios profesionales en Co
 Empresas B2B con producto o servicio validado, equipo comercial de 3 a 30 personas y ciclos de venta de 30 a 180 días.
 
 ## Contacto
-- Diagnóstico gratuito: https://blackscale.consulting/diagnostico.html
+- Diagnóstico gratuito: https://blackscale.consulting/diagnostico
 - Email: Servicio@blackscale.consulting
 - Sitio web: https://blackscale.consulting
