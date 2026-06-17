@@ -9,12 +9,12 @@
           <h3>¿Listo para escalar tu revenue?</h3>\
           <p>Hablemos de tus objetivos de crecimiento. Sin presentación corporativa, solo estrategia.</p>\
         </div>\
-        <a href="contacto.html" class="btn btn--primary" data-magnetic>Contáctanos</a>\
+        <a href="/contacto" class="btn btn--primary" data-magnetic>Contáctanos</a>\
       </div>\
     </div>\
     <div class="container footer__grid">\
       <div class="footer__brand">\
-        <a href="index.html" aria-label="BlackScale, inicio"><img src="assets/logo-horizontal-blanco.svg" alt="BlackScale" width="160" height="32"></a>\
+        <a href="/" aria-label="BlackScale, inicio"><img src="assets/logo-horizontal-blanco.svg" alt="BlackScale" width="160" height="32"></a>\
         <p>Agencia B2B con base en Bogotá, Colombia. Especialistas en generación de demanda, revenue operations y habilitación comercial.</p>\
         <a class="footer__contact" href="mailto:servicio@blackscale.consulting">\
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>\
@@ -27,20 +27,20 @@
       <div class="footer__col">\
         <h4>Empresa</h4>\
         <ul>\
-          <li><a href="por-que-nosotros.html">Por Qué BlackScale</a></li>\
-          <li><a href="proceso.html">Nuestro Proceso</a></li>\
-          <li><a href="contacto.html">Contacto</a></li>\
+          <li><a href="/por-que-nosotros">Por Qué BlackScale</a></li>\
+          <li><a href="/proceso">Nuestro Proceso</a></li>\
+          <li><a href="/contacto">Contacto</a></li>\
         </ul>\
       </div>\
       <div class="footer__col">\
         <h4>Legal y Políticas</h4>\
         <ul>\
-          <li><a href="legal.html#privacy">Política de Privacidad</a></li>\
-          <li><a href="legal.html#data-management">Gestión de Datos</a></li>\
-          <li><a href="legal.html#terms">Términos de Servicio</a></li>\
-          <li><a href="legal.html#cookies">Política de Cookies</a></li>\
+          <li><a href="/legal#privacy">Política de Privacidad</a></li>\
+          <li><a href="/legal#data-management">Gestión de Datos</a></li>\
+          <li><a href="/legal#terms">Términos de Servicio</a></li>\
+          <li><a href="/legal#cookies">Política de Cookies</a></li>\
           <li><a href="#" onclick="if(window.klaro){klaro.show();}return false;">Preferencias de Cookies</a></li>\
-          <li><a href="legal.html#accessibility">Accesibilidad</a></li>\
+          <li><a href="/legal#accessibility">Accesibilidad</a></li>\
         </ul>\
       </div>\
     </div>\
@@ -48,9 +48,9 @@
       <div class="container footer__bottom-inner">\
         <p>&copy; 2026 BlackScale Consulting. Todos los derechos reservados.</p>\
         <div>\
-          <a href="legal.html#privacy">Privacidad</a>\
-          <a href="legal.html#terms">Términos</a>\
-          <a href="legal.html#cookies">Cookies</a>\
+          <a href="/legal#privacy">Privacidad</a>\
+          <a href="/legal#terms">Términos</a>\
+          <a href="/legal#cookies">Cookies</a>\
         </div>\
       </div>\
     </div>\

@@ -219,68 +219,6 @@
     });
   }
 
-  /* ---------- Tweaks (protocolo host) ---------- */
-  var DEFAULTS = (window.TWEAK_DEFAULTS || { florituras: 80, glow: 40 });
-  function loadTweaks() {
-    try {
-      var saved = JSON.parse(localStorage.getItem('bsTweaks') || 'null');
-      if (saved) return Object.assign({}, DEFAULTS, saved);
-    } catch (e) { /* noop */ }
-    return Object.assign({}, DEFAULTS);
-  }
-  var tweaks = loadTweaks();
-  function applyTweaks() {
-    document.documentElement.style.setProperty('--flor-mult', (tweaks.florituras / 30).toFixed(3));
-    document.documentElement.style.setProperty('--glow-mult', (tweaks.glow / 40).toFixed(3));
-  }
-  function saveTweaks() {
-    try { localStorage.setItem('bsTweaks', JSON.stringify(tweaks)); } catch (e) { /* noop */ }
-    try {
-      window.parent.postMessage({ type: '__edit_mode_set_keys', edits: tweaks }, '*');
-    } catch (e) { /* noop */ }
-  }
-  function buildPanel() {
-    var panel = document.createElement('aside');
-    panel.className = 'tweaks';
-    panel.setAttribute('aria-label', 'Tweaks');
-    panel.innerHTML =
-      '<div class="tweaks__head"><strong>Tweaks</strong>' +
-      '<button class="tweaks__close" type="button" aria-label="Cerrar">&times;</button></div>' +
-      '<label><span>Florituras <em id="twFlorVal">' + tweaks.florituras + '%</em></span>' +
-      '<input id="twFlor" type="range" min="0" max="100" step="5" value="' + tweaks.florituras + '"></label>' +
-      '<label><span>Glow burgundy <em id="twGlowVal">' + tweaks.glow + '%</em></span>' +
-      '<input id="twGlow" type="range" min="0" max="100" step="5" value="' + tweaks.glow + '"></label>';
-    document.body.appendChild(panel);
-    panel.querySelector('#twFlor').addEventListener('input', function (e) {
-      tweaks.florituras = +e.target.value;
-      panel.querySelector('#twFlorVal').textContent = tweaks.florituras + '%';
-      applyTweaks(); saveTweaks();
-    });
-    panel.querySelector('#twGlow').addEventListener('input', function (e) {
-      tweaks.glow = +e.target.value;
-      panel.querySelector('#twGlowVal').textContent = tweaks.glow + '%';
-      applyTweaks(); saveTweaks();
-    });
-    panel.querySelector('.tweaks__close').addEventListener('click', function () {
-      panel.classList.remove('open');
-      try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch (e) { /* noop */ }
-    });
-    return panel;
-  }
-  function initTweaks() {
-    var panel = null;
-    window.addEventListener('message', function (e) {
-      var d = e.data || {};
-      if (d.type === '__activate_edit_mode') {
-        if (!panel) panel = buildPanel();
-        panel.classList.add('open');
-      } else if (d.type === '__deactivate_edit_mode') {
-        if (panel) panel.classList.remove('open');
-      }
-    });
-    try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) { /* noop */ }
-  }
-
   /* ---------- Boot ---------- */
   function boot() {
     initNav();
@@ -290,8 +228,6 @@
     initMagnetic();
     initBackToTop();
     initForms();
-    applyTweaks();
-    initTweaks();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();

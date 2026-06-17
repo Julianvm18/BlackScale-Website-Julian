@@ -26,9 +26,14 @@
             <input type="email" id="cf-email" name="email" placeholder="Tu correo corporativo" required autocomplete="email">\
             <span class="field-error">Ingresa un correo válido.</span>\
           </div>\
+          <div class="hp-field" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">\
+            <label for="cf-website">No llenar este campo</label>\
+            <input type="text" id="cf-website" name="website_url" tabindex="-1" autocomplete="off">\
+            <input type="text" id="cf-honey" name="_honey" tabindex="-1" autocomplete="off">\
+          </div>\
           <div class="form-consent">\
             <input type="checkbox" id="cf-habeas" name="habeas" required>\
-            <label for="cf-habeas">Autorizo a BlackScale Consulting el tratamiento de mis datos personales conforme a la <a href="legal.html#privacy">Política de Privacidad</a>, de acuerdo con la Ley 1581 de 2012.</label>\
+            <label for="cf-habeas">Autorizo a BlackScale Consulting el tratamiento de mis datos personales conforme a la <a href="/legal#privacy">Política de Privacidad</a>, de acuerdo con la Ley 1581 de 2012.</label>\
           </div>\
           <div class="form-error" role="alert" aria-live="polite" style="display:none; color:#e08a82; font-size:14px;"></div>\
           <button type="submit" class="btn btn--primary btn--full">Solicitar diagnóstico gratuito</button>\
