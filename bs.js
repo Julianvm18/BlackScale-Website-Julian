@@ -219,81 +219,6 @@
     });
   }
 
-  /* ---------- Simulador ROI ---------- */
-  function initRoiSimulator() {
-    var root = document.getElementById('roi-industria');
-    if (!root) return;
-    var MESES = 6;
-    // Benchmarks editables: costo por reunion calificada (COP) por industria.
-    // Derivados de CPL Colombia / tasa lead->reunion. Reemplazar con data real de BlackScale cuando exista.
-    var CPA = { seguros:1400000, saas:870000, fintech:820000, logistica:690000, servicios:1500000 };
-    var CONV_OPP = 0.6, RMIN = 10, RMAX = 15;
-    var $ = function(id){ return document.getElementById(id); };
-    function fmtCOP(n){
-      if (n >= 1e9) return '$' + (n/1e9).toFixed(n>=1e10?0:1).replace('.',',') + ' B';
-      if (n >= 1e6) return '$' + (n/1e6).toFixed(n>=1e7?0:1).replace('.',',') + ' M';
-      return '$' + Math.round(n).toLocaleString('es-CO');
-    }
-    function fmtNum(n){ return n>=1 ? Math.round(n).toLocaleString('es-CO') : n.toFixed(1).replace('.',','); }
-    // Separa miles con punto (formato Colombia) sin depender de Intl.
-    function group(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
-    function digitsOf(v){ return String(v == null ? '' : v).replace(/\D/g, ''); }
-    function readMoney(id){ return parseInt(digitsOf($(id).value), 10) || 0; }
-    // Reescribe el campo con separadores de miles conservando los digitos.
-    function fmtMoneyInput(el){ var d = digitsOf(el.value); el.value = d ? group(parseInt(d, 10)) : ''; }
-    var raf;
-    function calc(){
-      var ind = $('roi-industria').value;
-      var ticket = readMoney('roi-ticket');
-      var cierre = Math.min((+$('roi-cierre').value || 0) / 100, 1);
-      var pauta = readMoney('roi-pauta');
-      var inversion = +$('roi-inversion').value || 0;
-      var slider = $('roi-inversion');
-      var invLabel = $('roi-inversion-val');
-      if (invLabel) invLabel.textContent = fmtCOP(inversion);
-      if (slider) {
-        var pct = (inversion - slider.min) / (slider.max - slider.min) * 100;
-        slider.style.background = 'linear-gradient(90deg, var(--gold) ' + pct + '%, rgba(255,255,255,0.12) ' + pct + '%)';
-      }
-      var cpa = CPA[ind] || 1000000;
-      var citasMes = 0;
-      if (pauta > 0) {
-        var cap = pauta / cpa;
-        if (cap <= RMIN) { citasMes = cap; }
-        else { var holgura = Math.min((cap - RMIN) / RMIN, 1); citasMes = RMIN + (RMAX - RMIN) * holgura; }
-      }
-      var citas = citasMes * MESES;
-      var opps = citas * CONV_OPP;
-      var clientes = opps * cierre;
-      var revenue = clientes * ticket;
-      var invTotal = (inversion + pauta) * MESES;
-      var roi = invTotal > 0 ? revenue / invTotal : 0;
-      var cpaReal = citas > 0 ? (pauta * MESES) / citas : 0;
-      $('roi-s-citas').textContent = fmtNum(citas);
-      $('roi-s-opps').textContent = fmtNum(opps);
-      $('roi-s-clientes').textContent = fmtNum(clientes);
-      $('roi-r-inv').textContent = fmtCOP(invTotal);
-      $('roi-r-cpa').textContent = cpaReal > 0 ? fmtCOP(cpaReal) : '\u2014';
-      $('roi-r-revenue').textContent = fmtCOP(revenue);
-      $('roi-r-roi').textContent = roi > 0 ? (roi.toFixed(roi<10?1:0).replace('.',',') + '\u00d7') : '\u2014';
-      var max = citas || 1;
-      function setBar(id, v){ $(id).style.transform = 'scaleX(' + Math.min(v/max, 1) + ')'; }
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(function(){
-        setBar('roi-b-citas', citas); setBar('roi-b-opps', opps); setBar('roi-b-clientes', clientes);
-      });
-    }
-    ['roi-ticket','roi-pauta'].forEach(function(id){
-      var el = $(id); if (!el) return;
-      fmtMoneyInput(el);
-      el.addEventListener('input', function(){ fmtMoneyInput(el); calc(); });
-    });
-    ['roi-industria','roi-cierre','roi-inversion'].forEach(function(id){
-      var el = $(id); if (el) el.addEventListener('input', calc);
-    });
-    calc();
-  }
-
   /* ---------- Boot ---------- */
   function boot() {
     initNav();
@@ -303,7 +228,6 @@
     initMagnetic();
     initBackToTop();
     initForms();
-    initRoiSimulator();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
