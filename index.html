@@ -190,7 +190,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
-  <link rel="stylesheet" href="bs.css?v=20260619">
+  <link rel="stylesheet" href="bs.css?v=20260620">
   <style>
     /* ===== Hero ===== */
     .hero {
@@ -537,26 +537,29 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
 
             <div class="roi-field">
               <label for="roi-ticket">Ticket promedio por cliente</label>
-              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="number" class="roi-input" id="roi-ticket" value="30000000" min="0" step="1000000"><span class="roi-suf">COP</span></div>
+              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="text" inputmode="numeric" class="roi-input roi-money" id="roi-ticket" value="0"><span class="roi-suf">COP</span></div>
               <p class="roi-hint">Valor de un contrato cerrado (primer año, si es recurrente).</p>
             </div>
 
             <div class="roi-field">
               <label for="roi-cierre">Tu tasa de cierre</label>
-              <div class="roi-inwrap roi-inwrap--pct"><input type="number" class="roi-input" id="roi-cierre" value="25" min="0" max="100" step="1"><span class="roi-suf">%</span></div>
+              <div class="roi-inwrap roi-inwrap--pct"><input type="number" class="roi-input" id="roi-cierre" value="0" min="0" max="100" step="1"><span class="roi-suf">%</span></div>
               <p class="roi-hint">De cada reunión con un decisor, cuántas terminan en venta.</p>
             </div>
 
             <div class="roi-field">
               <label for="roi-pauta">Tu presupuesto de pauta mensual</label>
-              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="number" class="roi-input" id="roi-pauta" value="8000000" min="0" step="500000"><span class="roi-suf">COP</span></div>
+              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="text" inputmode="numeric" class="roi-input roi-money" id="roi-pauta" value="0"><span class="roi-suf">COP</span></div>
               <p class="roi-hint">Inversión directa en Google y LinkedIn Ads. Va aparte de tu inversión en el motor y la controlas tú.</p>
             </div>
 
             <div class="roi-field">
               <label for="roi-inversion">Tu inversión mensual en el motor de crecimiento</label>
-              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="number" class="roi-input" id="roi-inversion" value="7400000" min="0" step="500000"><span class="roi-suf">COP</span></div>
-              <p class="roi-hint">Lo que destinas cada mes a estrategia, gestión y ejecución de tu sistema de ventas. Definimos juntos el nivel óptimo en el diagnóstico.</p>
+              <div class="roi-range">
+                <input type="range" class="roi-slider" id="roi-inversion" min="5000000" max="15000000" step="500000" value="5000000">
+                <span class="roi-range__val" id="roi-inversion-val">$5 M</span>
+              </div>
+              <p class="roi-hint">La inversión base para operar el motor va de $5 M a $15 M al mes: cubre estrategia, gestión y ejecución de tu sistema de ventas. Definimos juntos el nivel óptimo en el diagnóstico.</p>
             </div>
           </div>
 
@@ -741,7 +744,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <script src="bs.js"></script>
+  <script src="bs.js?v=20260620"></script>
   <script>
     /* Subrayado dorado del titular (bajo "para empresas en Colombia") */
     (function () {

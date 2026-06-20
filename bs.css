@@ -829,6 +829,29 @@ strong { font-weight: 600; color: var(--cream-light); }
 .roi-inwrap--pct .roi-input { padding-right: 38px; }
 .roi-input::-webkit-outer-spin-button, .roi-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .roi-input { -moz-appearance: textfield; }
+.roi-range { display: flex; align-items: center; gap: 16px; padding-top: 6px; }
+.roi-slider {
+  flex: 1; -webkit-appearance: none; appearance: none;
+  height: 4px; border-radius: 2px; cursor: pointer; outline: none;
+  background: linear-gradient(90deg, var(--gold) 0%, rgba(255,255,255,0.12) 0%);
+}
+.roi-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 18px; height: 18px; border-radius: 50%; border: 0;
+  background: var(--gold); cursor: pointer;
+  box-shadow: 0 0 0 4px var(--gold-soft);
+  transition: box-shadow var(--t-fast) var(--ease);
+}
+.roi-slider::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px var(--gold-soft); }
+.roi-slider::-moz-range-thumb {
+  width: 18px; height: 18px; border-radius: 50%; border: 0;
+  background: var(--gold); cursor: pointer; box-shadow: 0 0 0 4px var(--gold-soft);
+}
+.roi-slider:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 6px var(--gold-soft); }
+.roi-range__val {
+  font-family: var(--serif); font-size: 22px; font-weight: 300;
+  color: var(--gold); min-width: 86px; text-align: right; white-space: nowrap;
+}
 .roi__panel {
   background: linear-gradient(180deg, rgba(85,28,37,0.18), rgba(28,27,24,0.5));
   border: 1px solid var(--border); border-radius: var(--r-card);
