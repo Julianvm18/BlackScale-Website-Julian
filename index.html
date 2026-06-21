@@ -190,7 +190,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
-  <link rel="stylesheet" href="bs.css?v=20260614">
+  <link rel="stylesheet" href="bs.css?v=20260621">
   <style>
     /* ===== Hero ===== */
     .hero {
@@ -511,49 +511,87 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       </div>
     </section>
 
-    <!-- FUNNEL -->
-    <section class="section section--alt section--hairline-top" data-screen-label="Home / Funnel">
+    <!-- SIMULADOR ROI -->
+    <section class="section section--alt section--hairline-top roi" data-screen-label="Home / Simulador ROI">
       <img class="flor flor--big" style="bottom:-280px; right:-220px;" src="assets/fig-floritura.svg" alt="" aria-hidden="true">
       <div class="container">
         <div class="section-header reveal">
-          <span class="tag">Cómo Se Ve Tu Pipeline</span>
-          <h2>De prospecto a negocio cerrado, <em>paso a paso</em></h2>
-          <p>Así se mueve el volumen cada trimestre a través de un sistema de demanda B2B bien construido. Tú solo cierras; del resto nos encargamos nosotros.</p>
+          <span class="tag">Simulador de Crecimiento</span>
+          <h2>Estima el pipeline que <em>podrías construir</em></h2>
+          <p>Elige tu industria y ajusta los datos de tu negocio. Calibramos las proyecciones con benchmarks reales por sector en Colombia y te mostramos tu retorno estimado a 6 meses.</p>
         </div>
-        <div class="grid-4" data-stagger>
-          <div class="funnel-cell reveal">
-            <span class="funnel-cell__step">Etapa 01</span>
-            <span class="funnel-cell__figure">250 a 400<sup>*</sup></span>
-            <span class="funnel-cell__name">Prospectos</span>
-            <span class="funnel-cell__track"><span class="funnel-cell__fill" style="--w:100%"></span></span>
-            <p class="funnel-cell__desc">Cuentas dentro de tu perfil de cliente ideal, investigadas y verificadas una por una.</p>
+        <div class="roi__grid">
+          <div class="roi__controls reveal">
+            <div class="roi-field">
+              <label for="roi-industria">Tu industria</label>
+              <select class="roi-select" id="roi-industria">
+                <option value="saas" selected>SaaS / Tecnología</option>
+                <option value="fintech">Fintech</option>
+                <option value="seguros">Seguros / Insurtech</option>
+                <option value="logistica">Logística</option>
+                <option value="servicios">Servicios profesionales</option>
+              </select>
+              <p class="roi-hint">Define los benchmarks de ticket, cierre y ritmo de reuniones de tu sector.</p>
+            </div>
+            <div class="roi-field">
+              <label for="roi-ticket">Ticket promedio por cliente (anual)</label>
+              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="text" inputmode="numeric" class="roi-input" id="roi-ticket" value="110.000.000"><span class="roi-suf">COP</span></div>
+              <p class="roi-rangehint" id="roi-ticket-range">Rango típico en tu sector: <b>$20M a $200M</b></p>
+              <p class="roi-adjust" id="roi-ticket-adjust">Ajustamos al mínimo de tu sector para una proyección realista.</p>
+            </div>
+            <div class="roi-field">
+              <label for="roi-cierre">Tu tasa de cierre</label>
+              <div class="roi-inwrap roi-inwrap--pct"><input type="number" class="roi-input" id="roi-cierre" value="22" min="0" max="100" step="1"><span class="roi-suf">%</span></div>
+              <p class="roi-hint">De cada reunión con un decisor, cuántas terminan en venta. Sugerido para tu sector: <span id="roi-cierre-sug">22%</span>.</p>
+            </div>
+            <div class="roi-field">
+              <label for="roi-pauta">Tu presupuesto de pauta mensual</label>
+              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="text" inputmode="numeric" class="roi-input" id="roi-pauta" value="8.000.000"><span class="roi-suf">COP</span></div>
+              <p class="roi-hint">Inversión directa en Google y LinkedIn Ads. Va aparte de tu fee y la controlas tú.</p>
+            </div>
           </div>
-          <div class="funnel-cell reveal">
-            <span class="funnel-cell__step">Etapa 02</span>
-            <span class="funnel-cell__figure">70 a 110<sup>*</sup></span>
-            <span class="funnel-cell__name">Leads (MQLs)</span>
-            <span class="funnel-cell__track"><span class="funnel-cell__fill" style="--w:72%"></span></span>
-            <p class="funnel-cell__desc">Prospectos que responden, abren conversaciones y muestran intención real de compra.</p>
-          </div>
-          <div class="funnel-cell reveal">
-            <span class="funnel-cell__step">Etapa 03</span>
-            <span class="funnel-cell__figure">12 a 20<sup>*</sup></span>
-            <span class="funnel-cell__name">Reuniones (SQLs)</span>
-            <span class="funnel-cell__track"><span class="funnel-cell__fill" style="--w:44%"></span></span>
-            <p class="funnel-cell__desc">Citas calificadas con tomadores de decisión, listas para que tu equipo presente.</p>
-          </div>
-          <div class="funnel-cell funnel-cell--gold reveal">
-            <span class="funnel-cell__step">Tu parte</span>
-            <span class="funnel-cell__figure">2 a 4<sup>*</sup></span>
-            <span class="funnel-cell__name">Negocios cerrados</span>
-            <span class="funnel-cell__track"><span class="funnel-cell__fill" style="--w:26%"></span></span>
-            <p class="funnel-cell__desc">Atiendes las reuniones agendadas, negocias y firmas nuevos contratos.</p>
+          <div class="reveal">
+            <div class="roi__panel">
+              <div class="roi__panel-title">Proyección a 6 meses</div>
+              <div class="roi-funnel">
+                <div class="roi-stage">
+                  <div class="roi-stage__top"><span class="roi-stage__label">Reuniones con decisores <span class="roi-stage__per">/ mes en régimen</span></span><span class="roi-stage__num" id="roi-s-citas">0</span></div>
+                  <div class="roi-bar"><div class="roi-bar__fill" id="roi-b-citas"></div></div>
+                  <div class="roi-stage__sub" id="roi-s-citas-total">≈ 0 en 6 meses</div>
+                </div>
+                <div class="roi-stage">
+                  <div class="roi-stage__top"><span class="roi-stage__label">Oportunidades calificadas <span class="roi-stage__per">total 6 meses</span></span><span class="roi-stage__num" id="roi-s-opps">0</span></div>
+                  <div class="roi-bar"><div class="roi-bar__fill" id="roi-b-opps"></div></div>
+                </div>
+                <div class="roi-stage roi-stage--gold">
+                  <div class="roi-stage__top"><span class="roi-stage__label">Nuevos clientes <span class="roi-stage__per">total 6 meses</span></span><span class="roi-stage__num" id="roi-s-clientes">0</span></div>
+                  <div class="roi-bar"><div class="roi-bar__fill" id="roi-b-clientes"></div></div>
+                </div>
+              </div>
+              <div class="roi-results">
+                <div class="roi-result">
+                  <div class="roi-result__k">Inversión total · 6m</div>
+                  <div class="roi-result__v" id="roi-r-inv">$0</div>
+                  <div class="roi-result__sub">Tu pauta + un estimado del fee de gestión del sistema (estrategia, operación y ejecución).</div>
+                </div>
+                <div class="roi-result">
+                  <div class="roi-result__k">Ingresos estimados · 6m</div>
+                  <div class="roi-result__v" id="roi-r-revenue">$0</div>
+                </div>
+                <div class="roi-result roi-result--hero">
+                  <div class="roi-result__k">Retorno estimado sobre tu inversión</div>
+                  <div class="roi-result__v" id="roi-r-roi">0×</div>
+                  <div class="roi-result__note">Por cada peso invertido en 6 meses.</div>
+                  <div class="roi-floornote" id="roi-floornote">Con estos supuestos el retorno es ajustado. En el diagnóstico revisamos cómo llevar tu ticket y tu cierre a un punto más rentable.</div>
+                </div>
+              </div>
+              <p class="roi__disclaimer">Proyección orientativa calibrada con benchmarks por industria del mercado B2B colombiano (ticket, ciclo y conversión de tu propio sector). No es una garantía de resultados: el desempeño real depende de la ejecución, el mercado y la calidad de la demanda. El retorno se estima sobre el valor facturable en los primeros 6 meses del contrato.</p>
+            </div>
+            <p class="challenge-cta roi__cta reveal">
+              <a class="btn btn--primary" href="contacto">Agenda tu diagnóstico gratuito <span class="arrow">→</span></a>
+            </p>
           </div>
         </div>
-        <p class="funnel-note reveal">* Rangos trimestrales promedio de un sistema de demanda B2B bien ejecutado. El volumen real depende de tu industria, ticket promedio y ciclo de venta. En el diagnóstico estimamos los números para tu caso específico.</p>
-        <p class="challenge-cta reveal">
-          <a class="link-gold" href="diagnostico">Estima tu pipeline potencial</a>
-        </p>
       </div>
     </section>
 
@@ -695,7 +733,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <script src="bs.js"></script>
+  <script src="bs.js?v=20260621"></script>
   <script>
     /* Subrayado dorado del titular (bajo "para empresas en Colombia") */
     (function () {

@@ -219,6 +219,98 @@
     });
   }
 
+  /* ---------- Simulador ROI ---------- */
+  function initRoiSimulator() {
+    if(!document.getElementById('roi-industria')) return;
+var MESES=6, CONV_OPP=0.6, CAP=6.0, FLOOR=1.2;
+  // Curva de arranque: fraccion del ritmo pleno por mes (montaje los primeros meses).
+  // Alineada al pricing: mes1 diagnostico, mes2 pipeline arranca, mes3 medible, mes4-6 pleno.
+  var CURVA=[0.25,0.55,0.80,1.0,1.0,1.0];
+  var CURVA_SUM=CURVA.reduce(function(a,b){return a+b},0); // 4.6 meses-equivalentes
+  var IND = {
+    saas:      { tmin:20000000,  tmax:200000000,  tdef:110000000, cierre:22, reun:12, atrib:0.42, fee:6000000 },
+    fintech:   { tmin:200000000, tmax:600000000,  tdef:400000000, cierre:18, reun:10, atrib:0.17, fee:14000000 },
+    seguros:   { tmin:100000000, tmax:400000000,  tdef:250000000, cierre:16, reun:11, atrib:0.26, fee:12000000 },
+    logistica: { tmin:40000000,  tmax:240000000,  tdef:140000000, cierre:20, reun:12, atrib:0.33, fee:9000000 },
+    servicios: { tmin:30000000,  tmax:300000000,  tdef:90000000,  cierre:18, reun:11, atrib:0.62, fee:10000000 }
+  };
+  var $=function(id){return document.getElementById(id)};
+  function fmtCOP(n){
+    if(n>=1e6){
+      var millones=n/1e6;
+      // siempre 1 decimal con coma; miles separados por punto (formato Colombia)
+      var s=millones.toLocaleString('es-CO',{minimumFractionDigits:1, maximumFractionDigits:1});
+      return '$'+s+' M';
+    }
+    return '$'+Math.round(n).toLocaleString('es-CO');
+  }
+  function fmtNum(n){return n>=1?Math.round(n).toLocaleString('es-CO'):n.toFixed(1).replace('.',',')}
+  function fmtX(n){return n.toFixed(1).replace('.',',')+'\u00d7'}
+
+  var lastInd=null;
+  function syncIndustry(){
+    var ind=$('roi-industria').value, d=IND[ind];
+    $('roi-ticket-range').innerHTML='Rango típico en tu sector: <b>'+fmtCOP(d.tmin)+' a '+fmtCOP(d.tmax)+'</b>';
+    $('roi-cierre-sug').textContent=d.cierre+'%';
+    if(lastInd!==ind){ // al cambiar de industria, recargar defaults del sector
+      $('roi-ticket').value=fmtMiles(d.tdef);
+      $('roi-cierre').value=d.cierre;
+      lastInd=ind;
+    }
+  }
+
+  function fmtMiles(n){ return Math.round(n).toLocaleString('es-CO'); }
+  function parseNum(str){ return +(String(str).replace(/[^\d]/g,'')) || 0; }
+  // formatea un input de texto con puntos de miles conservando la posicion del cursor al final
+  function formatInput(el){
+    var raw=parseNum(el.value);
+    el.value = raw>0 ? fmtMiles(raw) : '';
+  }
+
+  var raf;
+  function calc(){
+    var ind=$('roi-industria').value, d=IND[ind];
+    var ticket=parseNum($('roi-ticket').value);
+    var adj=$('roi-ticket-adjust');
+    if(ticket && ticket<d.tmin){ adj.classList.add('show'); } else { adj.classList.remove('show'); }
+    var ticketCalc=Math.max(ticket, d.tmin); // piso por industria para el calculo
+    var cierre=Math.min((+$('roi-cierre').value||0)/100,1);
+    var pauta=parseNum($('roi-pauta').value);
+
+    var reunMes=d.reun;                       // ritmo pleno en regimen
+    var citasTotal=reunMes*CURVA_SUM;         // acumulado 6m con curva de arranque
+    var opps=citasTotal*CONV_OPP;
+    var clientes=opps*cierre;
+    var revenue=clientes*ticketCalc*d.atrib;
+    var invTotal=(d.fee+pauta)*MESES;
+    var roiReal=invTotal>0?revenue/invTotal:0;
+    var roiShow=Math.max(Math.min(roiReal,CAP),FLOOR);
+
+    $('roi-floornote').classList.toggle('show', roiReal<FLOOR);
+
+    $('roi-s-citas').textContent=fmtNum(reunMes);
+    $('roi-s-citas-total').textContent='≈ '+fmtNum(citasTotal)+' en 6 meses';
+    $('roi-s-opps').textContent=fmtNum(opps);
+    $('roi-s-clientes').textContent=fmtNum(clientes);
+    $('roi-r-inv').textContent=fmtCOP(invTotal);
+    var revShow = (roiReal>CAP) ? CAP*invTotal : revenue;
+    $('roi-r-revenue').textContent=fmtCOP(revShow);
+    $('roi-r-roi').textContent=roiShow>0?fmtX(roiShow):'\u2014';
+
+    var max=citasTotal||1;
+    function setBar(id,v){$(id).style.transform='scaleX('+Math.min(v/max,1)+')'}
+    cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(function(){setBar('roi-b-citas',citasTotal);setBar('roi-b-opps',opps);setBar('roi-b-clientes',clientes)});
+  }
+
+  $('roi-industria').addEventListener('change',function(){syncIndustry();calc();});
+  ['roi-ticket','roi-pauta'].forEach(function(id){
+    $(id).addEventListener('input',function(){ formatInput(this); calc(); });
+  });
+  $('roi-cierre').addEventListener('input',calc);
+  lastInd=$('roi-industria').value; syncIndustry(); calc();
+  }
+
   /* ---------- Boot ---------- */
   function boot() {
     initNav();
@@ -228,6 +320,7 @@
     initMagnetic();
     initBackToTop();
     initForms();
+    initRoiSimulator();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
