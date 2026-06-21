@@ -195,9 +195,9 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     /* ===== Hero ===== */
     .hero {
       position: relative;
-      min-height: 94vh;
+      min-height: 86vh;
       display: flex; align-items: center;
-      padding: calc(76px + var(--sp-7)) 0 var(--sp-8);
+      padding: calc(76px + var(--sp-5)) 0 var(--sp-7);
       overflow: hidden;
       background:
         radial-gradient(1000px 560px at 50% -12%, rgba(85,28,37, calc(0.62 * var(--glow-mult))), transparent 68%),
@@ -535,18 +535,18 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
             </div>
             <div class="roi-field">
               <label for="roi-ticket">Ticket promedio por cliente (anual)</label>
-              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="text" inputmode="numeric" class="roi-input" id="roi-ticket" value="110.000.000"><span class="roi-suf">COP</span></div>
+              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="text" inputmode="numeric" class="roi-input" id="roi-ticket" value="0"><span class="roi-suf">COP</span></div>
               <p class="roi-rangehint" id="roi-ticket-range">Rango típico en tu sector: <b>$20M a $200M</b></p>
               <p class="roi-adjust" id="roi-ticket-adjust">Ajustamos al mínimo de tu sector para una proyección realista.</p>
             </div>
             <div class="roi-field">
               <label for="roi-cierre">Tu tasa de cierre</label>
-              <div class="roi-inwrap roi-inwrap--pct"><input type="number" class="roi-input" id="roi-cierre" value="22" min="0" max="100" step="1"><span class="roi-suf">%</span></div>
+              <div class="roi-inwrap roi-inwrap--pct"><input type="number" class="roi-input" id="roi-cierre" value="0" min="0" max="100" step="1"><span class="roi-suf">%</span></div>
               <p class="roi-hint">De cada reunión con un decisor, cuántas terminan en venta. Sugerido para tu sector: <span id="roi-cierre-sug">22%</span>.</p>
             </div>
             <div class="roi-field">
               <label for="roi-pauta">Tu presupuesto de pauta mensual</label>
-              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="text" inputmode="numeric" class="roi-input" id="roi-pauta" value="8.000.000"><span class="roi-suf">COP</span></div>
+              <div class="roi-inwrap"><span class="roi-pre">$</span><input type="text" inputmode="numeric" class="roi-input" id="roi-pauta" value="0"><span class="roi-suf">COP</span></div>
               <p class="roi-hint">Inversión directa en Google y LinkedIn Ads. Va aparte de tu fee y la controlas tú.</p>
             </div>
           </div>
@@ -733,7 +733,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <script src="bs.js?v=20260621"></script>
+  <script src="bs.js?v=20260622"></script>
   <script>
     /* Subrayado dorado del titular (bajo "para empresas en Colombia") */
     (function () {

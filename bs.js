@@ -247,16 +247,11 @@ var MESES=6, CONV_OPP=0.6, CAP=6.0, FLOOR=1.2;
   function fmtNum(n){return n>=1?Math.round(n).toLocaleString('es-CO'):n.toFixed(1).replace('.',',')}
   function fmtX(n){return n.toFixed(1).replace('.',',')+'\u00d7'}
 
-  var lastInd=null;
   function syncIndustry(){
     var ind=$('roi-industria').value, d=IND[ind];
+    // Solo actualiza las pistas por sector; los campos quedan en lo que ponga el usuario (arrancan en 0).
     $('roi-ticket-range').innerHTML='Rango típico en tu sector: <b>'+fmtCOP(d.tmin)+' a '+fmtCOP(d.tmax)+'</b>';
     $('roi-cierre-sug').textContent=d.cierre+'%';
-    if(lastInd!==ind){ // al cambiar de industria, recargar defaults del sector
-      $('roi-ticket').value=fmtMiles(d.tdef);
-      $('roi-cierre').value=d.cierre;
-      lastInd=ind;
-    }
   }
 
   function fmtMiles(n){ return Math.round(n).toLocaleString('es-CO'); }
@@ -308,7 +303,7 @@ var MESES=6, CONV_OPP=0.6, CAP=6.0, FLOOR=1.2;
     $(id).addEventListener('input',function(){ formatInput(this); calc(); });
   });
   $('roi-cierre').addEventListener('input',calc);
-  lastInd=$('roi-industria').value; syncIndustry(); calc();
+  syncIndustry(); calc();
   }
 
   /* ---------- Boot ---------- */
