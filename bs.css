@@ -802,7 +802,7 @@ strong { font-weight: 600; color: var(--cream-light); }
 /* ====== Simulador ROI ====== */
 .roi__grid {
   display: grid; grid-template-columns: 0.92fr 1.08fr;
-  gap: clamp(28px, 4vw, 56px); align-items: start;
+  gap: clamp(28px, 4vw, 56px); align-items: center;
   max-width: 1060px; margin: 0 auto;
 }
 @media (max-width: 880px){ .roi__grid { grid-template-columns: 1fr; gap: 36px; } }
