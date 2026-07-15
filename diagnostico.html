@@ -367,6 +367,11 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
             <a href="contacto" class="btn btn--primary" id="ctaCalendly" data-magnetic>Agendar llamada gratuita</a>
             <div class="capture-divider"><span>o si prefieres que te contactemos</span></div>
             <div class="capture-form" id="captureForm">
+              <div class="hp-field" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                <label for="cf-website-diag">No llenar este campo</label>
+                <input type="text" id="cf-website-diag" name="website_url" tabindex="-1" autocomplete="off">
+                <input type="text" id="cf-honey-diag" name="_honey" tabindex="-1" autocomplete="off">
+              </div>
               <div class="capture-row">
                 <input type="text" id="captureName" placeholder="Tu nombre" autocomplete="given-name">
                 <input type="email" id="captureEmail" placeholder="Tu email corporativo" autocomplete="email">
@@ -392,6 +397,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   <script src="bs.js?v=20260622"></script>
   <script>
     const A = {}, T = 5; let C = 0;
+    const DIAG_LOADED_AT = Date.now(); // control anti-bot (timing)
     const ICONS = {
       crit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12" y2="17.01"/></svg>',
       warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
@@ -434,6 +440,16 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
       if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ note.textContent='Ingresa un email válido para continuar.'; note.className='capture-note'; return; }
       var hb=document.getElementById('habeas-diagnostico');
       if(!hb||!hb.checked){ note.textContent='Debes autorizar el tratamiento de datos para continuar.'; note.className='capture-note'; return; }
+      /* Anti-bot (capa cliente; Nexus revalida del lado servidor): honeypot
+         + timing. Si se detecta bot, simulamos exito sin enviar. */
+      var elapsedMs=Date.now()-DIAG_LOADED_AT;
+      var honey=document.getElementById('cf-honey-diag'), honeyUrl=document.getElementById('cf-website-diag');
+      if((honey&&honey.value)||(honeyUrl&&honeyUrl.value)||elapsedMs<3000){
+        note.textContent='Recibido. Te contactamos en menos de un día hábil.';
+        note.className='capture-note sent';
+        document.getElementById('captureForm').style.display='none';
+        return;
+      }
       var btn=document.getElementById('captureBtn'); var btnOriginal=btn.textContent; btn.disabled=true; btn.textContent='Enviando...';
       function getUTM(name){ var m=window.location.search.match(new RegExp('[?&]'+name+'=([^&]*)')); return m?decodeURIComponent(m[1].replace(/\+/g,' ')):''; }
       var scoreEl=document.getElementById('scoreNumber');
@@ -442,7 +458,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
         message:'Diagnóstico de pipeline'+(scoreEl?(' · score '+scoreEl.textContent):''),
         source:'diagnostico',
         utm_source:getUTM('utm_source'), utm_medium:getUTM('utm_medium'), utm_campaign:getUTM('utm_campaign'),
-        _honey:'', website_url:''
+        _honey:honey?honey.value:'', website_url:honeyUrl?honeyUrl.value:'', elapsed_ms:elapsedMs
       };
       fetch('https://nexus.blackscale.consulting/api/webhook',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
         .then(function(r){

@@ -1,0 +1,43 @@
+# ============================================================
+# BlackScale Consulting - .gitignore
+# Evita commitear secretos y artefactos. El sitio es estatico
+# (HTML/CSS/JS), pero este repo se despliega dentro de public_html
+# y comparte contexto con el CRM (Nexus, Next.js): nunca debe
+# entrar un archivo de entorno ni credenciales.
+# ============================================================
+
+# Secretos / entorno (NUNCA commitear)
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.json
+credentials.json
+service-account*.json
+
+# Dependencias / build (por si se agrega tooling)
+node_modules/
+dist/
+build/
+.next/
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operativo / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Backups / temporales (robots.txt ya bloquea *.bak y *.zip)
+*.bak
+*.tmp
+*.zip

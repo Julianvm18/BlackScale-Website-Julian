@@ -122,6 +122,9 @@
   function initForms() {
     document.querySelectorAll('form[data-validate]').forEach(function (form) {
       var fields = form.querySelectorAll('input[required]:not([type="checkbox"])');
+      /* Marca de tiempo para el control anti-bot: un humano no completa
+         el formulario en menos de ~3 s desde que se carga la pagina. */
+      var formShownAt = Date.now();
       function check(input, report) {
         var val = input.value.trim();
         var ok = val.length > 0;
@@ -168,6 +171,23 @@
           var el = form.elements[name];
           return el ? el.value.trim() : '';
         }
+
+        /* ---- Anti-bot (capa cliente; Nexus revalida del lado servidor) ----
+           1) Honeypot: campos ocultos que solo un bot rellena.
+           2) Timing: envíos en menos de 3 s desde la carga son automatizados.
+           En ambos casos simulamos éxito y NO enviamos: el bot cree que pasó
+           y no reintenta, sin gastar cupo del webhook ni ensuciar el CRM. */
+        var elapsedMs = Date.now() - formShownAt;
+        if (val('_honey') || val('website_url') || elapsedMs < 3000) {
+          form.reset();
+          form.style.display = 'none';
+          var honeySuccess = form.parentElement.querySelector('.form-success');
+          if (honeySuccess) {
+            honeySuccess.style.display = 'block';
+            honeySuccess.classList.add('reveal', 'in-view');
+          }
+          return;
+        }
         function getUTM(name) {
           var m = window.location.search.match(new RegExp('[?&]' + name + '=([^&]*)'));
           return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
@@ -185,7 +205,8 @@
           utm_medium:   getUTM('utm_medium'),
           utm_campaign: getUTM('utm_campaign'),
           _honey:       val('_honey'),
-          website_url:  val('website_url')
+          website_url:  val('website_url'),
+          elapsed_ms:   elapsedMs
         };
         if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando…'; }
         fetch('https://nexus.blackscale.consulting/api/webhook', {

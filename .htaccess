@@ -171,16 +171,20 @@ RewriteRule ^(.+?)/?$ $1.html [L]
   </FilesMatch>
 
   # ---- SECURITY HEADERS ------------------------------------
-  Header set X-Content-Type-Options "nosniff"
-  Header set X-Frame-Options "SAMEORIGIN"
-  Header set Referrer-Policy "strict-origin-when-cross-origin"
-  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+  # "always" para que tambien apliquen a respuestas de error (404, 403):
+  # sin ello la pagina 404 se sirve sin estos headers.
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
   # CSP conservadora: solo directivas que no afectan los scripts/estilos
   # actuales (GA4, Pixel, Klaro, fuentes). NO agregar script-src sin
   # poder probar el sitio en vivo: una lista incompleta rompe analytics
-  # o formularios en silencio.
-  Header set Content-Security-Policy "frame-ancestors 'self'; object-src 'none'; base-uri 'self'"
+  # o formularios en silencio. Politica script-src completa recomendada
+  # (pendiente de verificar en vivo) documentada en el informe de auditoria.
+  Header always set Content-Security-Policy "frame-ancestors 'self'; object-src 'none'; base-uri 'self'"
 </IfModule>
 
 # ---- CHARSET -----------------------------------------------
