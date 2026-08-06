@@ -34,7 +34,7 @@ Nuestro perfil de cliente ideal es una empresa B2B con un producto o servicio va
 
 ## Cómo contactarnos
 
-- **Email**: Servicio@blackscale.consulting
+- **Email**: servicio@blackscale.consulting
 - **Sitio web**: https://blackscale.consulting
 - **Diagnóstico gratuito**: https://blackscale.consulting/diagnostico (5 preguntas, 3 minutos, resultados inmediatos)
 - **LinkedIn**: https://www.linkedin.com/company/blackscale-consulting/
@@ -43,11 +43,11 @@ Nuestro perfil de cliente ideal es una empresa B2B con un producto o servicio va
 ## Páginas principales
 
 - [Inicio](https://blackscale.consulting/): visión general de la consultoría B2B.
-- [Servicios](https://blackscale.consulting/services): los 6 servicios de BlackScale.
-- [Por Qué Nosotros](https://blackscale.consulting/why-us): filosofía y diferenciales.
-- [Proceso](https://blackscale.consulting/process): metodología de 6 pasos para activar el pipeline en semanas.
+- [Servicios](https://blackscale.consulting/servicios): los 6 servicios de BlackScale.
+- [Por Qué Nosotros](https://blackscale.consulting/por-que-nosotros): filosofía y diferenciales.
+- [Proceso](https://blackscale.consulting/proceso): metodología de 6 pasos para activar el pipeline en semanas.
 - [Diagnóstico Gratuito](https://blackscale.consulting/diagnostico): herramienta de autodiagnóstico de operación comercial B2B.
-- [Contacto](https://blackscale.consulting/contact): formulario y agenda de sesión gratuita.
+- [Contacto](https://blackscale.consulting/contacto): formulario y agenda de sesión gratuita.
 - [Blog](https://blackscale.consulting/blog/): artículos sobre ventas B2B, pipeline, marketing y operaciones comerciales en Colombia.
 - [Modelo comercial](https://blackscale.consulting/pricing.md): cómo cobramos y qué incluye el engagement de BlackScale.
 
